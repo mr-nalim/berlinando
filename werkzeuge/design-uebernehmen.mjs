@@ -37,7 +37,7 @@ const WEBSITE = path.join(REPO, 'website');
 const ASSETS = path.join(WEBSITE, 'assets');
 
 // Dateien in website/assets, die NICHT aus dem Export kommen (bleiben stehen)
-const EIGENE_ASSETS = new Set(['fonts', 'fonts.css', 'site.js', 'favicon.svg']);
+const EIGENE_ASSETS = new Set(['fonts', 'fonts.css', 'site.js', 'favicon.png', 'apple-touch-icon.png']);
 
 // Seitentitel (Browser-Tab & Google). Tourseiten: automatisch aus der <h1>.
 const TITEL = {
@@ -197,7 +197,8 @@ function umbauen(datei, roh) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${TITEL[datei] ?? titelAusH1(body)}</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/fonts.css">
 ${head.trim()}
 <script src="assets/site.js" defer></script>

@@ -26,7 +26,7 @@ in `website/` werden bei der nächsten Übernahme überschrieben.
 | Ordner / Datei | Inhalt |
 | --- | --- |
 | `website/` | **die Website** — genau das, was online geht (fertiges HTML) |
-| `website/assets/` | Fotos, Logo, Schriften, `site.js` (Aufklappen, Karussell, Scroll-Effekte) |
+| `website/assets/` | Fotos, Logo, Favicon (das „B" aus Martas Logo), Schriften, `site.js` (Aufklappen, Karussell, Scroll-Effekte) |
 | `werkzeuge/design-uebernehmen.mjs` | wandelt einen Claude-Design-Export in `website/` um |
 | `werkzeuge/korrekturen.mjs` | Texte, die bei jeder Übernahme fest ersetzt werden (z. B. Datenschutz-Hosting) |
 | `werkzeuge/qa-vergleich.mjs` | vergleicht `website/` Seite für Seite mit dem Original-Export |
