@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Guerra Fria · Berlinando</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+    :root { --font-heading:'Baloo 2', system-ui, sans-serif; --font-body:'Nunito Sans', system-ui, sans-serif; --font-slogan:'Cormorant Garamond', Georgia, serif; }
+    body { margin:0; background:#FBF7EE; font-family:var(--font-body); }
+    a { color:#33302B; text-decoration:none; transition:color .15s; }
+    a:hover { color:#B45B3E; }
+    .yb-fill { background:#F6C445; color:#33302B; border:1px solid #F6C445; border-radius:10px; white-space:nowrap; transition:background .15s, transform .12s; cursor:pointer; }
+    .yb-fill:hover { background:#EAB72E; border-color:#EAB72E; }
+    .yb-fill:active { transform:translateY(1px); }
+    .yb-fill:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    .lnk { border-bottom:1px solid #C7B59A; padding-bottom:2px; white-space:nowrap; transition:border-color .15s; }
+    .lnk:hover { border-color:#B45B3E; }
+    .nlink { color:inherit; transition:opacity .15s; }
+    .nlink:hover { color:inherit; opacity:.6; }
+    .plate-b { background:#fff; padding:8px; border:1px solid #E7DFCB; box-shadow:0 1px 3px rgba(51,48,43,.07); }
+    .plate-b image-slot { display:block; width:100%; height:100%; filter:saturate(.94) sepia(.04) contrast(.99) brightness(1.01); }
+    .acc { border-top:1px solid #E7DFCB; }
+    .acc:last-of-type { border-bottom:1px solid #E7DFCB; }
+    .acc-btn { display:grid; grid-template-columns:minmax(0,1fr) 24px; gap:20px; align-items:start; width:100%; padding:22px 2px; margin:0; border:none; background:transparent; color:#33302B; font-family:inherit; text-align:left; cursor:pointer; }
+    .acc-btn:hover .acc-t { color:#B45B3E; }
+    .acc-btn:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    .acc-t { transition:color .18s; }
+    .acc-a { color:#A8977C; display:flex; align-items:center; justify-content:flex-end; height:26px; transition:transform .4s cubic-bezier(.22,.61,.36,1), color .18s; }
+    .acc.is-open .acc-a { transform:rotate(180deg); }
+    .acc-pan { max-height:0; overflow:hidden; transition:max-height .5s cubic-bezier(.22,.61,.36,1); }
+    .acc-pan > div { opacity:0; transition:opacity .25s ease; }
+    .acc.is-open .acc-pan > div { opacity:1; transition:opacity .4s ease .12s; }
+    .ext { border-top:1px solid #EDE5D3; }
+    .ext:last-child { border-bottom:1px solid #EDE5D3; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 44px; }
+    .prose p { font-size:18px; line-height:1.78; margin:0 0 22px; max-width:64ch; color:color-mix(in srgb,#33302B 84%,transparent); text-wrap:pretty; }
+    .prose p:last-child { margin-bottom:0; }
+    @media (max-width: 900px) {
+      .wrap { padding-left:22px !important; padding-right:22px !important; }
+      .g2 { grid-template-columns:minmax(0,1fr) !important; gap:28px !important; }
+      .navlinks { display:none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .acc-pan, .acc-pan > div, .acc-a { transition:none; }
+    }
+  </style>
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<div style="font-family:var(--font-body);color:#33302B;background:#FBF7EE">
+
+  <nav style="position:sticky;top:0;z-index:60;background:#FBF7EE;box-shadow:0 1px 0 #E7DFCB">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:14px;padding-bottom:14px">
+      <a href="index.html" style="display:flex;align-items:flex-end;flex-shrink:0"><img src="assets/logo-rose-inkdot.png" alt="Berlinando" style="height:44px"></a>
+      <div style="display:flex;align-items:center;gap:30px">
+        <div class="navlinks" style="display:flex;align-items:center;gap:30px;font-size:15px;font-weight:600;white-space:nowrap">
+          <a href="passeios.html" class="nlink">Passeios</a>
+          <a href="como-funciona.html" class="nlink">Como funciona</a>
+          <a href="quem-sou.html" class="nlink">Quem Sou</a>
+        </div>
+        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="font-size:14px;font-weight:700;padding:10px 20px;text-decoration:none">Reservar</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="wrap" style="padding-top:48px;padding-bottom:36px">
+    <a href="passeios.html" style="display:inline-block;font-size:14px;color:color-mix(in srgb,#33302B 70%,transparent);margin-bottom:26px">← Todos os passeios</a>
+    <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C25067;margin-bottom:16px">Berlim por Temas · Roteiro 8</div>
+    <h1 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(36px,4.8vw,64px);line-height:1.04;margin:0 0 16px;max-width:18ch;text-wrap:pretty">A Guerra Fria</h1>
+    <p style="font-family:var(--font-slogan);font-style:italic;font-size:clamp(20px,2.2vw,27px);line-height:1.36;margin:0 0 30px;max-width:34ch;color:color-mix(in srgb,#33302B 74%,transparent)">A guerra que só terminou quando o Muro caiu</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px 30px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 80%,transparent);font-variant-numeric:tabular-nums">
+      <span>Duração ~6 h</span>
+      <span>A pé e transporte público</span>
+      <span>Privado · em português</span>
+    </div>
+  </header>
+
+  <div style="position:relative;width:100%;height:clamp(300px,38vw,520px);overflow:hidden;background:#33302B">
+    <img src="assets/foto-muro-tote.jpg" alt="A Guerra Fria" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover">
+  </div>
+
+  <section class="wrap" style="padding-top:56px;padding-bottom:10px">
+    <div style="max-width:62ch;border-left:2px solid #E0C3C9;padding-left:30px">
+      <blockquote style="margin:0;font-family:var(--font-heading);font-weight:500;font-size:clamp(24px,2.8vw,34px);line-height:1.26;color:#B45B3E;text-wrap:pretty">“…uma cortina de ferro desceu sobre o continente”</blockquote>
+      <div style="font-family:var(--font-slogan);font-style:italic;font-size:16px;line-height:1.5;margin-top:14px;color:color-mix(in srgb,#33302B 62%,transparent)">A imagem ficou célebre neste discurso — embora Churchill já a tivesse usado antes, num telegrama a Truman em maio de 1945.</div>
+      <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb,#33302B 70%,transparent);margin-top:16px">Winston Churchill, discurso “Sinews of Peace” (“Nervos da Paz”) — Westminster College, Fulton, Missouri, 5 de março de 1946</div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:48px;padding-bottom:16px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#B45B3E;margin-bottom:22px">Panorama</div>
+    <div class="prose">
+      <p>Quando a guerra acabou, em 1945, os vencedores se encontraram em meio aos escombros da Alemanha nazista derrotada, em uma conferência que, embora relativamente pouco conhecida, selou a ocupação da Alemanha: a Conferência de Potsdam, ou dos “Grandes Três”. O país já fora dividido em quatro zonas de ocupação — decisão herdada de Yalta e dos acordos aliados —, e Berlim, junto com ele. A cidade, encravada bem no meio da zona de ocupação soviética, virou uma ilha de quatro donos — americanos, britânicos, franceses e soviéticos —, e a costura da aliança de guerra logo se rompeu. Foi aqui, no fim das contas, que a “cortina de ferro” de que falou Churchill desceu de forma mais concreta: no meio de uma cidade só.</p>
+      <p>Por todo este período, Berlim foi a fronteira mais vigiada do mundo, porque era onde os dois blocos se encaravam a poucos metros — no Checkpoint Charlie, tanques americanos e soviéticos chegaram a se apontar os canhões.</p>
+      <p>E é aqui que este tour faz a pergunta desconfortável: quando a gente olha os dois lados com a mesma régua — o que encontramos?</p>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:18px;padding-bottom:4px">
+    <div class="plate-b" style="max-width:820px"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-brandenburger-tor-ubahn.jpg" alt="a estação Brandenburger Tor" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+  </section>
+
+  <section class="wrap" style="padding-top:46px;padding-bottom:10px">
+    <div class="acc">
+      <button type="button" class="acc-btn" aria-expanded="false">
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:9px">Janela</div>
+          <h2 class="acc-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(22px,2.3vw,28px);line-height:1.18;margin:0;max-width:30ch;text-wrap:pretty">De onde veio o serviço secreto da Alemanha Ocidental?</h2>
+        </div>
+        <span class="acc-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+      </button>
+      <div class="acc-pan">
+        <div>
+          <div class="prose" style="padding:2px 2px 30px">
+            <p>De uma fórmula difícil de acreditar: montado por um general da Wehrmacht, recheado de oficiais da SS, com dinheiro da CIA. O general Reinhard Gehlen chefiara a inteligência militar de Hitler no front leste; em 1946, com os americanos, transformou a sua rede na “Organização Gehlen”, que empregou centenas de ex-agentes nazistas (SS, SD, Gestapo) — e, em 1956, virou o BND, o serviço secreto da Alemanha Ocidental. A luta contra o comunismo herdou, no Oeste, os quadros do regime que acabara de ser derrotado — o mesmo regime que dizimara o Partido Comunista alemão: dezenas de milhares de mortos e cerca de 150 mil presos em campos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="acc">
+      <button type="button" class="acc-btn" aria-expanded="false">
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:9px">Você sabia?</div>
+          <h2 class="acc-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(22px,2.3vw,28px);line-height:1.18;margin:0;max-width:30ch;text-wrap:pretty">O que foi a Kontrollratsgesetz Nr. 46 (1947)?</h2>
+        </div>
+        <span class="acc-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+      </button>
+      <div class="acc-pan">
+        <div>
+          <div class="prose" style="padding:2px 2px 30px">
+            <p>Foi a lei com que os Aliados dissolveram a Prússia. Em 25 de fevereiro de 1947, o Conselho de Controle Aliado decretou que a Prússia — “desde sempre portadora do militarismo e da reação na Alemanha” — deixava de existir. Artigo I: fica dissolvida. Um Estado inteiro apagado por uma canetada, no primeiro capítulo da ocupação — antes mesmo de a cortina de ferro se fechar de vez. (E sim: essa palavra-monstro é o nome oficial da lei.)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F4EDDC;border-top:1px solid #E8DEC4;border-bottom:1px solid #E8DEC4;margin-top:56px">
+    <div class="wrap" style="padding-top:60px;padding-bottom:60px">
+      <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(30px,3.4vw,42px);line-height:1.06;margin:0 0 40px">Prático deste tour</h2>
+
+      <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:start;padding-bottom:38px;border-bottom:1px solid #E1D6BC">
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:12px">1 · Duração e reserva</div>
+          <div style="font-family:var(--font-heading);font-weight:500;font-size:30px;line-height:1.1;margin-bottom:14px;font-variant-numeric:tabular-nums">~6 horas</div>
+          <p style="font-size:16px;line-height:1.7;margin:0;max-width:42ch;color:color-mix(in srgb,#33302B 80%,transparent)">É um tour que cruza a cidade. O tour-base combina caminhada e transporte público, pelos exteriores; se quiserem entrar em algum museu, combinamos e eu providencio os ingressos.</p>
+          <p style="font-size:16px;line-height:1.7;margin:12px 0 0;max-width:42ch;color:color-mix(in srgb,#33302B 80%,transparent)">Preços — <a href="como-funciona.html#valores" class="lnk" style="font-weight:700;color:#B45B3E">ver a tabela</a>.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px">
+          <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="font-size:16px;font-weight:700;padding:14px 28px;text-decoration:none">Reservar no WhatsApp</a>
+          <span style="font-size:15px;color:color-mix(in srgb,#33302B 74%,transparent);font-variant-numeric:tabular-nums">+49 1578 5568432</span>
+        </div>
+      </div>
+
+      <div style="padding-top:38px">
+        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:12px">2 · Extensões</div>
+        <p style="font-size:15px;line-height:1.66;margin:0 0 26px;max-width:64ch;color:color-mix(in srgb,#33302B 80%,transparent)">★ = posso guiar/contextualizar vocês; Vocês também podem fazer por conta própria — neste caso posso fazer a reserva dos ingressos.</p>
+
+        <div class="ext">
+          <div style="padding:20px 2px">
+            <h3 style="font-family:var(--font-heading);font-weight:500;font-size:22px;line-height:1.2;margin:0 0 8px">Panorama “DIE MAUER” (Asisi), no Checkpoint Charlie</h3>
+            <div style="font-size:14px;line-height:1.6;color:color-mix(in srgb,#33302B 80%,transparent);margin-bottom:12px">€14 p.p. · +~40 min.</div>
+            <div class="acc" style="border:none">
+              <button type="button" class="acc-btn" style="padding:0" aria-expanded="false">
+                <span class="acc-t" style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:#B45B3E">O que é</span>
+                <span class="acc-a" style="height:20px" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+              </button>
+              <div class="acc-pan">
+                <div><p style="font-size:15px;line-height:1.7;margin:12px 0 0;max-width:58ch;color:color-mix(in srgb,#33302B 82%,transparent)">O 360° da vida à sombra do Muro.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ext">
+          <div style="padding:20px 2px">
+            <h3 style="font-family:var(--font-heading);font-weight:500;font-size:22px;line-height:1.2;margin:0 0 8px">Stasi-Museum (antiga sede do MfS, Lichtenberg, leste)</h3>
+            <div style="font-size:14px;line-height:1.6;color:color-mix(in srgb,#33302B 80%,transparent);margin-bottom:12px">€12 p.p. · +~1h + deslocamento. A visita que fazemos no roteiro-base é só por fora.</div>
+            <div class="acc" style="border:none">
+              <button type="button" class="acc-btn" style="padding:0" aria-expanded="false">
+                <span class="acc-t" style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:#B45B3E">O que é</span>
+                <span class="acc-a" style="height:20px" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+              </button>
+              <div class="acc-pan">
+                <div><p style="font-size:15px;line-height:1.7;margin:12px 0 0;max-width:58ch;color:color-mix(in srgb,#33302B 82%,transparent)">O gabinete de Mielke, a máquina de vigilância por dentro.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ext">
+          <div style="padding:20px 2px">
+            <h3 style="font-family:var(--font-heading);font-weight:500;font-size:22px;line-height:1.2;margin:0 0 8px">Memorial de Hohenschönhausen (a antiga prisão da Stasi, Lichtenberg, leste)</h3>
+            <div style="font-size:14px;line-height:1.6;color:color-mix(in srgb,#33302B 80%,transparent);margin-bottom:12px">Entrada grátis, visita guiada €9 (reduzida €5) · diário 10–18h · +~2h + deslocamento. A visita por dentro é conduzida pelo memorial; eu acompanho e contextualizo.</div>
+            <div class="acc" style="border:none">
+              <button type="button" class="acc-btn" style="padding:0" aria-expanded="false">
+                <span class="acc-t" style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:#B45B3E">O que é</span>
+                <span class="acc-a" style="height:20px" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+              </button>
+              <div class="acc-pan">
+                <div><p style="font-size:15px;line-height:1.7;margin:12px 0 0;max-width:58ch;color:color-mix(in srgb,#33302B 82%,transparent)">A prisão preventiva da Stasi, onde se interrogavam e se quebravam presos políticos; hoje memorial, com visitas guiadas frequentemente por ex-presos — o Estado contra o próprio povo, de perto.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ext">
+          <div style="padding:20px 2px">
+            <h3 style="font-family:var(--font-heading);font-weight:500;font-size:22px;line-height:1.2;margin:0 0 8px">★ Teufelsberg (Grunewald, oeste)</h3>
+            <div style="font-size:14px;line-height:1.6;color:color-mix(in srgb,#33302B 80%,transparent);margin-bottom:12px">€12 p.p. · +2h30.</div>
+            <div class="acc" style="border:none">
+              <button type="button" class="acc-btn" style="padding:0" aria-expanded="false">
+                <span class="acc-t" style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:#B45B3E">O que é</span>
+                <span class="acc-a" style="height:20px" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+              </button>
+              <div class="acc-pan">
+                <div><p style="font-size:15px;line-height:1.7;margin:12px 0 0;max-width:58ch;color:color-mix(in srgb,#33302B 82%,transparent)">A estação de escuta da NSA sobre a “montanha do diabo”, feita do entulho da guerra.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ext">
+          <div style="padding:20px 2px">
+            <h3 style="font-family:var(--font-heading);font-weight:500;font-size:22px;line-height:1.2;margin:0 0 8px">AlliiertenMuseum (Museu dos Aliados, Dahlem, oeste)</h3>
+            <div style="font-size:14px;line-height:1.6;color:color-mix(in srgb,#33302B 80%,transparent);margin-bottom:12px">Grátis · +~1h30 + deslocamento (fecha seg.).</div>
+            <div class="acc" style="border:none">
+              <button type="button" class="acc-btn" style="padding:0" aria-expanded="false">
+                <span class="acc-t" style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:#B45B3E">O que é</span>
+                <span class="acc-a" style="height:20px" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+              </button>
+              <div class="acc-pan">
+                <div><p style="font-size:15px;line-height:1.7;margin:12px 0 0;max-width:58ch;color:color-mix(in srgb,#33302B 82%,transparent)">O lado ocidental — avião da Ponte Aérea, a guarita original do Checkpoint Charlie.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ext">
+          <div style="padding:20px 2px">
+            <h3 style="font-family:var(--font-heading);font-weight:500;font-size:22px;line-height:1.2;margin:0 0 8px">★ Museu de Karlshorst (leste)</h3>
+            <div style="font-size:14px;line-height:1.6;color:color-mix(in srgb,#33302B 80%,transparent);margin-bottom:12px">Grátis · +~1h30 + deslocamento (fecha seg.).</div>
+            <div class="acc" style="border:none">
+              <button type="button" class="acc-btn" style="padding:0" aria-expanded="false">
+                <span class="acc-t" style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:#B45B3E">O que é</span>
+                <span class="acc-a" style="height:20px" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+              </button>
+              <div class="acc-pan">
+                <div><p style="font-size:15px;line-height:1.7;margin:12px 0 0;max-width:58ch;color:color-mix(in srgb,#33302B 82%,transparent)">A voz soviética — a sala da rendição de 1945, ex-quartel do SMAD/KGB.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ext">
+          <div style="padding:20px 2px">
+            <h3 style="font-family:var(--font-heading);font-weight:500;font-size:22px;line-height:1.2;margin:0 0 8px">★ Tempelhof + Memorial da Ponte Aérea (Luftbrückendenkmal)</h3>
+            <div style="font-size:14px;line-height:1.6;color:color-mix(in srgb,#33302B 80%,transparent);margin-bottom:12px">Campo grátis; visita por dentro do edifício €17,50 p.p. (grupo €280–430) · +30 min (só o campo) a +2h (com o edifício; fecha ter.).</div>
+            <div class="acc" style="border:none">
+              <button type="button" class="acc-btn" style="padding:0" aria-expanded="false">
+                <span class="acc-t" style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:#B45B3E">O que é</span>
+                <span class="acc-a" style="height:20px" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+              </button>
+              <div class="acc-pan">
+                <div><p style="font-size:15px;line-height:1.7;margin:12px 0 0;max-width:58ch;color:color-mix(in srgb,#33302B 82%,transparent)">Caminhar pela pista dos Rosinenbomber.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ext">
+          <div style="padding:20px 2px">
+            <h3 style="font-family:var(--font-heading);font-weight:500;font-size:22px;line-height:1.2;margin:0 0 8px">★ Ponte Glienicke (Potsdam), a “ponte dos espiões”</h3>
+            <div style="font-size:14px;line-height:1.6;color:color-mix(in srgb,#33302B 80%,transparent);margin-bottom:12px">Visita ao ar livre, grátis. Também no tour Potsdam.</div>
+            <div class="acc" style="border:none">
+              <button type="button" class="acc-btn" style="padding:0" aria-expanded="false">
+                <span class="acc-t" style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:#B45B3E">O que é</span>
+                <span class="acc-a" style="height:20px" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+              </button>
+              <div class="acc-pan">
+                <div><p style="font-size:15px;line-height:1.7;margin:12px 0 0;max-width:58ch;color:color-mix(in srgb,#33302B 82%,transparent)">Onde Leste e Oeste trocavam agentes capturados.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ext">
+          <div style="padding:20px 2px">
+            <h3 style="font-family:var(--font-heading);font-weight:500;font-size:22px;line-height:1.2;margin:0 0 8px">★ Villa Schöningen (Potsdam)</h3>
+            <div style="font-size:14px;line-height:1.6;color:color-mix(in srgb,#33302B 80%,transparent);margin-bottom:12px">€9 · sex–dom.</div>
+            <div class="acc" style="border:none">
+              <button type="button" class="acc-btn" style="padding:0" aria-expanded="false">
+                <span class="acc-t" style="font-size:14px;font-weight:700;letter-spacing:0.04em;color:#B45B3E">O que é</span>
+                <span class="acc-a" style="height:20px" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+              </button>
+              <div class="acc-pan">
+                <div><p style="font-size:15px;line-height:1.7;margin:12px 0 0;max-width:58ch;color:color-mix(in srgb,#33302B 82%,transparent)">Vila de 1843 à beira da ponte; na RDA, um lar de crianças na faixa da morte; hoje um pequeno museu sobre a divisão da Alemanha e a própria ponte dos espiões.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding-top:38px">
+        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:12px">3 · Serviço avulso</div>
+        <p style="font-size:16px;line-height:1.7;margin:0;max-width:62ch;color:color-mix(in srgb,#33302B 80%,transparent)">Eu providencio a compra/reserva de qualquer ingresso acima, mesmo sem a visita com a guia. Taxa de 10% sobre o total desses serviços (pagamento adiantado).</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#231F1C">
+    <div class="wrap g2" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;padding-top:76px;padding-bottom:76px">
+      <div>
+        <div style="font-size:15px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#E58497;margin-bottom:18px">Reservas</div>
+        <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(34px,4.2vw,54px);line-height:1.06;margin:0;max-width:18ch;color:#FBF7EE;text-wrap:pretty">Vamos combinar o seu passeio.</h2>
+      </div>
+      <div style="border-left:1px solid rgba(251,247,238,.18);padding-left:44px;display:flex;flex-direction:column;align-items:flex-start;gap:20px">
+        <p style="font-size:16px;line-height:1.7;margin:0;color:rgba(251,247,238,.72)">Me chame no WhatsApp com a data e quantas pessoas — o resto a gente acerta junto.</p>
+        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="padding:15px 32px;font-size:15px;letter-spacing:0.03em;text-decoration:none">Reservar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid #E7DFCB;background:#FBF7EE">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding-top:30px;padding-bottom:36px;font-size:14px">
+      <a href="passeios.html" class="lnk">← Todos os passeios</a>
+      <span style="color:color-mix(in srgb,#33302B 60%,transparent)">© 2026 Berlinando · <a href="informacoes-legais.html" style="color:inherit">Informações legais</a></span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

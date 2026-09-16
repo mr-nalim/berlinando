@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo · Berlinando</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/fonts.css">
+<meta name="omelette-owns-print" content="1">
+  <style>
+    :root { --font-heading:'Baloo 2', system-ui, sans-serif; --font-body:'Nunito Sans', system-ui, sans-serif; --font-slogan:'Cormorant Garamond', Georgia, serif; }
+    body { margin:0; background:#FBF7EE; font-family:var(--font-body); }
+    a { color:#33302B; text-decoration:none; transition:color .15s; }
+    a:hover { color:#B45B3E; }
+    .lnk { border-bottom:1px solid #C7B59A; padding-bottom:2px; transition:border-color .15s; }
+    .lnk:hover { border-color:#B45B3E; }
+    .plate-b { background:#fff; padding:7px; border:1px solid #E7DFCB; box-shadow:0 1px 3px rgba(51,48,43,.07); }
+    .plate-b image-slot { display:block; width:100%; height:100%; filter:saturate(.94) sepia(.04) contrast(.99) brightness(1.01); }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 44px; }
+    .cgrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:44px 40px; }
+    .chip { font-size:12.5px; letter-spacing:0.04em; padding:5px 11px; border:1px solid #E1D6BC; border-radius:999px; color:color-mix(in srgb,#33302B 74%,transparent); white-space:nowrap; }
+    .fact { display:grid; grid-template-columns:minmax(0,1fr); padding:18px 2px; border-top:1px solid #E1D6BC; }
+    .fact:last-child { border-bottom:1px solid #E1D6BC; }
+    .factp { font-size:16.5px; line-height:1.68; margin:0; max-width:78ch; color:color-mix(in srgb,#33302B 84%,transparent); }
+    .agb { font-size:15px; line-height:1.66; color:color-mix(in srgb,#33302B 84%,transparent); padding-left:1.3em; margin:0; display:grid; gap:11px; max-width:88ch; }
+    table.t { border-collapse:collapse; width:100%; min-width:660px; }
+    table.t th { padding:0 16px 11px; font-size:11.5px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:color-mix(in srgb,#33302B 58%,transparent); text-align:left; white-space:nowrap; }
+    table.t td { padding:12px 16px; font-size:15.5px; border-top:1px solid #E7DFCB; color:color-mix(in srgb,#33302B 86%,transparent); }
+    table.t td.n { font-variant-numeric:tabular-nums; white-space:nowrap; }
+    table.t td.tt { font-weight:700; color:#33302B; }
+    .hidden { display:none !important; }
+    .filter { font-family:var(--font-body); font-size:14px; font-weight:700; color:#33302B; background:transparent; border:1px solid #E1D6BC; border-radius:999px; padding:9px 16px; cursor:pointer; transition:background .15s, border-color .15s, color .15s; }
+    .filter:hover { border-color:#B45B3E; color:#B45B3E; }
+    .filter:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    .filter.on { background:#33302B; border-color:#33302B; color:#FBF7EE; }
+    .toggle { font-family:var(--font-body); font-size:13.5px; font-weight:700; color:#B45B3E; background:transparent; border:1px solid #E1D6BC; border-radius:999px; padding:7px 13px; cursor:pointer; white-space:nowrap; transition:border-color .15s, background .15s; }
+    .toggle:hover { border-color:#B45B3E; background:color-mix(in srgb,#B45B3E 7%,transparent); }
+    .toggle:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    @media (max-width: 900px) {
+      .wrap { padding-left:22px !important; padding-right:22px !important; }
+      .cgrid { grid-template-columns:minmax(0,1fr) !important; gap:36px !important; }
+      .g2 { grid-template-columns:minmax(0,1fr) !important; gap:26px !important; }
+    }
+    @media print {
+      .wrap { max-width:none; padding:0 14mm; }
+      .cgrid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px 22px; }
+      .card, .fact, table.t { break-inside:avoid; }
+      .pbreak { break-before:page; }
+      .noprint { display:none !important; }
+    }
+  </style>
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<div data-cat-root="1" style="font-family:var(--font-body);color:#33302B;background:#FBF7EE">
+
+  <header class="wrap" style="padding-top:56px;padding-bottom:10px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:40px">
+      <img src="assets/logo-rose-inkdot.png" alt="Berlinando" style="height:46px">
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:color-mix(in srgb,#33302B 56%,transparent)">Catálogo de Tours · 2026</div>
+    </div>
+    <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C25067;margin-bottom:20px">Berlinando · Catálogo de Tours</div>
+    <h1 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(42px,6vw,82px);line-height:0.99;letter-spacing:-0.01em;margin:0 0 22px;text-wrap:pretty">Berlim, com quem a conhece por dentro.</h1>
+    <p style="font-family:var(--font-slogan);font-style:italic;font-size:clamp(21px,2.5vw,30px);line-height:1.32;margin:0 0 42px;max-width:34ch;color:#B45B3E">Dez tours privados, guiados em português — para agências e operadoras do Brasil e de Portugal.</p>
+    <div class="g2" style="display:grid;grid-template-columns:1fr 0.46fr;gap:46px;align-items:start;padding-top:32px;border-top:1px solid #E7DFCB">
+      <p style="font-size:17.5px;line-height:1.76;margin:0;color:color-mix(in srgb,#33302B 86%,transparent);text-wrap:pretty">Sou a <strong>Marta Rocha</strong>, há 14 anos trabalho como guia em Berlim. Tenho formação em Filosofia e moro na Alemanha há quase quatro décadas. Meus passeios são feitos <strong>sob medida</strong>: sem roteiro engessado, no ritmo do grupo, para quem quer vivenciar com mais profundidade a cidade. Este catálogo reúne os dez tours que eu montei para vocês saberem o que podem oferecer aos seus clientes; ao lado de cada um, a <strong>duração</strong>, o <strong>público ideal</strong> e o <strong>valor</strong>. Os roteiros também podem ser misturados, caso você necessite de uma outra variação.</p>
+      <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/5;overflow:hidden"><img src="assets/foto-marta-guiando2.jpg" alt="Retrato da Marta" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+    </div>
+  </header>
+
+  <div class="noprint" style="position:sticky;top:0;z-index:50;background:#FBF7EE;box-shadow:0 1px 0 #E7DFCB;margin-top:56px">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:14px;padding-bottom:14px">
+      <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:color-mix(in srgb,#33302B 54%,transparent);margin-right:6px">Ver</span>
+      <button type="button" class="filter on" data-filter="all">Todos os 10</button>
+      <button type="button" class="filter" data-filter="geo">Berlim Geográfica</button>
+      <button type="button" class="filter" data-filter="tema">Berlim por Temas</button>
+      <button type="button" class="filter" data-filter="4h">Meio período (~4h)</button>
+      <button type="button" class="filter" data-filter="6h">Dia inteiro (~6h)</button>
+    </div>
+  </div>
+
+  <section class="wrap" data-group="geo" style="padding-top:44px">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 24px;padding-bottom:16px;border-bottom:1px solid #C7B59A">
+      <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4.2vw,52px);line-height:1.02;margin:0">Berlim Geográfica</h2>
+      <span style="font-size:14.5px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 52%,transparent)">Seis tours por lugar · 01–06</span>
+    </div>
+    <p style="font-size:17px;line-height:1.7;margin:20px 0 40px;max-width:62ch;color:color-mix(in srgb,#33302B 80%,transparent)">A cidade percorrida pelo espaço — do centro histórico aos dois lados do Muro e a Potsdam.</p>
+
+    <div class="cgrid">
+      <div class="card" data-family="geo" data-dur="4h">
+        <div class="plate-b" style="margin-bottom:18px"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-grupo-reichstag.jpg" alt="Reichstag" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.1em;color:#B45B3E;margin-bottom:8px;font-variant-numeric:tabular-nums">01</div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 7px;text-wrap:pretty">O Eixo Histórico do Século XX</h3>
+        <div style="font-size:15px;line-height:1.5;margin-bottom:12px;color:color-mix(in srgb,#33302B 74%,transparent)">Do Reichstag ao Checkpoint Charlie</div>
+        <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">Uma linha que se percorre a pé e traça o arco de tensão do século XX alemão.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><span class="chip">Primeira vez em Berlim</span><span class="chip">História do séc. XX</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid #E1D6BC;border-bottom:1px solid #E1D6BC;margin-bottom:14px;justify-content:space-between;flex-wrap:wrap">
+          <span style="font-family:var(--font-heading);font-size:22px;color:#B45B3E;font-variant-numeric:tabular-nums">a partir de €400</span>
+          <span style="font-size:14px;color:color-mix(in srgb,#33302B 64%,transparent)">4h · até 10 pessoas</span>
+          <button type="button" class="toggle">ver detalhe ▾</button>
+        </div>
+        <div class="more hidden">
+          <p style="font-size:16px;line-height:1.7;margin:0 0 10px;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">O eixo onde a República de Weimar nasceu e ruiu, o nazismo ergueu seu aparato, o Exército Vermelho encerrou a guerra em 1945 e, poucos anos depois, o Muro partiu a cidade em dois.</p>
+          <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb,#33302B 68%,transparent)">Extensões (tempo a mais): Cúpula de vidro do Reichstag (+1h) · Panorama DIE MAUER, Checkpoint Charlie (+30–45 min).</p>
+        </div>
+      </div>
+
+      <div class="card" data-family="geo" data-dur="4h">
+        <div class="plate-b" style="margin-bottom:18px"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-berliner-dom.jpg" alt="Catedral de Berlim" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.1em;color:#B45B3E;margin-bottom:8px;font-variant-numeric:tabular-nums">02</div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 7px;text-wrap:pretty">O Coração da Prússia</h3>
+        <div style="font-size:15px;line-height:1.5;margin-bottom:12px;color:color-mix(in srgb,#33302B 74%,transparent)">Do Gendarmenmarkt à Catedral de Berlim</div>
+        <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">O avesso luminoso da cidade: palácios, óperas e os salões das ideias.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><span class="chip">Arte e ideias</span><span class="chip">Contraponto ao séc. XX</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid #E1D6BC;border-bottom:1px solid #E1D6BC;margin-bottom:14px;justify-content:space-between;flex-wrap:wrap">
+          <span style="font-family:var(--font-heading);font-size:22px;color:#B45B3E;font-variant-numeric:tabular-nums">a partir de €400</span>
+          <span style="font-size:14px;color:color-mix(in srgb,#33302B 64%,transparent)">4h · até 10 pessoas</span>
+          <button type="button" class="toggle">ver detalhe ▾</button>
+        </div>
+        <div class="more hidden">
+          <p style="font-size:16px;line-height:1.7;margin:0 0 10px;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">A Berlim de Frederico, o Grande: um fórum de palácios, teatros e academias ao longo da Unter den Linden, e os saraus em que nobres, judeus e poetas conversavam como iguais.</p>
+          <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb,#33302B 68%,transparent)">Extensões (tempo a mais): “Take 5” no Museu Novo/Nefertiti (+1h30) · Catedral de Berlim (+1h30) · Panorama do Pergamon (+30–45 min).</p>
+        </div>
+      </div>
+
+      <div class="card" data-family="geo" data-dur="6h">
+        <div class="plate-b" style="margin-bottom:18px"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-potsdamer-platz.jpg" alt="Potsdamer Platz" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.1em;color:#B45B3E;margin-bottom:8px;font-variant-numeric:tabular-nums">03</div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 7px;text-wrap:pretty">O Eixo das 3 Berlins</h3>
+        <div style="font-size:15px;line-height:1.5;margin-bottom:12px;color:color-mix(in srgb,#33302B 74%,transparent)">Berlim em um dia, do Oeste capitalista ao Leste socialista</div>
+        <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">Uma visão panorâmica da cidade inteira — ideal para quem chega de cruzeiro.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><span class="chip">Berlim em um dia</span><span class="chip">Cruzeiristas (Warnemünde)</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid #E1D6BC;border-bottom:1px solid #E1D6BC;margin-bottom:14px;justify-content:space-between;flex-wrap:wrap">
+          <span style="font-family:var(--font-heading);font-size:22px;color:#B45B3E;font-variant-numeric:tabular-nums">a partir de €600</span>
+          <span style="font-size:14px;color:color-mix(in srgb,#33302B 64%,transparent)">6h · até 10 pessoas</span>
+          <button type="button" class="toggle">ver detalhe ▾</button>
+        </div>
+        <div class="more hidden">
+          <p style="font-size:16px;line-height:1.7;margin:0 0 10px;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Formato “Berlim em um dia”: do Oeste capitalista ao Leste socialista, num só fio. Pensado para quem tem pouco tempo — cruzeiro, escala ou primeira visão geral.</p>
+          <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb,#33302B 68%,transparent)">Extensões (tempo a mais): Andar gastronômico da KaDeWe (+1h) · East Side Gallery (+1h).</p>
+        </div>
+      </div>
+
+      <div class="card" data-family="geo" data-dur="4h">
+        <div class="plate-b" style="margin-bottom:18px"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-grupo-coluna.jpg" alt="Coluna da Vitória" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.1em;color:#B45B3E;margin-bottom:8px;font-variant-numeric:tabular-nums">04</div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 7px;text-wrap:pretty">Berlim Ocidental</h3>
+        <div style="font-size:15px;line-height:1.5;margin-bottom:12px;color:color-mix(in srgb,#33302B 74%,transparent)">A Vitrine do Capitalismo</div>
+        <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">Como o Ocidente respondeu ao Muro — do Ku'damm a Teufelsberg.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><span class="chip">Guerra Fria (lado ocidental)</span><span class="chip">Consumo e liberdade</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid #E1D6BC;border-bottom:1px solid #E1D6BC;margin-bottom:14px;justify-content:space-between;flex-wrap:wrap">
+          <span style="font-family:var(--font-heading);font-size:22px;color:#B45B3E;font-variant-numeric:tabular-nums">a partir de €400</span>
+          <span style="font-size:14px;color:color-mix(in srgb,#33302B 64%,transparent)">4h · até 10 pessoas</span>
+          <button type="button" class="toggle">ver detalhe ▾</button>
+        </div>
+        <div class="more hidden">
+          <p style="font-size:16px;line-height:1.7;margin:0 0 10px;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">A ilha ocidental cercada pela RDA e transformada em vitrine do capitalismo — a resposta do Oeste ao socialismo do outro lado.</p>
+          <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb,#33302B 68%,transparent)">Extensões (tempo a mais): Estádio Olímpico de 1936 (+2h) · Teufelsberg, antiga estação de espionagem (+2h30).</p>
+        </div>
+      </div>
+
+      <div class="card" data-family="geo" data-dur="4h">
+        <div class="plate-b" style="margin-bottom:18px"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-grafite-fernsehturm.jpg" alt="Berlim Oriental" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.1em;color:#B45B3E;margin-bottom:8px;font-variant-numeric:tabular-nums">05</div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 7px;text-wrap:pretty">Berlim Oriental</h3>
+        <div style="font-size:15px;line-height:1.5;margin-bottom:12px;color:color-mix(in srgb,#33302B 74%,transparent)">A Cidade Operária</div>
+        <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">A capital do socialismo por dentro: a vida — e a vigilância — na RDA.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><span class="chip">Vida na RDA</span><span class="chip">Socialismo</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid #E1D6BC;border-bottom:1px solid #E1D6BC;margin-bottom:14px;justify-content:space-between;flex-wrap:wrap">
+          <span style="font-family:var(--font-heading);font-size:22px;color:#B45B3E;font-variant-numeric:tabular-nums">a partir de €400</span>
+          <span style="font-size:14px;color:color-mix(in srgb,#33302B 64%,transparent)">4h · até 10 pessoas</span>
+          <button type="button" class="toggle">ver detalhe ▾</button>
+        </div>
+        <div class="more hidden">
+          <p style="font-size:16px;line-height:1.7;margin:0 0 10px;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">A capital da Alemanha socialista: da grandiosa Karl-Marx-Allee à Torre de TV, o cotidiano e as promessas — e os limites — do “Estado dos trabalhadores”.</p>
+          <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb,#33302B 68%,transparent)">Extensões (tempo a mais): DDR Museum, interativo (+1h).</p>
+        </div>
+      </div>
+
+      <div class="card" data-family="geo" data-dur="6h">
+        <div class="plate-b" style="margin-bottom:18px"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-potsdam-escultura.jpg" alt="Potsdam" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.1em;color:#B45B3E;margin-bottom:8px;font-variant-numeric:tabular-nums">06</div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 7px;text-wrap:pretty">Potsdam</h3>
+        <div style="font-size:15px;line-height:1.5;margin-bottom:12px;color:color-mix(in srgb,#33302B 74%,transparent)">O Refúgio dos Reis</div>
+        <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">Sanssouci e os palácios de Frederico, a 40 minutos de Berlim.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><span class="chip">Palácios e jardins</span><span class="chip">Bate-volta</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid #E1D6BC;border-bottom:1px solid #E1D6BC;margin-bottom:14px;justify-content:space-between;flex-wrap:wrap">
+          <span style="font-family:var(--font-heading);font-size:22px;color:#B45B3E;font-variant-numeric:tabular-nums">a partir de €600</span>
+          <span style="font-size:14px;color:color-mix(in srgb,#33302B 64%,transparent)">dia inteiro · até 10 pessoas</span>
+          <button type="button" class="toggle">ver detalhe ▾</button>
+        </div>
+        <div class="more hidden">
+          <p style="font-size:16px;line-height:1.7;margin:0 0 10px;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Da terra eslava ao jardim de Frederico, o Grande — e ao lugar onde, em 1945, os vencedores desenharam a divisão da Alemanha (a Conferência de Potsdam).</p>
+          <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb,#33302B 68%,transparent)">Extensões (tempo a mais): Palácio de Sanssouci (+40 min) · Neues Palais (+1h) · Galeria de Pinturas de Frederico (+30 min · só de maio a outubro). Ida de trem ~45 min; entradas à parte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap pbreak" data-group="tema" style="padding-top:76px">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 24px;padding-bottom:16px;border-bottom:1px solid #C7B59A">
+      <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(32px,4.2vw,52px);line-height:1.02;margin:0">Berlim por Temas</h2>
+      <span style="font-size:14.5px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 52%,transparent)">Quatro tours, por assunto · 07–10</span>
+    </div>
+    <p style="font-size:17px;line-height:1.7;margin:20px 0 40px;max-width:62ch;color:color-mix(in srgb,#33302B 80%,transparent)">A cidade percorrida por um fio condutor — a memória, a guerra fria, o nazismo, a presença judaica.</p>
+
+    <div class="cgrid">
+      <div class="card" data-family="tema" data-dur="6h">
+        <div class="plate-b" style="margin-bottom:18px"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-sachsenhausen.jpg" alt="Sachsenhausen" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.1em;color:#B45B3E;margin-bottom:8px;font-variant-numeric:tabular-nums">07</div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 7px;text-wrap:pretty">Sachsenhausen</h3>
+        <div style="font-size:15px;line-height:1.5;margin-bottom:12px;color:color-mix(in srgb,#33302B 74%,transparent)">O Paradigma do Terror</div>
+        <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">A geometria do terror: o campo-modelo da SS — uma visita de compreensão.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><span class="chip">Memória</span><span class="chip">Fora da cidade</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid #E1D6BC;border-bottom:1px solid #E1D6BC;margin-bottom:14px;justify-content:space-between;flex-wrap:wrap">
+          <span style="font-family:var(--font-heading);font-size:22px;color:#B45B3E;font-variant-numeric:tabular-nums">a partir de €600</span>
+          <span style="font-size:14px;color:color-mix(in srgb,#33302B 64%,transparent)">dia inteiro · até 10 pessoas</span>
+          <button type="button" class="toggle">ver detalhe ▾</button>
+        </div>
+        <div class="more hidden">
+          <p style="font-size:16px;line-height:1.7;margin:0 0 10px;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Em Oranienburg, a menos de uma hora de Berlim, a SS ergueu não apenas um campo, mas o campo-modelo do sistema de terror do regime — e o centro que treinava os comandantes dos outros campos.</p>
+          <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb,#33302B 68%,transparent)">Entrada gratuita + €3/pessoa (contribuição para o memorial). Conduzo pessoalmente (tenho licença para guiar no local).</p>
+        </div>
+      </div>
+
+      <div class="card" data-family="tema" data-dur="6h">
+        <div class="plate-b" style="margin-bottom:18px"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-muro-tote.jpg" alt="o Muro" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.1em;color:#B45B3E;margin-bottom:8px;font-variant-numeric:tabular-nums">08</div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 7px;text-wrap:pretty">A Guerra Fria</h3>
+        <div style="font-size:15px;line-height:1.5;margin-bottom:12px;color:color-mix(in srgb,#33302B 74%,transparent)">A guerra que só terminou quando o Muro caiu</div>
+        <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">Da conferência de Potsdam ao Muro: espionagem e os dois lados de Berlim.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><span class="chip">Espionagem</span><span class="chip">Os dois lados</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid #E1D6BC;border-bottom:1px solid #E1D6BC;margin-bottom:14px;justify-content:space-between;flex-wrap:wrap">
+          <span style="font-family:var(--font-heading);font-size:22px;color:#B45B3E;font-variant-numeric:tabular-nums">a partir de €600</span>
+          <span style="font-size:14px;color:color-mix(in srgb,#33302B 64%,transparent)">~6h · até 10 pessoas</span>
+          <button type="button" class="toggle">ver detalhe ▾</button>
+        </div>
+        <div class="more hidden">
+          <p style="font-size:16px;line-height:1.7;margin:0 0 10px;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Berlim como epicentro do confronto entre Leste e Oeste — a cidade dos espiões, do bloqueio e da ponte aérea, da Stasi e dos serviços secretos dos dois lados.</p>
+          <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb,#33302B 68%,transparent)">Extensões (tempo a mais): Stasi-Museum (+~1h) · Museu de Karlshorst (+1h30) · Teufelsberg (+2h30) · Memorial de Hohenschönhausen (+~2h) · Ponte Glienicke, ao ar livre (+1h30).</p>
+        </div>
+      </div>
+
+      <div class="card" data-family="tema" data-dur="4h">
+        <div class="plate-b" style="margin-bottom:18px"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-neue-wache.jpg" alt="Neue Wache" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.1em;color:#B45B3E;margin-bottom:8px;font-variant-numeric:tabular-nums">09</div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 7px;text-wrap:pretty">A Alemanha Nazista</h3>
+        <div style="font-size:15px;line-height:1.5;margin-bottom:12px;color:color-mix(in srgb,#33302B 74%,transparent)">A capital do 3º Reich — da chegada ao Poder à ruína</div>
+        <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">O chão de Berlim onde uma democracia se deixou desmontar.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><span class="chip">3º Reich</span><span class="chip">Público brasileiro</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid #E1D6BC;border-bottom:1px solid #E1D6BC;margin-bottom:14px;justify-content:space-between;flex-wrap:wrap">
+          <span style="font-family:var(--font-heading);font-size:22px;color:#B45B3E;font-variant-numeric:tabular-nums">a partir de €450</span>
+          <span style="font-size:14px;color:color-mix(in srgb,#33302B 64%,transparent)">~4h30 · até 10 pessoas</span>
+          <button type="button" class="toggle">ver detalhe ▾</button>
+        </div>
+        <div class="more hidden">
+          <p style="font-size:16px;line-height:1.7;margin:0 0 10px;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Em janeiro de 1933 a Alemanha ainda era uma república; poucas semanas depois, já não era. Este tour percorre o lugar onde o regime nasceu, governou e ruiu — do Reichstag ao Memorial do Soldado Soviético.</p>
+          <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb,#33302B 68%,transparent)">Extensões (tempo a mais): Vila de Wannsee (+3h) · Gleis 17 (+1h30) · Estádio Olímpico de 1936 (+2h) · Memorial Soviético de Treptow (+1h30).</p>
+        </div>
+      </div>
+
+      <div class="card" data-family="tema" data-dur="4h">
+        <div class="plate-b" style="margin-bottom:18px"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-estelas.jpg" alt="Berlim Judaica" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.1em;color:#B45B3E;margin-bottom:8px;font-variant-numeric:tabular-nums">10</div>
+        <h3 style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 7px;text-wrap:pretty">A Berlim Judaica</h3>
+        <div style="font-size:15px;line-height:1.5;margin-bottom:12px;color:color-mix(in srgb,#33302B 74%,transparent)">Séculos de presença, e o retorno</div>
+        <p style="font-size:16.5px;line-height:1.7;margin:0 0 14px;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">A história de uma comunidade que ajudou a construir Berlim — e voltou.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><span class="chip">Herança judaica</span><span class="chip">Presença e retorno</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid #E1D6BC;border-bottom:1px solid #E1D6BC;margin-bottom:14px;justify-content:space-between;flex-wrap:wrap">
+          <span style="font-family:var(--font-heading);font-size:22px;color:#B45B3E;font-variant-numeric:tabular-nums">a partir de €400</span>
+          <span style="font-size:14px;color:color-mix(in srgb,#33302B 64%,transparent)">~4h · até 10 pessoas</span>
+          <button type="button" class="toggle">ver detalhe ▾</button>
+        </div>
+        <div class="more hidden">
+          <p style="font-size:16px;line-height:1.7;margin:0 0 10px;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Não é um roteiro de vítimas, mas de presença: da comunidade medieval ao Iluminismo de Mendelssohn, da ruptura ao retorno. No antigo bairro judaico, de Marienkirche a Regina Jonas, a primeira mulher rabina do mundo.</p>
+          <p style="font-size:14.5px;line-height:1.6;margin:0;color:color-mix(in srgb,#33302B 68%,transparent)">Extensões (tempo a mais): Museu Judaico (+meio período) · Memorial do Holocausto (+45 min) · Gleis 17 (+1h30) · Bebelplatz (+20 min) · Bairro Bávaro / Bayerischer Platz — “Orte des Erinnerns” (+2h): 80 placas espalhadas pelo bairro, cada uma com uma lei antijudaica do cotidiano — a perseguição sendo legalizada, passo a passo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap pbreak" style="padding-top:76px">
+    <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(30px,3.6vw,44px);line-height:1.04;margin:0 0 12px">Os dez de relance</h2>
+    <p style="font-size:16.5px;line-height:1.7;margin:0 0 28px;color:color-mix(in srgb,#33302B 74%,transparent)">Para comparar e escolher rápido.</p>
+    <div style="overflow-x:auto">
+      <table class="t">
+        <thead><tr><th>#</th><th>Tour</th><th>Família</th><th>Duração</th><th>Ideal para</th><th>A partir de</th></tr></thead>
+        <tbody>
+          <tr><td class="n">1</td><td class="tt">O Eixo Histórico do Século XX</td><td>Geográfica</td><td class="n">4h</td><td>História do séc. XX</td><td class="n">€400</td></tr>
+          <tr><td class="n">2</td><td class="tt">O Coração da Prússia</td><td>Geográfica</td><td class="n">4h</td><td>Arte, ideias, o lado luminoso</td><td class="n">€400</td></tr>
+          <tr><td class="n">3</td><td class="tt">O Eixo das 3 Berlins</td><td>Geográfica</td><td class="n">6h</td><td>Berlim em um dia; cruzeiristas</td><td class="n">€600</td></tr>
+          <tr><td class="n">4</td><td class="tt">Berlim Ocidental</td><td>Geográfica</td><td class="n">4h</td><td>Guerra Fria pelo lado ocidental</td><td class="n">€400</td></tr>
+          <tr><td class="n">5</td><td class="tt">Berlim Oriental</td><td>Geográfica</td><td class="n">4h</td><td>Vida na RDA; socialismo</td><td class="n">€400</td></tr>
+          <tr><td class="n">6</td><td class="tt">Potsdam</td><td>Geográfica</td><td class="n">dia inteiro</td><td>Palácios, lagos e jardins; bate-volta</td><td class="n">€600</td></tr>
+          <tr><td class="n">7</td><td class="tt">Sachsenhausen</td><td>Temas</td><td class="n">dia inteiro</td><td>Campo de concentração; Memória; bate-volta</td><td class="n">€600</td></tr>
+          <tr><td class="n">8</td><td class="tt">A Guerra Fria</td><td>Temas</td><td class="n">~6h</td><td>Espionagem; os dois lados</td><td class="n">€600</td></tr>
+          <tr><td class="n">9</td><td class="tt">A Alemanha Nazista</td><td>Temas</td><td class="n">~4h30</td><td>3º Reich; Ascensão e queda do regime nazista</td><td class="n">€450</td></tr>
+          <tr><td class="n">10</td><td class="tt">A Berlim Judaica</td><td>Temas</td><td class="n">~4h</td><td>Herança judaica; presença e retorno</td><td class="n">€400</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:14.5px;line-height:1.6;margin:18px 0 0;color:color-mix(in srgb,#33302B 66%,transparent)">Valores “a partir de” = grupo de até 10 pessoas. Tabela completa por tamanho de grupo logo abaixo.</p>
+  </section>
+
+  <section style="background:#F4EDDC;border-top:1px solid #E8DEC4;border-bottom:1px solid #E8DEC4;margin-top:72px">
+    <div class="wrap" style="padding-top:60px;padding-bottom:64px">
+      <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(30px,3.6vw,44px);line-height:1.04;margin:0 0 12px">Valores para agências</h2>
+      <p style="font-size:17px;line-height:1.7;margin:0 0 30px;color:color-mix(in srgb,#33302B 80%,transparent)">Simples e transparente: cobrança por hora, por grupo (não por pessoa).</p>
+      <div style="font-family:var(--font-heading);font-size:22px;line-height:1.3;margin-bottom:18px">Tarifa por hora, por grupo — conforme o tamanho do grupo:</div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px">
+        <div style="display:flex;align-items:baseline;gap:9px;padding:11px 16px;border:1px solid #E1D6BC;border-radius:8px;background:#FBF7EE"><span style="font-size:15px;color:color-mix(in srgb,#33302B 78%,transparent)"><strong>até 10</strong> pessoas</span><span style="font-size:17px;font-weight:700;font-variant-numeric:tabular-nums;color:#B45B3E">€100/h</span></div>
+        <div style="display:flex;align-items:baseline;gap:9px;padding:11px 16px;border:1px solid #E1D6BC;border-radius:8px;background:#FBF7EE"><span style="font-size:15px;color:color-mix(in srgb,#33302B 78%,transparent)"><strong>11–20</strong></span><span style="font-size:17px;font-weight:700;font-variant-numeric:tabular-nums;color:#B45B3E">€110/h</span></div>
+        <div style="display:flex;align-items:baseline;gap:9px;padding:11px 16px;border:1px solid #E1D6BC;border-radius:8px;background:#FBF7EE"><span style="font-size:15px;color:color-mix(in srgb,#33302B 78%,transparent)"><strong>21–30</strong></span><span style="font-size:17px;font-weight:700;font-variant-numeric:tabular-nums;color:#B45B3E">€120/h</span></div>
+        <div style="display:flex;align-items:baseline;gap:9px;padding:11px 16px;border:1px solid #E1D6BC;border-radius:8px;background:#FBF7EE"><span style="font-size:15px;color:color-mix(in srgb,#33302B 78%,transparent)"><strong>31–40</strong></span><span style="font-size:17px;font-weight:700;font-variant-numeric:tabular-nums;color:#B45B3E">€130/h</span></div>
+        <div style="display:flex;align-items:baseline;gap:9px;padding:11px 16px;border:1px solid #E1D6BC;border-radius:8px;background:#FBF7EE"><span style="font-size:15px;color:color-mix(in srgb,#33302B 78%,transparent)"><strong>41–50</strong></span><span style="font-size:17px;font-weight:700;font-variant-numeric:tabular-nums;color:#B45B3E">€140/h</span></div>
+      </div>
+      <p style="font-size:15.5px;line-height:1.68;margin:0 0 34px;max-width:72ch;color:color-mix(in srgb,#33302B 76%,transparent)">O valor de cada tour é a tarifa horária multiplicada pela duração. A agência acrescenta a sua própria margem ao vender para o cliente final.</p>
+      <div style="overflow-x:auto;background:#FBF7EE;border:1px solid #E7DFCB;padding:22px 18px;margin-bottom:34px">
+        <table class="t">
+          <thead><tr><th>Duração</th><th>até 10 pax</th><th>11–20 pax</th><th>21–30 pax</th><th>31–40 pax</th><th>41–50 pax</th></tr></thead>
+          <tbody>
+            <tr><td class="tt">4 horas</td><td class="n">€400</td><td class="n">€440</td><td class="n">€480</td><td class="n">€520</td><td class="n">€560</td></tr>
+            <tr><td class="tt">4h30 (nº 9)</td><td class="n">€450</td><td class="n">€495</td><td class="n">€540</td><td class="n">€585</td><td class="n">€630</td></tr>
+            <tr><td class="tt">6h / dia inteiro</td><td class="n">€600</td><td class="n">€660</td><td class="n">€720</td><td class="n">€780</td><td class="n">€840</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fact"><p class="factp"><strong>Ingressos não incluídos.</strong> Museus e pontos pagos ficam por conta do cliente; combino o que vale a pena.</p></div>
+      <div class="fact"><p class="factp"><strong>Reservas feitas por mim = taxa de 10%</strong> sobre o valor dos ingressos/serviços (pagamento adiantado). Itens gratuitos que exigem reserva (ex.: a Cúpula do Reichstag): taxa fixa de €10 por pessoa.</p></div>
+      <div class="fact"><p class="factp"><strong>Fora de Berlim</strong> (Potsdam, Sachsenhausen): locomoção por transporte público; veículo privado com motorista sob consulta. Entradas à parte.</p></div>
+      <div class="fact"><p class="factp"><strong>Grupos acima de 10 pessoas</strong> ou com dois guias: sob consulta.</p></div>
+      <div class="fact"><p class="factp"><strong>Sinal de 25%</strong> para reservar e travar a data.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:64px">
+    <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(30px,3.6vw,44px);line-height:1.04;margin:0 0 28px">Como funciona</h2>
+    <div class="fact"><p class="factp"><strong>Privados e sob medida.</strong> Só o seu cliente e o grupo dele — mais ninguém. Sinto o ritmo e a profundidade que querem e conduzo por ali.</p></div>
+    <div class="fact"><p class="factp"><strong>Em português nativo.</strong> Sou brasileira; guio na língua do seu cliente.</p></div>
+    <div class="fact"><p class="factp"><strong>Encontro no hotel</strong> ou em ponto combinado. O visitante decide o horário; recomendo começar às 10h.</p></div>
+    <div class="fact"><p class="factp"><strong>A pé, na maior parte.</strong> Quando é preciso ir longe, usamos o eficiente transporte público de Berlim — para o brasileiro, já uma imersão a mais. Isto vale para grupos de até 10–15 pax. Acima disso, recomendo o aluguel de uma van ou ônibus — que eu também posso providenciar.</p></div>
+  </section>
+
+  <section style="background:#231F1C;margin-top:56px">
+    <div class="wrap g2" style="display:grid;grid-template-columns:1.3fr 1fr;gap:52px;align-items:end;padding-top:70px;padding-bottom:70px">
+      <div>
+        <div style="font-size:14px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#E58497;margin-bottom:18px">Reservas e contato</div>
+        <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(30px,3.8vw,48px);line-height:1.08;margin:0;max-width:24ch;color:#FBF7EE;text-wrap:pretty">WhatsApp +49 1578 5568432</h2>
+      </div>
+      <div style="border-left:1px solid rgba(251,247,238,.18);padding-left:42px;display:flex;flex-direction:column;gap:12px">
+        <a href="mailto:mrocha@berlin.de" style="font-size:16px;color:#FBF7EE">mrocha@berlin.de</a>
+        <a href="https://www.instagram.com/berlinando_tours/" target="_blank" rel="noopener" style="font-size:16px;color:rgba(251,247,238,.78)">Instagram @berlinando_tours</a>
+        <a href="https://facebook.com/guiaemberlim" target="_blank" rel="noopener" style="font-size:16px;color:rgba(251,247,238,.78)">Facebook /guiaemberlim</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap pbreak" style="padding-top:68px">
+    <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(28px,3.2vw,40px);line-height:1.04;margin:0 0 10px">Condições Gerais</h2>
+    <p style="font-size:15.5px;line-height:1.7;margin:0 0 26px;color:color-mix(in srgb,#33302B 70%,transparent)">Prestação de serviço de guia de turismo · Berlinando (Marta Rocha)</p>
+    <ol class="agb">
+      <li><strong>Objeto.</strong> A Berlinando (Marta Rocha) presta serviço de guia de turismo — visitas guiadas privadas em Berlim e arredores. Não atua como operadora ou organizadora de viagem.</li>
+      <li><strong>Reserva e confirmação.</strong> A solicitação da agência é vinculante; o contrato se conclui com a confirmação por escrito da Berlinando (data, duração, ponto de encontro e valor).</li>
+      <li><strong>Preços e pagamento.</strong> Valores conforme a tabela deste catálogo (por hora e por tamanho de grupo; valor líquido — a agência acrescenta a sua margem). Sinal de 25% para travar a data. O saldo é pago até 3 dias antes do tour; emitimos fatura — avise se deseja recebê-la.</li>
+      <li><strong>Cancelamento e estorno.</strong> Gratuito até 15 dias antes; 50% de 14 a 7 dias antes; 100% com menos de 7 dias ou em caso de não comparecimento. O sinal de 25% fica retido (cobre o planejamento).</li>
+      <li><strong>Não comparecimento.</strong> Ausência sem aviso — ou atraso que inviabilize o serviço — equivale a cancelamento no dia (100%).</li>
+      <li><strong>Alterações.</strong> O roteiro pode ser adaptado a pedido do cliente ou por necessidade (clima, obras, fechamentos, segurança, força maior). Alterações a pedido do cliente que aumentem a duração são cobradas proporcionalmente; em caso de força maior, busca-se remarcar ou ajustar o roteiro.</li>
+      <li><strong>Ingressos e custos de terceiros.</strong> Entradas de museus e pontos pagos não estão incluídas. Reservas feitas pela Berlinando: taxa de 10% sobre o valor dos ingressos/serviços; itens gratuitos que exigem reserva (ex.: a Cúpula do Reichstag): €10 por pessoa.</li>
+      <li><strong>Responsabilidade.</strong> A Berlinando responde por dolo e culpa grave; para danos leves, a responsabilidade limita-se aos danos previsíveis e típicos do serviço. A Berlinando mantém seguro de responsabilidade civil profissional (Gothaer). A responsabilidade por danos à vida, ao corpo e à saúde não é limitada.</li>
+      <li><strong>Deveres do cliente.</strong> Chegar pontualmente ao ponto de encontro (o atraso encurta o tour, não o estende); informar na reserva necessidades especiais (mobilidade, crianças, restrições); seguir as orientações de segurança da guia; responsabilizar-se pelos menores do grupo; comunicar qualquer mudança ou cancelamento por escrito.</li>
+      <li><strong>Proteção de dados.</strong> Os dados são tratados apenas para a execução do serviço, conforme o RGPD/DSGVO.</li>
+      <li><strong>Foro e lei aplicável.</strong> Aplica-se o direito alemão; foro em Berlim.</li>
+    </ol>
+
+    <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(28px,3.2vw,40px);line-height:1.04;margin:56px 0 10px">Allgemeine Geschäftsbedingungen</h2>
+    <p style="font-size:15.5px;line-height:1.7;margin:0 0 26px;color:color-mix(in srgb,#33302B 70%,transparent)">Leistungen als Gästeführerin · Berlinando (Marta Rocha)</p>
+    <ol class="agb">
+      <li><strong>Gegenstand.</strong> Berlinando (Marta Rocha) erbringt Leistungen als Gästeführerin — private Führungen in Berlin und Umgebung. Berlinando ist kein Reiseveranstalter und kein Reiseorganisator.</li>
+      <li><strong>Buchung und Bestätigung.</strong> Die Buchung der Agentur ist verbindlich; der Vertrag kommt mit der schriftlichen Bestätigung durch Berlinando zustande (Datum, Dauer, Treffpunkt und Preis).</li>
+      <li><strong>Preise und Zahlung.</strong> Es gelten die Preise dieses Katalogs (pro Stunde und nach Gruppengröße; Nettopreis — die Agentur schlägt ihre eigene Marge auf). Anzahlung von 25% zur verbindlichen Reservierung des Termins. Der Restbetrag ist bis 3 Tage vor der Führung zu zahlen; eine Rechnung wird ausgestellt — bitte teilen Sie mit, ob Sie sie erhalten möchten.</li>
+      <li><strong>Stornierung.</strong> Kostenfrei bis 15 Tage vorher; 50% von 14 bis 7 Tage vorher; 100% bei weniger als 7 Tagen oder bei Nichterscheinen. Die Anzahlung von 25% wird einbehalten (deckt die Planung).</li>
+      <li><strong>Nichterscheinen.</strong> Ausbleiben ohne Absage — oder eine Verspätung, die die Leistung unmöglich macht — gilt als Stornierung am Tag (100%).</li>
+      <li><strong>Änderungen.</strong> Die Route kann auf Wunsch des Kunden oder aus Notwendigkeit angepasst werden (Wetter, Baustellen, Schließungen, Sicherheit, höhere Gewalt). Vom Kunden gewünschte Änderungen, die die Dauer verlängern, werden anteilig berechnet; bei höherer Gewalt wird eine Verschiebung oder Anpassung angestrebt.</li>
+      <li><strong>Eintritte und Leistungen Dritter.</strong> Eintritte für Museen und kostenpflichtige Orte sind nicht enthalten. Von Berlinando vorgenommene Buchungen: 10% Gebühr auf den Wert der Eintritte/Leistungen; kostenlose Angebote mit Reservierungspflicht (z. B. die Reichstagskuppel): 10 € pro Person.</li>
+      <li><strong>Haftung.</strong> Berlinando haftet für Vorsatz und grobe Fahrlässigkeit; bei leichter Fahrlässigkeit ist die Haftung auf den vorhersehbaren, vertragstypischen Schaden begrenzt. Berlinando unterhält eine Berufshaftpflichtversicherung (Gothaer). Die Haftung für Schäden an Leben, Körper und Gesundheit ist nicht begrenzt.</li>
+      <li><strong>Mitwirkungspflichten des Kunden.</strong> Pünktliches Erscheinen am Treffpunkt (Verspätung verkürzt die Führung, verlängert sie nicht); Mitteilung besonderer Bedürfnisse bei der Buchung (Mobilität, Kinder, Einschränkungen); Befolgen der Sicherheitshinweise der Führerin; Aufsicht über Minderjährige in der Gruppe; Mitteilung von Änderungen oder Stornierungen in Textform.</li>
+      <li><strong>Datenschutz.</strong> Die Daten werden ausschließlich zur Durchführung der Leistung verarbeitet (DSGVO).</li>
+      <li><strong>Gerichtsstand und anwendbares Recht.</strong> Es gilt deutsches Recht; Gerichtsstand ist Berlin.</li>
+    </ol>
+  </section>
+
+  <footer style="border-top:1px solid #E7DFCB;background:#FBF7EE;margin-top:64px">
+    <div class="wrap" style="padding-top:34px;padding-bottom:44px;display:grid;gap:8px;font-size:14.5px;color:color-mix(in srgb,#33302B 72%,transparent)">
+      <p style="margin:0"><strong style="color:#33302B">Berlinando</strong> · Marta R. R. Rocha · Reuterstraße 15, 12053 Berlin · Alemanha</p>
+      <p style="margin:0;font-variant-numeric:tabular-nums">USt-IdNr DE285533023 · <a href="mailto:mrocha@berlin.de" class="lnk">mrocha@berlin.de</a> · WhatsApp +49 1578 5568432 · Instagram <a href="https://www.instagram.com/berlinando_tours/" target="_blank" rel="noopener" class="lnk">@berlinando_tours</a> · Facebook <a href="https://facebook.com/guiaemberlim" target="_blank" rel="noopener" class="lnk">/guiaemberlim</a></p>
+      <p style="margin:0">Catálogo de Tours · atualizado em 15/09/2026.</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Berlinando · Guia Brasileira em Berlim</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="ds/styles.css">
+  <style>
+    :root { --font-heading:'Baloo 2', system-ui, sans-serif; --font-body:'Nunito Sans', system-ui, sans-serif; --font-slogan:'Cormorant Garamond', Georgia, serif; }
+    body { margin:0; background:#FBF7EE; font-family:var(--font-body); }
+    a { color:#33302B; text-decoration:none; transition:color .15s; }
+    a:hover { color:#B45B3E; }
+    .yb { background:transparent; color:#33302B; border:1px solid #33302B; white-space:nowrap; transition:background .15s, transform .12s; cursor:pointer; }
+    .yb:hover { background:rgba(51,48,43,.06); }
+    .yb:active { transform:translateY(1px); }
+    .yb:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    .yb-dark { background:transparent; color:#FBF7EE; border:1px solid #F6C445; white-space:nowrap; transition:background .15s; cursor:pointer; }
+    .yb-dark:hover { background:rgba(246,196,69,.12); }
+    .yb-dark:focus-visible { outline:2px solid #F6C445; outline-offset:3px; }
+    .plate-b image-slot, .plate-b img { filter:saturate(.94) sepia(.04) contrast(.99) brightness(1.01); }
+    .yb-fill { background:#F6C445; color:#33302B; border:1px solid #F6C445; border-radius:10px; white-space:nowrap; transition:background .15s, transform .12s; cursor:pointer; }
+    .yb-fill:hover { background:#EAB72E; border-color:#EAB72E; }
+    .yb-fill:active { transform:translateY(1px); }
+    .yb-fill:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    .lnk { border-bottom:1px solid #C7B59A; padding-bottom:2px; white-space:nowrap; transition:border-color .15s; }
+    .lnk:hover { border-color:#B45B3E; }
+    .lnk:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    .qrow { display:flex; gap:44px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; }
+    .qrow::-webkit-scrollbar { display:none; }
+    .qrow figure { flex:0 0 min(360px,78vw); scroll-snap-align:start; }
+    .qbtn { width:36px; height:36px; border:none; background:transparent; color:#33302B; font-size:26px; line-height:1; padding:0 0 4px; cursor:pointer; transition:color .15s, opacity .15s; }
+    .qbtn:hover:not(:disabled) { color:#B45B3E; }
+    .qbtn:disabled { opacity:.28; cursor:default; }
+    .qbtn:active { transform:translateY(1px); }
+    .qbtn:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    .plate-b { background:#fff; padding:8px; border:1px solid #E7DFCB; box-shadow:0 1px 3px rgba(51,48,43,.07); }
+    .navcta { white-space:nowrap; }
+    .g3f > div + div { border-left:1px solid #E7DFCB; padding-left:34px; }
+    .nlink { color:inherit; transition:opacity .15s; }
+    .nlink:hover { color:inherit; opacity:.6; }
+    .nl { color:#FBF7EE; text-shadow:0 1px 8px rgba(0,0,0,.4); font-weight:600; }
+    .nl:hover { color:#F6C445; }
+    .reveal { transition:opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1); }
+    .reveal.is-pre { opacity:0; transform:translateY(15px); }
+    .reveal.is-pre.is-in { opacity:1; transform:none; }
+    .rule { transform-origin:left center; opacity:1; transition:transform .8s cubic-bezier(.22,.61,.36,1); }
+    .rule.is-pre { transform:scaleX(0); }
+    .rule.is-pre.is-in { transform:none; }
+    .plate-b image-slot { display:block; width:100%; height:100%; transition:transform .7s cubic-bezier(.22,.61,.36,1); }
+    .trowx:hover .plate-b image-slot { transform:scale(1.045); }
+    .trowx { border-bottom:1px solid #E7DFCB; transition:border-color .22s; }
+    .trow { --trow-line:29px; display:grid; grid-template-columns:minmax(0,1fr) auto 26px; gap:24px; align-items:start; width:100%; padding:23px 4px; margin:0; border:none; background:transparent; color:#33302B; font-family:inherit; text-align:left; cursor:pointer; }
+    .tpan { max-height:0; overflow:hidden; transition:max-height .52s cubic-bezier(.22,.61,.36,1); }
+    .tpan > div { opacity:0; transition:opacity .25s ease; }
+    .trow-t { transition:transform .26s cubic-bezier(.22,.61,.36,1), color .18s; }
+    .trow-a { color:#A8977C; display:flex; align-items:center; justify-content:flex-end; height:var(--trow-line,29px); transition:transform .4s cubic-bezier(.22,.61,.36,1), color .18s; }
+    .trow:hover .trow-t, .trow:focus-visible .trow-t { color:#B45B3E; }
+    .trow:hover .trow-a { color:#B45B3E; }
+    .trow:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    .trowx.is-open .tpan > div { opacity:1; transition:opacity .42s ease .14s; }
+    .trowx.is-open .trow-t { transform:translateX(8px); }
+    .trowx.is-open .trow-a { transform:rotate(180deg); }
+    .gx { border-top:1px solid #E7DFCB; }
+    .grow { display:grid; grid-template-columns:330px minmax(0,1fr) 26px; gap:40px; align-items:center; width:100%; padding:26px 4px; margin:0; border:none; background:transparent; color:#33302B; font-family:inherit; text-align:left; cursor:pointer; }
+    .grow-t { transition:transform .26s cubic-bezier(.22,.61,.36,1), color .18s; }
+    .grow:hover .grow-t, .grow:focus-visible .grow-t { color:#B45B3E; }
+    .grow:hover > .trow-a { color:#B45B3E; }
+    .grow:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    .grow .plate-b image-slot { transition:transform .7s cubic-bezier(.22,.61,.36,1); }
+    .grow:hover .plate-b image-slot { transform:scale(1.045); }
+    .gpan { max-height:0; overflow:hidden; transition:max-height .55s cubic-bezier(.22,.61,.36,1); }
+    .gpan > div { opacity:0; transition:opacity .25s ease; }
+    .gx.is-open .gpan > div { opacity:1; transition:opacity .42s ease .14s; }
+    .gx.is-open .grow-t { transform:translateX(8px); }
+    .gx.is-open > .grow .trow-a { transform:rotate(180deg); }
+    @media (max-width: 900px) {
+      .wrap { padding-left:22px !important; padding-right:22px !important; }
+      .g2 { grid-template-columns:minmax(0,1fr) !important; gap:30px !important; align-items:start !important; }
+      .g2 > p { justify-self:start !important; margin-bottom:0 !important; max-width:56ch !important; }
+      .g4 { grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; gap:38px !important; }
+      .nohang { white-space:normal !important; }
+      #nav-claim { display:none !important; }
+      .navcenter { flex:0 0 auto !important; justify-content:flex-end !important; }
+      .navlinks { gap:22px !important; margin-right:0 !important; font-size:14px !important; }
+      .ctaside { border-left:none !important; border-top:1px solid rgba(251,247,238,.18) !important; padding-left:0 !important; padding-top:34px !important; }
+      .trow { --trow-line:24px; grid-template-columns:minmax(0,1fr) auto 22px !important; gap:16px !important; }
+      .grow { grid-template-columns:210px minmax(0,1fr) 22px !important; gap:24px !important; }
+      .tmeta { flex-wrap:wrap !important; gap:8px 12px !important; }
+      .trow-t { font-size:21px !important; }
+      .heroflex { flex-direction:column-reverse !important; align-items:stretch !important; gap:34px !important; }
+      .herobrand { width:100% !important; padding:0 22px !important; }
+      .fbot { flex-direction:column !important; align-items:flex-start !important; gap:14px !important; }
+    }
+    @media (max-width: 620px) {
+      .g4 { grid-template-columns:minmax(0,1fr) !important; }
+      .g3f { grid-template-columns:minmax(0,1fr) !important; gap:0 !important; }
+      .g3f > div + div { border-left:none !important; padding-left:0 !important; }
+      .grow { grid-template-columns:minmax(0,1fr) 20px !important; gap:14px 12px !important; }
+      .grow > .plate-b { grid-column:1 / -1 !important; }
+      .grow > div:not(.plate-b) { grid-column:1 !important; }
+      .grow > .trow-a { grid-column:2 !important; align-self:start !important; }
+      .trow { grid-template-columns:minmax(0,1fr) 20px !important; gap:12px !important; }
+      .trow > div { grid-column:1 !important; grid-row:1 !important; }
+      .trow > span { grid-column:1 !important; grid-row:2 !important; }
+      .trow > .trow-a { grid-column:2 !important; grid-row:1 !important; align-self:start !important; }
+      .navlinks { gap:16px !important; font-size:13px !important; }
+      .navcta { font-size:13px !important; padding:12px 16px !important; }
+      .qbtn { width:44px !important; height:44px !important; }
+      .navlinks { display:none !important; }
+      #nav-logo { height:44px !important; }
+      #hero-claim { letter-spacing:0.3em !important; margin-right:-0.3em !important; }
+      .qrow { gap:30px !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal.is-pre, .rule.is-pre { opacity:1; transform:none; transition:none; }
+      .plate-b image-slot, .trowx:hover .plate-b image-slot { transition:none; transform:none; }
+      .tpan, .tpan > div, .gpan, .gpan > div { transition:none; }
+    }
+  </style>
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<div style="font-family:var(--font-body);color:#33302B;background:#FBF7EE">
+
+  <!-- ===== NAV ===== -->
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:60">
+    <div style="position:absolute;inset:0;background:#FBF7EE;box-shadow:0 1px 0 #E7DFCB, 0 8px 22px -8px rgba(51,48,43,0)"></div>
+    <div class="wrap" style="position:relative;max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="display:flex;align-items:flex-end;flex-shrink:0"><img id="nav-logo" src="assets/logo-rose-inkdot.png" alt="Berlinando" style="height:58px;transition:height .18s ease-out"></a>
+      <div class="navcenter" style="position:relative;flex:1;min-height:38px;display:flex;align-items:center;justify-content:flex-end;gap:34px">
+        <div class="navlinks" style="display:flex;align-items:center;gap:34px;font-size:15px;font-weight:600;white-space:nowrap;color:#33302B">
+          <a href="passeios.html" class="nlink">Passeios</a>
+          <a href="como-funciona.html" class="nlink">Como funciona</a>
+          <a href="quem-sou.html" class="nlink">Quem Sou</a>
+          <a href="#kontakt" class="nlink">Contato</a>
+        </div>
+        <a href="#kontakt" class="yb navcta" style="font-size:14px;font-weight:700;padding:10px 20px;border-radius:10px;text-decoration:none">Fale com a Marta</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header id="top" style="position:relative;width:100%;padding-top:120px;border-bottom:1px solid #E7DFCB">
+    <div class="wrap" style="max-width:1280px;margin:0 auto;padding:0 44px 30px">
+      <div class="g2" style="display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,5vw,72px);align-items:end">
+        <div>
+          <h1 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(40px,5.4vw,74px);line-height:1;margin:0;text-wrap:pretty">Guia Brasileira em Berlim</h1>
+          <div style="margin:18px 0 0;margin-right:-0.42em;font-family:var(--font-slogan);font-weight:600;font-size:clamp(14px,1.5vw,17px);letter-spacing:0.42em;text-transform:uppercase;color:color-mix(in srgb,#33302B 62%,transparent)">Berlim do nosso jeito</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:24px;padding-bottom:5px">
+          <p style="margin:0;font-size:18px;line-height:1.62;color:color-mix(in srgb,#33302B 76%,transparent);text-wrap:pretty;max-width:38ch">Passeios privados de história e cidade, em português. Só você e o seu grupo — sem roteiro engessado.</p>
+          <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="font-size:16px;font-weight:700;padding:13px 26px;text-decoration:none">Fale com a Marta no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="herophoto" style="position:relative;width:100%;height:clamp(360px,46vw,660px);overflow:hidden;background:#33302B">
+      <img src="assets/foto-hero-portao.jpg" alt="Marta com seu grupo em frente ao Portão de Brandemburgo" style="position:absolute;left:0;bottom:-80px;width:100%;height:130%;max-width:none;object-fit:cover;object-position:52% 50%;transform:translate3d(0, -0px, 0);will-change:transform;backface-visibility:hidden">
+    </div>
+  </header>
+
+
+  <!-- ===== ABERTURA ===== -->
+  <section class="wrap" style="max-width:1280px;margin:0 auto;padding:64px 44px 0">
+    <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start;padding-bottom:58px;border-bottom:1px solid #E7DFCB">
+      <div class="reveal">
+        <blockquote style="margin:0;font-family:var(--font-heading);font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1.24;color:#B45B3E;text-wrap:pretty">“Diante de Deus, no fundo, todos os seres humanos são berlinenses.”</blockquote>
+        <div style="font-family:var(--font-slogan);font-style:italic;font-size:16px;line-height:1.5;margin-top:16px;color:color-mix(in srgb,#33302B 58%,transparent)">Vor Gott sind eigentlich alle Menschen Berliner.</div>
+        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb,#33302B 55%,transparent);margin-top:18px">Theodor Fontane · Der Berliner Ton, 1850</div>
+      </div>
+      <div class="reveal" style="transition-delay:.07s">
+        <p style="font-size:17px;line-height:1.74;margin:0;max-width:48ch;color:color-mix(in srgb,#33302B 72%,transparent)">Fontane escreveu essa frase com um sorriso irônico, alfinetando a velha convicção dos berlinenses de que o mundo começa e termina em Berlim. Eu, confesso, prefiro levá-la a sério: Berlim tem um jeito de entrar na gente e não sair mais. Venha comigo, e você vai ver — um pouco berlinense, no fim, todo mundo acaba virando.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOUREN ===== -->
+  <section id="touren" class="wrap" style="max-width:1280px;margin:0 auto;padding:60px 44px 64px;border-top:1px solid #E7DFCB">
+    <div class="reveal" style="font-size:15px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C25067;margin-bottom:18px">Dois modos de entrar na mesma cidade</div>
+    <h2 class="nohang reveal" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(38px,4.4vw,56px);line-height:1.04;margin:0;transition-delay:.07s">Meus Passeios</h2>
+    <p class="reveal" style="font-size:17px;line-height:1.74;margin:24px 0 40px;max-width:62ch;color:color-mix(in srgb,#33302B 72%,transparent);transition-delay:.12s">Concebi os tours a partir de duas bases. Berlim tem camadas demais — impérios, guerras, muros, renascimentos — para caber num percurso só; por isso, em vez de um único tipo de abordagem, ofereço dois. Você decide com qual deles prefere começar.</p>
+
+    <div>
+      <div class="reveal" style="transition-delay:0s">
+        <div class="gx">
+          <button type="button" class="grow" aria-expanded="false">
+            <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-memorial-casal.jpg" alt="Berlim por Temas" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+            <div>
+              <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:10px">Um fio a fundo</div>
+              <h3 class="grow-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(28px,3vw,36px);line-height:1.08;margin:0 0 12px">Berlim por Temas</h3>
+              <p style="font-size:16px;line-height:1.72;margin:0 0 14px;max-width:54ch;color:color-mix(in srgb,#33302B 72%,transparent)">O fio condutor é uma ideia. Em vez de uma área, seguimos um assunto — a Alemanha nazista, a Guerra Fria, a cidade operária — atravessando a cidade por onde o fio da História nos levar.</p>
+              <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 80%,transparent);font-variant-numeric:tabular-nums">4 roteiros · 4 a 6 horas</div>
+            </div>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="gpan">
+            <div>
+              <div style="padding:0 0 34px">
+        <div class="trowx">
+          <button type="button" class="trow" aria-expanded="false">
+            <div>
+              <h4 class="trow-t" style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 8px">Sachsenhausen</h4>
+              <div class="tmeta" style="font-size:15px;line-height:1.45;color:color-mix(in srgb,#33302B 80%,transparent)">O Paradigma do Terror — a geometria do terror, fora da cidade</div>
+            </div>
+            <span style="font-family:var(--font-heading);font-size:22px;line-height:var(--trow-line);font-variant-numeric:tabular-nums;white-space:nowrap">6 h</span>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="tpan">
+            <div>
+              <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center;padding:4px 4px 30px">
+                <div>
+                  <p style="font-size:16px;line-height:1.7;margin:0 0 22px;max-width:62ch;color:color-mix(in srgb,#33302B 72%,transparent)">Há lugares que visitamos por necessidade de compreensão. Sachsenhausen é um deles: não apenas um campo, mas o campo-modelo do sistema de terror do regime.</p>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+                      <a href="tour-7-sachsenhausen.html" class="yb" style="display:inline-block;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none">Ver o roteiro →</a>
+                      <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Reservar no WhatsApp</a>
+                    </div>
+                </div>
+                <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-sachsenhausen.jpg" alt="Sachsenhausen" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trowx">
+          <button type="button" class="trow" aria-expanded="false">
+            <div>
+              <h4 class="trow-t" style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 8px">A Guerra Fria</h4>
+              <div class="tmeta" style="font-size:15px;line-height:1.45;color:color-mix(in srgb,#33302B 80%,transparent)">A guerra que só terminou quando o Muro caiu</div>
+            </div>
+            <span style="font-family:var(--font-heading);font-size:22px;line-height:var(--trow-line);font-variant-numeric:tabular-nums;white-space:nowrap">~6 h</span>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="tpan">
+            <div>
+              <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center;padding:4px 4px 30px">
+                <div>
+                  <p style="font-size:16px;line-height:1.7;margin:0 0 22px;max-width:62ch;color:color-mix(in srgb,#33302B 72%,transparent)">Berlim foi a fronteira mais vigiada do mundo, porque era onde os dois blocos se encaravam a poucos metros. E aqui o tour faz a pergunta desconfortável: olhando os dois lados com a mesma régua, o que encontramos?</p>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+                      <a href="tour-8-guerra-fria.html" class="yb" style="display:inline-block;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none">Ver o roteiro →</a>
+                      <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Reservar no WhatsApp</a>
+                    </div>
+                </div>
+                <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-muro-tote.jpg" alt="A Guerra Fria" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trowx">
+          <button type="button" class="trow" aria-expanded="false">
+            <div>
+              <h4 class="trow-t" style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 8px">A Alemanha Nazista</h4>
+              <div class="tmeta" style="font-size:15px;line-height:1.45;color:color-mix(in srgb,#33302B 80%,transparent)">A capital do 3º Reich — da chegada ao Poder à ruína</div>
+            </div>
+            <span style="font-family:var(--font-heading);font-size:22px;line-height:var(--trow-line);font-variant-numeric:tabular-nums;white-space:nowrap">~4,5 h</span>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="tpan">
+            <div>
+              <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center;padding:4px 4px 30px">
+                <div>
+                  <p style="font-size:16px;line-height:1.7;margin:0 0 22px;max-width:62ch;color:color-mix(in srgb,#33302B 72%,transparent)">Em janeiro de 1933, a Alemanha ainda era uma república. Poucas semanas após a nomeação de Hitler como Chanceler, a república já não existia.</p>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+                      <a href="tour-9-alemanha-nazista.html" class="yb" style="display:inline-block;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none">Ver o roteiro →</a>
+                      <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Reservar no WhatsApp</a>
+                    </div>
+                </div>
+                <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-neue-wache.jpg" alt="A Alemanha Nazista" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trowx">
+          <button type="button" class="trow" aria-expanded="false">
+            <div>
+              <h4 class="trow-t" style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 8px">A Berlim Judaica</h4>
+              <div class="tmeta" style="font-size:15px;line-height:1.45;color:color-mix(in srgb,#33302B 80%,transparent)">Séculos de presença, e o retorno</div>
+            </div>
+            <span style="font-family:var(--font-heading);font-size:22px;line-height:var(--trow-line);font-variant-numeric:tabular-nums;white-space:nowrap">~4 h</span>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="tpan">
+            <div>
+              <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center;padding:4px 4px 30px">
+                <div>
+                  <p style="font-size:16px;line-height:1.7;margin:0 0 22px;max-width:62ch;color:color-mix(in srgb,#33302B 72%,transparent)">Este tour não é um roteiro de vítimas. É a história de uma comunidade que, por séculos, ajudou a construir Berlim — e que quase foi dizimada.</p>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+                      <a href="tour-10-berlim-judaica.html" class="yb" style="display:inline-block;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none">Ver o roteiro →</a>
+                      <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Reservar no WhatsApp</a>
+                    </div>
+                </div>
+                <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-estelas.jpg" alt="A Berlim Judaica" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.06s">
+        <div class="gx">
+          <button type="button" class="grow" aria-expanded="false">
+            <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-oranienburger.jpg" alt="Berlim Geográfica" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+            <div>
+              <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:10px">Percursos por área</div>
+              <h3 class="grow-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(28px,3vw,36px);line-height:1.08;margin:0 0 12px">Berlim Geográfica</h3>
+              <p style="font-size:16px;line-height:1.72;margin:0 0 14px;max-width:54ch;color:color-mix(in srgb,#33302B 72%,transparent)">O fio condutor é o próprio chão. Escolhemos uma parte da cidade e a percorremos deixando cada rua e cada praça contar o que viveu — a história aparece onde de fato aconteceu, debaixo dos seus pés.</p>
+              <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 80%,transparent);font-variant-numeric:tabular-nums">6 roteiros · 4 a 6 horas</div>
+            </div>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="gpan">
+            <div>
+              <div style="padding:0 0 34px">
+        <div class="trowx">
+          <button type="button" class="trow" aria-expanded="false">
+            <div>
+              <h4 class="trow-t" style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 8px">O Eixo Histórico do Século XX</h4>
+              <div class="tmeta" style="font-size:15px;line-height:1.45;color:color-mix(in srgb,#33302B 80%,transparent)">Do Reichstag ao Checkpoint Charlie</div>
+            </div>
+            <span style="font-family:var(--font-heading);font-size:22px;line-height:var(--trow-line);font-variant-numeric:tabular-nums;white-space:nowrap">4 h</span>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="tpan">
+            <div>
+              <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center;padding:4px 4px 30px">
+                <div>
+                  <p style="font-size:16px;line-height:1.7;margin:0 0 22px;max-width:46ch;color:color-mix(in srgb,#33302B 72%,transparent)">Do Reichstag ao Checkpoint Charlie: uma linha em Berlim que se percorre a pé e que traça o arco de tensão da cultura alemã.</p>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+                    <a href="tour-1-eixo-historico.html" class="yb" style="display:inline-block;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none">Ver o roteiro →</a>
+                    <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Reservar no WhatsApp</a>
+                  </div>
+                </div>
+                <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-grupo-reichstag.jpg" alt="O Eixo Histórico do Século XX" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trowx">
+          <button type="button" class="trow" aria-expanded="false">
+            <div>
+              <h4 class="trow-t" style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 8px">O Coração da Prússia</h4>
+              <div class="tmeta" style="font-size:15px;line-height:1.45;color:color-mix(in srgb,#33302B 80%,transparent)">Do Gendarmenmarkt à Catedral de Berlim</div>
+            </div>
+            <span style="font-family:var(--font-heading);font-size:22px;line-height:var(--trow-line);font-variant-numeric:tabular-nums;white-space:nowrap">4 h</span>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="tpan">
+            <div>
+              <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center;padding:4px 4px 30px">
+                <div>
+                  <p style="font-size:16px;line-height:1.7;margin:0 0 22px;max-width:62ch;color:color-mix(in srgb,#33302B 72%,transparent)">Enquanto o Eixo do Século XX atravessa o século das catástrofes, este é o seu avesso luminoso: ópera, biblioteca e museu ao longo da Unter den Linden.</p>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+                      <a href="tour-2-coracao-da-prussia.html" class="yb" style="display:inline-block;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none">Ver o roteiro →</a>
+                      <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Reservar no WhatsApp</a>
+                    </div>
+                </div>
+                <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-dom-degraus.jpg" alt="O Coração da Prússia" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trowx">
+          <button type="button" class="trow" aria-expanded="false">
+            <div>
+              <h4 class="trow-t" style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 8px">O Eixo das 3 Berlins</h4>
+              <div class="tmeta" style="font-size:15px;line-height:1.45;color:color-mix(in srgb,#33302B 80%,transparent)">Berlim em um dia, do Oeste capitalista ao Leste socialista</div>
+            </div>
+            <span style="font-family:var(--font-heading);font-size:22px;line-height:var(--trow-line);font-variant-numeric:tabular-nums;white-space:nowrap">6 h</span>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="tpan">
+            <div>
+              <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center;padding:4px 4px 30px">
+                <div>
+                  <p style="font-size:16px;line-height:1.7;margin:0 0 22px;max-width:46ch;color:color-mix(in srgb,#33302B 72%,transparent)">Num só dia percorremos três Berlins que já foram três mundos — e, entre elas, o Portão de Brandemburgo, onde por 28 anos o Muro tornou intransponível o que hoje cruzamos num passo.</p>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+                    <a href="tour-3-eixo-das-3-berlins.html" class="yb" style="display:inline-block;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none">Ver o roteiro →</a>
+                    <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Reservar no WhatsApp</a>
+                  </div>
+                </div>
+                <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-potsdamer-platz.jpg" alt="O Eixo das 3 Berlins" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trowx">
+          <button type="button" class="trow" aria-expanded="false">
+            <div>
+              <h4 class="trow-t" style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 8px">Berlim Ocidental</h4>
+              <div class="tmeta" style="font-size:15px;line-height:1.45;color:color-mix(in srgb,#33302B 80%,transparent)">A Vitrine do Capitalismo · Do Jardim Zoológico ao Fórum Cultural</div>
+            </div>
+            <span style="font-family:var(--font-heading);font-size:22px;line-height:var(--trow-line);font-variant-numeric:tabular-nums;white-space:nowrap">4 h</span>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="tpan">
+            <div>
+              <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center;padding:4px 4px 30px">
+                <div>
+                  <p style="font-size:16px;line-height:1.7;margin:0 0 22px;max-width:62ch;color:color-mix(in srgb,#33302B 72%,transparent)">O lado do dinheiro e do brilho. Caminhamos por essa vitrine sem ingenuidade: admirando o brilho e, ao mesmo tempo, entendendo por que ele brilhava.</p>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+                      <a href="tour-4-berlim-ocidental.html" class="yb" style="display:inline-block;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none">Ver o roteiro →</a>
+                      <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Reservar no WhatsApp</a>
+                    </div>
+                </div>
+                <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-grupo-coluna.jpg" alt="Berlim Ocidental" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trowx">
+          <button type="button" class="trow" aria-expanded="false">
+            <div>
+              <h4 class="trow-t" style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 8px">Berlim Oriental</h4>
+              <div class="tmeta" style="font-size:15px;line-height:1.45;color:color-mix(in srgb,#33302B 80%,transparent)">A Cidade Operária que se tornou a capital socialista</div>
+            </div>
+            <span style="font-family:var(--font-heading);font-size:22px;line-height:var(--trow-line);font-variant-numeric:tabular-nums;white-space:nowrap">4 h</span>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="tpan">
+            <div>
+              <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center;padding:4px 4px 30px">
+                <div>
+                  <p style="font-size:16px;line-height:1.7;margin:0 0 22px;max-width:46ch;color:color-mix(in srgb,#33302B 72%,transparent)">Antes de ser “o Leste” da Guerra Fria, esta já era a Berlim de quem trabalhava. Caminhamos por ela de baixo para cima.</p>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+                    <a href="tour-5-berlim-oriental.html" class="yb" style="display:inline-block;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none">Ver o roteiro →</a>
+                    <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Reservar no WhatsApp</a>
+                  </div>
+                </div>
+                <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-grafite-fernsehturm.jpg" alt="Berlim Oriental" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trowx">
+          <button type="button" class="trow" aria-expanded="false">
+            <div>
+              <h4 class="trow-t" style="font-family:var(--font-heading);font-weight:500;font-size:26px;line-height:1.12;margin:0 0 8px">Potsdam</h4>
+              <div class="tmeta" style="font-size:15px;line-height:1.45;color:color-mix(in srgb,#33302B 80%,transparent)">O Refúgio dos Reis — da terra eslava ao jardim de Frederico</div>
+            </div>
+            <span style="font-family:var(--font-heading);font-size:22px;line-height:var(--trow-line);font-variant-numeric:tabular-nums;white-space:nowrap">6 h</span>
+            <span class="trow-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
+          </button>
+          <div class="tpan">
+            <div>
+              <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:center;padding:4px 4px 30px">
+                <div>
+                  <p style="font-size:16px;line-height:1.7;margin:0 0 22px;max-width:62ch;color:color-mix(in srgb,#33302B 72%,transparent)">Um dia em camadas: da terra eslava ao jardim de Frederico, do palácio do pós-guerra à ponte dos espiões — o mundo inteiro cabendo num jardim.</p>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+                      <a href="tour-6-potsdam.html" class="yb" style="display:inline-block;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none">Ver o roteiro →</a>
+                      <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Reservar no WhatsApp</a>
+                    </div>
+                </div>
+                <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img src="assets/foto-potsdam-escultura.jpg" alt="Potsdam" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal rule" style="height:1px;background:#E7DFCB;margin:0 0 28px"></div>
+      <div class="reveal" style="margin-bottom:24px;font-size:14px;color:color-mix(in srgb,#33302B 72%,transparent)">Em desenvolvimento: A Batalha por Berlim · Germânia — A Capital Mundial do 3º Reich.</div>
+    </div>
+  </section>
+
+  <!-- ===== MARTA ===== -->
+  <section id="marta" style="background:#F4EDDC;border-top:1px solid #E8DEC4;border-bottom:1px solid #E8DEC4">
+    <div class="wrap g2" style="max-width:1280px;margin:0 auto;padding:72px 44px;display:grid;grid-template-columns:0.82fr 1fr;gap:62px;align-items:center">
+    <div class="plate-b">
+      <div style="position:relative;width:100%;aspect-ratio:4/5"><img src="assets/foto-marta-guiando2.jpg" alt="Retrato da Marta" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div>
+    </div>
+    <div>
+      <div class="reveal" style="font-size:15px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C25067;margin-bottom:18px">Quem Sou</div>
+      <h2 class="reveal" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(36px,4vw,48px);line-height:1.06;margin:0 0 22px;transition-delay:.07s">Marta Ruth Ribeiro Rocha</h2>
+      <p style="font-size:16px;line-height:1.74;margin:0 0 18px;color:color-mix(in srgb,#33302B 72%,transparent)">Cheguei à Alemanha em 1986, ainda estudante de Filosofia, achando que aqui era a terra dos grandes pensadores — e que só se pensa direito em alemão. O que era férias se tornou a vida: são quarenta anos, três filhos criados aqui, e a Alemanha aprendida do jeito que só se aprende vivendo — por dentro.</p>
+      <p style="font-size:16px;line-height:1.74;margin:0 0 26px;color:color-mix(in srgb,#33302B 72%,transparent)">Conheci Berlim em 1989, com o Muro ainda de pé, e me apaixonei de vez — dessas paixões que a gente leva anos pra entender. Hoje eu compartilho com os meus clientes não só a paixão, mas o porquê dela.</p>
+      <p style="font-family:var(--font-heading);font-size:25px;line-height:1.4;margin:0 0 30px;color:#B45B3E">Sou guia profissional desde 2012.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 28px">
+        <a href="quem-sou.html" class="lnk" style="font-size:15px;font-weight:700;color:#B45B3E">Minha história completa →</a>
+        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="lnk" style="font-size:15px">Escreva para mim no WhatsApp →</a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ===== STIMMEN ===== -->
+  <section id="stimmen" class="wrap" style="max-width:1280px;margin:0 auto;padding:72px 44px 44px">
+    <div class="reveal" style="font-size:15px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C25067;margin-bottom:18px">Depoimentos</div>
+    <div class="g2" style="display:grid;grid-template-columns:auto 1fr;gap:64px;align-items:end;margin-bottom:44px">
+      <h2 class="reveal" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(36px,4vw,48px);line-height:1.06;margin:0;transition-delay:.07s">O que dizem os grupos</h2>
+      <div style="font-size:15px;color:color-mix(in srgb,#33302B 62%,transparent);padding-bottom:8px">Avaliações no Google · <span style="color:#B45B3E">★★★★★</span> 5,0</div>
+    </div>
+    <div class="reveal rule" style="height:1px;background:#E7DFCB;margin-bottom:36px"></div>
+    <div>
+    <div class="qrow">
+      <figure style="margin:0;display:flex;flex-direction:column">
+        <div style="color:#B45B3E;font-size:15px;letter-spacing:0.28em;margin-bottom:14px">★★★★★</div>
+        <blockquote style="margin:0 0 18px;font-size:16px;line-height:1.66;color:color-mix(in srgb,#33302B 78%,transparent)">“Eu amei!!!! Muito simpática, conhece muito da história! Ficamos muito felizes em poder confiar no trabalho de uma pessoa muito experiente.”</blockquote>
+        <figcaption style="margin-top:auto;font-size:14px;font-weight:700">Samanta Amaral Miranda</figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column">
+        <div style="color:#B45B3E;font-size:15px;letter-spacing:0.28em;margin-bottom:14px">★★★★★</div>
+        <blockquote style="margin:0 0 18px;font-size:16px;line-height:1.66;color:color-mix(in srgb,#33302B 78%,transparent)">“Berlin sob um olhar artístico, histórico e cultural. Uma experiência sem adjetivos.”</blockquote>
+        <figcaption style="margin-top:auto;font-size:14px;font-weight:700">Teúnes Andrade</figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column">
+        <div style="color:#B45B3E;font-size:15px;letter-spacing:0.28em;margin-bottom:14px">★★★★★</div>
+        <blockquote style="margin:0 0 18px;font-size:16px;line-height:1.66;color:color-mix(in srgb,#33302B 78%,transparent)">“Simplesmente espetacular! Cultura, conhecimento, disposição e alto astral unidos em uma só pessoa. Experiência maravilhosa e uma visão inesquecível de Berlim.”</blockquote>
+        <figcaption style="margin-top:auto;font-size:14px;font-weight:700">Sílvia</figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column">
+        <div style="color:#B45B3E;font-size:15px;letter-spacing:0.28em;margin-bottom:14px">★★★★★</div>
+        <blockquote style="margin:0 0 18px;font-size:16px;line-height:1.66;color:color-mix(in srgb,#33302B 78%,transparent)">“Nosso passeio por Berlim certamente não teria sido o mesmo sem o seu conhecimento. Muita história e leveza. Aprendizagem que se leva para a vida. Companhia maravilhosa!”</blockquote>
+        <figcaption style="margin-top:auto;font-size:14px;font-weight:700">Cláudia Leitner</figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column">
+        <div style="color:#B45B3E;font-size:15px;letter-spacing:0.28em;margin-bottom:14px">★★★★★</div>
+        <blockquote style="margin:0 0 18px;font-size:16px;line-height:1.66;color:color-mix(in srgb,#33302B 78%,transparent)">“Estivemos com Marta em Berlim, foi ótimo. Demonstrou pleno conhecimento histórico e atual da cidade e foi muito cordial em seu atendimento. Recomendo!”</blockquote>
+        <figcaption style="margin-top:auto;font-size:14px;font-weight:700">Cristiano Johann</figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column">
+        <div style="color:#B45B3E;font-size:15px;letter-spacing:0.28em;margin-bottom:14px">★★★★★</div>
+        <blockquote style="margin:0 0 18px;font-size:16px;line-height:1.66;color:color-mix(in srgb,#33302B 78%,transparent)">“Conhecimento diferenciado da história da cidade e do país.”</blockquote>
+        <figcaption style="margin-top:auto;font-size:14px;font-weight:700">Rodrigo Coelho</figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column">
+        <div style="color:#B45B3E;font-size:15px;letter-spacing:0.28em;margin-bottom:14px">★★★★★</div>
+        <blockquote style="margin:0 0 18px;font-size:16px;line-height:1.66;color:color-mix(in srgb,#33302B 78%,transparent)">“Berlinar com Marta. Não tem igual.”</blockquote>
+        <figcaption style="margin-top:auto;font-size:14px;font-weight:700">Eduardo Siqueira</figcaption>
+      </figure>
+    </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:28px;margin-top:36px">
+      <button class="qbtn" disabled aria-label="Depoimentos anteriores">&#8249;</button>
+      <div style="height:1px;background:#E7DFCB;flex:1"></div>
+      <button class="qbtn" aria-label="Mais depoimentos">&#8250;</button>
+    </div>
+  </section>
+
+  <!-- ===== CTA / KONTAKT (dunkler Abschluss) ===== -->
+  <section id="kontakt" style="background:#231F1C">
+    <div class="wrap g2" style="max-width:1280px;margin:0 auto;padding:84px 44px;display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:end">
+      <div>
+        <div style="font-size:15px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#E58497;margin-bottom:18px">Reservas</div>
+        <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(42px,5vw,66px);line-height:1.04;margin:0;max-width:16ch;color:#FBF7EE;text-wrap:pretty">Vamos combinar o seu passeio em Berlim.</h2>
+      </div>
+      <div class="ctaside" style="border-left:1px solid rgba(251,247,238,.18);padding-left:48px;display:flex;flex-direction:column;align-items:flex-start;gap:22px">
+        <p style="font-size:16px;line-height:1.7;margin:0;color:rgba(251,247,238,.7)">Me chame no WhatsApp com a data e quantas pessoas — o resto a gente acerta junto.</p>
+        <p style="font-size:15px;line-height:1.7;margin:0;color:rgba(251,247,238,.56)">Preços — <a href="como-funciona.html#valores" style="color:#FBF7EE;border-bottom:1px solid rgba(246,196,69,.5);padding-bottom:1px">ver a tabela</a>.</p>
+        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="padding:15px 32px;font-size:15px;letter-spacing:0.03em">Reservar no WhatsApp</a>
+        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" style="font-size:15px;color:#FBF7EE;border-bottom:1px solid rgba(246,196,69,.5);padding-bottom:2px;font-variant-numeric:tabular-nums">+49 1578 5568432</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="border-top:1px solid #E7DFCB;background:#FBF7EE">
+    <div class="wrap" style="max-width:1280px;margin:0 auto;padding:64px 44px 0">
+      <div class="g4" style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:52px;align-items:start">
+        <div>
+          <img src="assets/logo-rose-inkdot.png" alt="Berlinando" style="height:34px;display:block;margin-bottom:20px">
+          <div style="font-family:var(--font-slogan);font-weight:600;font-size:13px;letter-spacing:0.42em;text-transform:uppercase;color:#C25067;margin-bottom:22px">Berlim do nosso jeito</div>
+          <p style="font-size:15px;line-height:1.7;margin:0;max-width:32ch;color:color-mix(in srgb,#33302B 68%,transparent)">Passeios privados de história e cidade, em português. Só você e o seu grupo.</p>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:18px">Passeios</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;align-items:flex-start">
+            <a href="passeios.html" style="color:color-mix(in srgb,#33302B 68%,transparent)">Berlim por Temas</a>
+            <a href="passeios.html" style="color:color-mix(in srgb,#33302B 68%,transparent)">Berlim Geográfica</a>
+            <a href="passeios.html" style="color:color-mix(in srgb,#33302B 68%,transparent)">Todos os passeios</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:18px">Berlinando</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;align-items:flex-start">
+            <a href="#marta" style="color:color-mix(in srgb,#33302B 68%,transparent)">Quem Sou</a>
+            <a href="#stimmen" style="color:color-mix(in srgb,#33302B 68%,transparent)">Depoimentos</a>
+            <a href="#kontakt" style="color:color-mix(in srgb,#33302B 68%,transparent)">Contato</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:18px">Contato</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;align-items:flex-start">
+            <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" style="color:color-mix(in srgb,#33302B 68%,transparent);font-variant-numeric:tabular-nums">WhatsApp +49 1578 5568432</a>
+            <a href="https://www.instagram.com/berlinando_tours/" target="_blank" rel="noopener" style="color:color-mix(in srgb,#33302B 68%,transparent)">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal rule" style="height:1px;background:#E7DFCB;margin-top:58px"></div>
+      <div class="fbot" style="display:flex;align-items:center;justify-content:space-between;gap:22px;padding:22px 0 34px;font-size:13px">
+        <div style="color:color-mix(in srgb,#33302B 55%,transparent)">© 2026 Berlinando · <a href="informacoes-legais.html" class="lnk" style="color:inherit">Informações legais</a></div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

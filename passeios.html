@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passeios · Berlinando</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+    :root { --font-heading:'Baloo 2', system-ui, sans-serif; --font-body:'Nunito Sans', system-ui, sans-serif; --font-slogan:'Cormorant Garamond', Georgia, serif; }
+    body { margin:0; background:#FBF7EE; font-family:var(--font-body); }
+    a { color:#33302B; text-decoration:none; transition:color .15s; }
+    a:hover { color:#B45B3E; }
+    .yb-fill { background:#F6C445; color:#33302B; border:1px solid #F6C445; border-radius:10px; white-space:nowrap; transition:background .15s, transform .12s; cursor:pointer; }
+    .yb-fill:hover { background:#EAB72E; border-color:#EAB72E; }
+    .yb-fill:active { transform:translateY(1px); }
+    .yb-fill:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
+    .lnk { border-bottom:1px solid #C7B59A; padding-bottom:2px; white-space:nowrap; transition:border-color .15s; }
+    .lnk:hover { border-color:#B45B3E; }
+    .nlink { color:inherit; transition:opacity .15s; }
+    .nlink:hover { color:inherit; opacity:.6; }
+    .plate-b { background:#fff; padding:8px; border:1px solid #E7DFCB; box-shadow:0 1px 3px rgba(51,48,43,.07); }
+    .plate-b image-slot { display:block; width:100%; height:100%; filter:saturate(.94) sepia(.04) contrast(.99) brightness(1.01); }
+    html { scroll-behavior:smooth; }
+    .cmplink { display:block; text-decoration:none; color:inherit; }
+    .cmplink:hover { color:inherit; }
+    .cmplink h2 { transition:color .18s; }
+    .cmplink:hover h2 { color:#B45B3E; }
+    .cmplink .cmpgo span { display:inline-block; transition:transform .26s cubic-bezier(.22,.61,.36,1); }
+    .cmplink:hover .cmpgo span { transform:translateY(3px); }
+    .cmplink:focus-visible { outline:2px solid #B45B3E; outline-offset:8px; }
+    .chap { scroll-margin-top:86px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
+    .wrap { max-width:1180px; margin:0 auto; padding:0 44px; }
+    .tgrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:52px 44px; }
+    .tc { display:flex; flex-direction:column; text-decoration:none; color:inherit; }
+    .tc-body { flex:1; display:flex; flex-direction:column; }
+    .tc:hover { color:inherit; }
+    .tc:focus-visible { outline:2px solid #B45B3E; outline-offset:6px; }
+    .tc image-slot { transition:transform .8s cubic-bezier(.22,.61,.36,1); }
+    .tc:hover image-slot { transform:scale(1.04); }
+    .tcard-t { transition:color .18s; }
+    .tc:hover .tcard-t { color:#B45B3E; }
+    .tc-foot { margin-top:auto; display:flex; align-items:baseline; justify-content:space-between; gap:18px; padding-top:14px; border-top:1px solid #E7DFCB; }
+    .tc-body > p { margin-bottom:22px !important; }
+    .tc-go { font-size:14px; font-weight:700; color:#B45B3E; white-space:nowrap; display:inline-flex; align-items:center; gap:8px; }
+    .tc-go span { transition:transform .26s cubic-bezier(.22,.61,.36,1); }
+    .tc:hover .tc-go span { transform:translateX(5px); }
+    .soon { border-top:1px solid #E7DFCB; padding:26px 2px; margin-top:44px; }
+    @media (max-width: 900px) {
+      .wrap { padding-left:22px !important; padding-right:22px !important; }
+      .g2 { grid-template-columns:minmax(0,1fr) !important; gap:28px !important; }
+      .tgrid { gap:40px 32px !important; }
+      .cmp { grid-template-columns:minmax(0,1fr) !important; gap:34px !important; }
+      .cmp-r { border-left:none !important; padding-left:0 !important; border-top:1px solid #E8DEC4; padding-top:34px; }
+      .navlinks { display:none !important; }
+    }
+    @media (max-width: 640px) {
+      .chap h2 { white-space:normal !important; }
+      .tgrid { grid-template-columns:minmax(0,1fr) !important; }
+    }
+  </style>
+<script src="assets/site.js" defer></script>
+</head>
+<body>
+<div style="font-family:var(--font-body);color:#33302B;background:#FBF7EE">
+
+  <nav style="position:sticky;top:0;z-index:60;background:#FBF7EE;box-shadow:0 1px 0 #E7DFCB">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:14px;padding-bottom:14px">
+      <a href="index.html" style="display:flex;align-items:flex-end;flex-shrink:0"><img src="assets/logo-rose-inkdot.png" alt="Berlinando" style="height:44px"></a>
+      <div style="display:flex;align-items:center;gap:30px">
+        <div class="navlinks" style="display:flex;align-items:center;gap:30px;font-size:15px;font-weight:600;white-space:nowrap">
+          <span style="display:flex;align-items:center;gap:14px;white-space:nowrap">
+            <span style="color:#B45B3E">Passeios</span>
+            <span style="width:1px;height:14px;background:#DCD2BD"></span>
+            <a href="#geografica" class="nlink" style="font-weight:500">Geográfica</a>
+            <a href="#temas" class="nlink" style="font-weight:500">Temas</a>
+          </span>
+          <a href="como-funciona.html" class="nlink">Como funciona</a>
+          <a href="quem-sou.html" class="nlink">Quem Sou</a>
+        </div>
+        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="font-size:14px;font-weight:700;padding:10px 20px;text-decoration:none">Reservar</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="wrap" style="padding-top:58px;padding-bottom:20px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C25067;margin-bottom:20px">Dois modos de entrar na mesma cidade</div>
+    <h1 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(46px,6.6vw,88px);line-height:0.98;letter-spacing:-0.01em;margin:0 0 24px;text-wrap:pretty">Meus Passeios</h1>
+    <p style="font-size:18px;line-height:1.76;margin:0;max-width:58ch;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">Concebi os tours a partir de duas bases. Berlim tem camadas demais — impérios, guerras, muros, renascimentos — para caber num percurso só; por isso, em vez de um único tipo de abordagem, ofereço dois. Você decide com qual deles prefere começar.</p>
+  </header>
+
+  <div style="position:relative;width:100%;height:clamp(200px,22vw,300px);overflow:hidden;background:#33302B;margin-top:44px">
+    <img src="assets/foto-telhados.jpg" alt="os telhados de Berlim" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover">
+  </div>
+
+  <section style="background:#F4EDDC;border-top:1px solid #E8DEC4;border-bottom:1px solid #E8DEC4">
+    <div class="wrap cmp" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,52px);padding-top:50px;padding-bottom:52px">
+      <a class="cmplink" href="#geografica">
+        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:11px">Percursos por área</div>
+        <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.7vw,33px);line-height:1.08;margin:0 0 14px">Berlim Geográfica</h2>
+        <p style="font-size:16px;line-height:1.72;margin:0 0 16px;max-width:50ch;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">O fio condutor é o próprio chão. Escolhemos uma parte da cidade e a percorremos deixando cada rua e cada praça contar o que viveu. A história aparece onde de fato aconteceu, em camadas, debaixo dos seus pés. É a maneira de sentir Berlim como lugar — de vê-la, andá-la e guardá-la na memória.</p>
+        <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">6 roteiros · 4 a 6 horas</div>
+        <div class="cmpgo" style="display:flex;align-items:center;gap:9px;margin-top:16px;font-size:14px;font-weight:700;color:#B45B3E">Ver os 6 roteiros <span>↓</span></div>
+      </a>
+
+      <a class="cmplink cmp-r" href="#temas" style="border-left:1px solid #E7DFCB;padding-left:clamp(28px,4vw,52px)">
+        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:11px">Um fio a fundo</div>
+        <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.7vw,33px);line-height:1.08;margin:0 0 14px">Berlim por Temas</h2>
+        <p style="font-size:16px;line-height:1.72;margin:0 0 16px;max-width:50ch;color:color-mix(in srgb,#33302B 84%,transparent);text-wrap:pretty">O fio condutor é uma ideia. Em vez de uma área, seguimos um assunto — a Alemanha nazista, a Guerra Fria, a cidade operária — atravessando a cidade por onde o fio da História nos levar. É a maneira de mergulhar: menos “o que se vê daqui” e mais “como isto foi, e por quê”.</p>
+        <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">4 roteiros · 4 a 6 horas</div>
+        <div class="cmpgo" style="display:flex;align-items:center;gap:9px;margin-top:16px;font-size:14px;font-weight:700;color:#B45B3E">Ver os 4 roteiros <span>↓</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:34px;padding-bottom:6px">
+    <p style="font-family:var(--font-slogan);font-style:italic;font-size:clamp(19px,2vw,24px);line-height:1.45;margin:0;max-width:64ch;color:color-mix(in srgb,#33302B 80%,transparent);text-wrap:pretty">Nenhum é melhor que o outro: elas respondem a desejos diferentes — e conversam entre si. Me diga o que te move — um lugar para conhecer ou uma história para entender — e a gente acha o caminho certo. Ou combina os dois.</p>
+  </section>
+
+  <div id="geografica" class="wrap chap" style="margin-top:104px">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 24px;padding-bottom:18px;border-bottom:1px solid #C7B59A">
+      <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(34px,4.4vw,56px);line-height:1.02;margin:0;white-space:nowrap">Berlim Geográfica</h2>
+      <span style="font-size:15px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 52%,transparent);font-variant-numeric:tabular-nums">Roteiros 01–06</span>
+    </div>
+  </div>
+
+  <section class="wrap" style="padding-top:44px;padding-bottom:20px">
+    <div>
+      <div class="tgrid">
+        <a class="tc" href="tour-1-eixo-historico.html">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-grupo-reichstag.jpg" alt="O Eixo Histórico do Século XX" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+          <div class="tc-body" style="padding-top:20px">
+            <h3 class="tcard-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.1;margin:0 0 9px;text-wrap:pretty">O Eixo Histórico do Século XX</h3>
+            <div style="font-size:15px;line-height:1.5;margin-bottom:13px;color:color-mix(in srgb,#33302B 74%,transparent)">Do Reichstag ao Checkpoint Charlie</div>
+            <p style="font-size:16px;line-height:1.7;margin:0;max-width:44ch;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Uma linha em Berlim que se percorre a pé e que traça o arco de tensão da cultura alemã.</p>
+            <div class="tc-foot">
+              <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">Duração 4 h</span>
+              <span class="tc-go">Ver o roteiro <span>→</span></span>
+            </div>
+          </div>
+        </a>
+        <a class="tc" href="tour-2-coracao-da-prussia.html">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-berliner-dom.jpg" alt="O Coração da Prússia" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+          <div class="tc-body" style="padding-top:20px">
+            <h3 class="tcard-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.1;margin:0 0 9px;text-wrap:pretty">O Coração da Prússia</h3>
+            <div style="font-size:15px;line-height:1.5;margin-bottom:13px;color:color-mix(in srgb,#33302B 74%,transparent)">Do Gendarmenmarkt à Catedral de Berlim</div>
+            <p style="font-size:16px;line-height:1.7;margin:0;max-width:44ch;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Enquanto o Eixo do Século XX atravessa o século das catástrofes, este é o seu avesso luminoso: ópera, biblioteca e museu ao longo da Unter den Linden.</p>
+            <div class="tc-foot">
+              <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">Duração 4 h</span>
+              <span class="tc-go">Ver o roteiro <span>→</span></span>
+            </div>
+          </div>
+        </a>
+        <a class="tc" href="tour-3-eixo-das-3-berlins.html">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-potsdamer-platz.jpg" alt="O Eixo das 3 Berlins" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+          <div class="tc-body" style="padding-top:20px">
+            <h3 class="tcard-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.1;margin:0 0 9px;text-wrap:pretty">O Eixo das 3 Berlins</h3>
+            <div style="font-size:15px;line-height:1.5;margin-bottom:13px;color:color-mix(in srgb,#33302B 74%,transparent)">Berlim em um dia, do Oeste capitalista ao Leste socialista</div>
+            <p style="font-size:16px;line-height:1.7;margin:0;max-width:44ch;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Num só dia percorremos três Berlins que já foram três mundos — e, entre elas, o Portão de Brandemburgo.</p>
+            <div class="tc-foot">
+              <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">Duração 6 h</span>
+              <span class="tc-go">Ver o roteiro <span>→</span></span>
+            </div>
+          </div>
+        </a>
+        <a class="tc" href="tour-4-berlim-ocidental.html">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-grupo-coluna.jpg" alt="Berlim Ocidental" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+          <div class="tc-body" style="padding-top:20px">
+            <h3 class="tcard-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.1;margin:0 0 9px;text-wrap:pretty">Berlim Ocidental</h3>
+            <div style="font-size:15px;line-height:1.5;margin-bottom:13px;color:color-mix(in srgb,#33302B 74%,transparent)">A Vitrine do Capitalismo · Do Jardim Zoológico ao Fórum Cultural</div>
+            <p style="font-size:16px;line-height:1.7;margin:0;max-width:44ch;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">O lado do dinheiro e do brilho. Caminhamos por essa vitrine sem ingenuidade: admirando o brilho e, ao mesmo tempo, entendendo por que ele brilhava.</p>
+            <div class="tc-foot">
+              <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">Duração 4 h</span>
+              <span class="tc-go">Ver o roteiro <span>→</span></span>
+            </div>
+          </div>
+        </a>
+        <a class="tc" href="tour-5-berlim-oriental.html">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-grafite-fernsehturm.jpg" alt="Berlim Oriental" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+          <div class="tc-body" style="padding-top:20px">
+            <h3 class="tcard-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.1;margin:0 0 9px;text-wrap:pretty">Berlim Oriental</h3>
+            <div style="font-size:15px;line-height:1.5;margin-bottom:13px;color:color-mix(in srgb,#33302B 74%,transparent)">A Cidade Operária que se tornou a capital socialista</div>
+            <p style="font-size:16px;line-height:1.7;margin:0;max-width:44ch;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Antes de ser “o Leste” da Guerra Fria, esta já era a Berlim de quem trabalhava. Caminhamos por ela de baixo para cima.</p>
+            <div class="tc-foot">
+              <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">Duração 4 h</span>
+              <span class="tc-go">Ver o roteiro <span>→</span></span>
+            </div>
+          </div>
+        </a>
+        <a class="tc" href="tour-6-potsdam.html">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-potsdam-escultura.jpg" alt="Potsdam" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+          <div class="tc-body" style="padding-top:20px">
+            <h3 class="tcard-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.1;margin:0 0 9px;text-wrap:pretty">Potsdam</h3>
+            <div style="font-size:15px;line-height:1.5;margin-bottom:13px;color:color-mix(in srgb,#33302B 74%,transparent)">O Refúgio dos Reis — da terra eslava ao jardim de Frederico</div>
+            <p style="font-size:16px;line-height:1.7;margin:0;max-width:44ch;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Um dia em camadas: do palácio do pós-guerra à ponte dos espiões — o mundo inteiro cabendo num jardim.</p>
+            <div class="tc-foot">
+              <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">Duração 6 h</span>
+              <span class="tc-go">Ver o roteiro <span>→</span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:26px;padding-bottom:0">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;padding-top:24px;border-top:1px solid #E7DFCB">
+      <a href="como-funciona.html#valores" class="lnk" style="font-size:15px;font-weight:700;color:#B45B3E">Preços — ver a tabela →</a>
+    </div>
+  </section>
+
+  <div id="temas" class="wrap chap" style="margin-top:104px">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 24px;padding-bottom:18px;border-bottom:1px solid #C7B59A">
+      <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(34px,4.4vw,56px);line-height:1.02;margin:0;white-space:nowrap">Berlim por Temas</h2>
+      <span style="font-size:15px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 52%,transparent);font-variant-numeric:tabular-nums">Roteiros 07–10</span>
+    </div>
+  </div>
+
+  <section class="wrap" style="padding-top:44px;padding-bottom:20px">
+    <div>
+      <div class="tgrid">
+        <a class="tc" href="tour-7-sachsenhausen.html">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-sachsenhausen.jpg" alt="Sachsenhausen" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+          <div class="tc-body" style="padding-top:20px">
+            <h3 class="tcard-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.1;margin:0 0 9px;text-wrap:pretty">Sachsenhausen</h3>
+            <div style="font-size:15px;line-height:1.5;margin-bottom:13px;color:color-mix(in srgb,#33302B 74%,transparent)">O Paradigma do Terror — a geometria do terror, fora da cidade</div>
+            <p style="font-size:16px;line-height:1.7;margin:0;max-width:44ch;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Há lugares que visitamos por necessidade de compreensão. Sachsenhausen é um deles: não apenas um campo, mas o campo-modelo do sistema de terror do regime.</p>
+            <div class="tc-foot">
+              <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">Duração 6 h</span>
+              <span class="tc-go">Ver o roteiro <span>→</span></span>
+            </div>
+          </div>
+        </a>
+        <a class="tc" href="tour-8-guerra-fria.html">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-muro-tote.jpg" alt="A Guerra Fria" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+          <div class="tc-body" style="padding-top:20px">
+            <h3 class="tcard-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.1;margin:0 0 9px;text-wrap:pretty">A Guerra Fria</h3>
+            <div style="font-size:15px;line-height:1.5;margin-bottom:13px;color:color-mix(in srgb,#33302B 74%,transparent)">A guerra que só terminou quando o Muro caiu</div>
+            <p style="font-size:16px;line-height:1.7;margin:0;max-width:44ch;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Berlim foi a fronteira mais vigiada do mundo, porque era onde os dois blocos se encaravam a poucos metros.</p>
+            <div class="tc-foot">
+              <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">Duração ~6 h</span>
+              <span class="tc-go">Ver o roteiro <span>→</span></span>
+            </div>
+          </div>
+        </a>
+        <a class="tc" href="tour-9-alemanha-nazista.html">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-neue-wache.jpg" alt="A Alemanha Nazista" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+          <div class="tc-body" style="padding-top:20px">
+            <h3 class="tcard-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.1;margin:0 0 9px;text-wrap:pretty">A Alemanha Nazista</h3>
+            <div style="font-size:15px;line-height:1.5;margin-bottom:13px;color:color-mix(in srgb,#33302B 74%,transparent)">A capital do 3º Reich — da chegada ao Poder à ruína</div>
+            <p style="font-size:16px;line-height:1.7;margin:0;max-width:44ch;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Em janeiro de 1933, a Alemanha ainda era uma república. Poucas semanas após a nomeação de Hitler como Chanceler, a república já não existia.</p>
+            <div class="tc-foot">
+              <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">Duração ~4,5 h</span>
+              <span class="tc-go">Ver o roteiro <span>→</span></span>
+            </div>
+          </div>
+        </a>
+        <a class="tc" href="tour-10-berlim-judaica.html">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-estelas.jpg" alt="A Berlim Judaica" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+          <div class="tc-body" style="padding-top:20px">
+            <h3 class="tcard-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.1;margin:0 0 9px;text-wrap:pretty">A Berlim Judaica</h3>
+            <div style="font-size:15px;line-height:1.5;margin-bottom:13px;color:color-mix(in srgb,#33302B 74%,transparent)">Séculos de presença, e o retorno</div>
+            <p style="font-size:16px;line-height:1.7;margin:0;max-width:44ch;color:color-mix(in srgb,#33302B 82%,transparent);text-wrap:pretty">Este tour não é um roteiro de vítimas. É a história de uma comunidade que, por séculos, ajudou a construir Berlim — e que quase foi dizimada.</p>
+            <div class="tc-foot">
+              <span style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 72%,transparent);font-variant-numeric:tabular-nums">Duração ~4 h</span>
+              <span class="tc-go">Ver o roteiro <span>→</span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:26px;padding-bottom:0">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;padding-top:24px;border-top:1px solid #E7DFCB">
+      <a href="como-funciona.html#valores" class="lnk" style="font-size:15px;font-weight:700;color:#B45B3E">Preços — ver a tabela →</a>
+    </div>
+  </section>
+
+  <section style="background:#231F1C;margin-top:56px">
+    <div class="wrap g2" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;padding-top:76px;padding-bottom:76px">
+      <div>
+        <div style="font-size:15px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#E58497;margin-bottom:18px">Reservas</div>
+        <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(34px,4.2vw,54px);line-height:1.06;margin:0;max-width:18ch;color:#FBF7EE;text-wrap:pretty">Vamos combinar o seu passeio.</h2>
+      </div>
+      <div style="border-left:1px solid rgba(251,247,238,.18);padding-left:44px;display:flex;flex-direction:column;align-items:flex-start;gap:20px">
+        <p style="font-size:16px;line-height:1.7;margin:0;color:rgba(251,247,238,.72)">Me chame no WhatsApp com a data e quantas pessoas — o resto a gente acerta junto.</p>
+        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="padding:15px 32px;font-size:15px;letter-spacing:0.03em;text-decoration:none">Reservar no WhatsApp</a>
+        <span style="font-size:15px;line-height:1.6;color:rgba(251,247,238,.56)">Preços — <a href="como-funciona.html#valores" style="color:#FBF7EE;border-bottom:1px solid rgba(246,196,69,.5);padding-bottom:1px">ver a tabela</a>.</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid #E7DFCB;background:#FBF7EE">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding-top:30px;padding-bottom:36px;font-size:14px">
+      <a href="index.html" class="lnk">← Início</a>
+      <span style="color:color-mix(in srgb,#33302B 60%,transparent)">© 2026 Berlinando · <a href="informacoes-legais.html" style="color:inherit">Informações legais</a></span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

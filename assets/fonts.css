@@ -1,0 +1,8 @@
+/* Selbst gehostete Schriften — DSGVO: Besucher*innen laden nichts von Google.
+   Exakt die Dateien, die das Design in Claude Design verwendet (Google Fonts,
+   Subset „latin", deckt pt-BR ab), einmalig heruntergeladen am 16.09.2026.
+   Lizenz aller drei Familien: SIL Open Font License 1.1. */
+@font-face { font-family:'Baloo 2'; font-style:normal; font-weight:400 700; font-display:swap; src:url('fonts/baloo2-latin.woff2') format('woff2'); }
+@font-face { font-family:'Nunito Sans'; font-style:normal; font-weight:400 800; font-stretch:100%; font-display:swap; src:url('fonts/nunito-sans-latin.woff2') format('woff2'); }
+@font-face { font-family:'Cormorant Garamond'; font-style:normal; font-weight:300 600; font-display:swap; src:url('fonts/cormorant-garamond-latin.woff2') format('woff2'); }
+@font-face { font-family:'Cormorant Garamond'; font-style:italic; font-weight:400; font-display:swap; src:url('fonts/cormorant-garamond-italic-latin.woff2') format('woff2'); }
