@@ -3,10 +3,35 @@
 Website von **Marta Rocha**, brasilianische Stadtführerin in Berlin.
 Sprache der Seite: Portugiesisch (pt-BR).
 
-**Reines HTML/CSS** — kein Build, kein Framework, keine Installation. Die Dateien
-werden genau so ausgeliefert, wie sie hier liegen. Zum Ansehen reicht ein
-Doppelklick auf `index.html` (für die volle Funktion besser über einen lokalen
-Server, siehe unten).
+## So funktioniert's
+
+```
+Claude Design  ──Export (ZIP)──▶  Claude Code  ──git push──▶  GitHub  ──automatisch──▶  Live-Seite
+(hier wird gestaltet             („neuer Export liegt          (dieses Repo)            (GitHub Pages)
+ und Text geändert)               in Downloads")
+```
+
+1. **Gestalten & Texte ändern** — im Claude-Design-Projekt „Berlinando website strategy".
+2. **Exportieren** — Projekt als ZIP herunterladen (landet in `Downloads`).
+3. **Übernehmen** — in Claude Code (in diesem Ordner) sagen:
+   *„Neuer Export liegt in Downloads, bitte übernehmen."*
+   Claude wandelt den Export um, prüft jede Seite und zeigt, was sich ändert.
+4. **Freigeben** — nach deinem OK wird hochgeladen; 1–2 Minuten später ist es live.
+
+**Wichtig:** Design und Texte **nur in Claude Design** ändern. Direkte Änderungen
+in `website/` werden bei der nächsten Übernahme überschrieben.
+
+## Ordner
+
+| Ordner / Datei | Inhalt |
+| --- | --- |
+| `website/` | **die Website** — genau das, was online geht (fertiges HTML) |
+| `website/assets/` | Fotos, Logo, Schriften, `site.js` (Aufklappen, Karussell, Scroll-Effekte) |
+| `werkzeuge/design-uebernehmen.mjs` | wandelt einen Claude-Design-Export in `website/` um |
+| `werkzeuge/korrekturen.mjs` | Texte, die bei jeder Übernahme fest ersetzt werden (z. B. Datenschutz-Hosting) |
+| `werkzeuge/qa-vergleich.mjs` | vergleicht `website/` Seite für Seite mit dem Original-Export |
+| `.claude/skills/design-uebernehmen/` | Anleitung für Claude Code |
+| `.github/workflows/` | automatisches Veröffentlichen von `website/` |
 
 ## Seiten
 
@@ -20,62 +45,27 @@ Server, siehe unten).
 | `informacoes-legais.html` | Impressum und Datenschutz |
 | `tour-1-…` bis `tour-10-…` | die zehn Tourseiten |
 
-## Ordner
-
-- `assets/` — Fotos, Logo, Favicon
-- `assets/fonts/` + `assets/fonts.css` — **selbst gehostete** Schriften (Baloo 2, Nunito Sans, Cormorant Garamond)
-- `assets/site.js` — das einzige Skript: Aufklappen, Karussell, Scroll-Effekte, Katalog-Filter
-- `ds/styles.css` — Basis-Stile aus Claude Design
-
-## Texte ändern
-
-Der Inhalt steht als Klartext zwischen den HTML-Tags, z. B.
-
-```html
-<h1 ...>Guia Brasileira em Berlim</h1>
-```
-
-Nur den Text zwischen `>` und `<` ändern, die Tags und `style="…"` in Ruhe lassen.
-Kontaktdaten (WhatsApp, E-Mail, Instagram) stehen auf mehreren Seiten — bei
-Änderungen **alle Seiten** durchsuchen (in VS Code: `Cmd+Shift+F`).
-
-## Neues Foto
-
-Foto nach `assets/` legen (JPEG, lange Seite max. 1600 px, möglichst unter 400 KB)
-und im HTML den Dateinamen im `src="assets/…"` austauschen. Das `alt="…"`
-beschreibt das Bild auf Portugiesisch (wichtig für Barrierefreiheit und Google).
-
-## Lokal ansehen
+## Einrichtung auf einem neuen Rechner
 
 ```bash
-python3 -m http.server 8000
+git clone https://github.com/mr-nalim/berlinando.git
+cd berlinando
+npm install
+npx playwright install chromium
 ```
 
-Dann im Browser: http://localhost:8000
+(Nur für das Übernehmen/Prüfen nötig. Die Website selbst braucht nichts davon.)
 
-## Zusammenarbeiten
+Website lokal ansehen: `npm run vorschau` → http://localhost:8000
 
-`main` ist die veröffentlichte Seite.
+## Warum wird der Export umgewandelt?
 
-1. **Vor dem Arbeiten** die neuesten Änderungen holen (`git pull`).
-2. Ändern, ansehen, dann speichern und hochladen (`git commit` + `git push`).
-3. Größere Umbauten lieber in einem eigenen Zweig + Pull Request, damit die andere
-   Person drüberschauen kann.
+Der Export aus Claude Design ist eine *Bauanleitung*: Beim Aufruf lädt jede Seite
+~3 MB Programmcode von einem US-Server (unpkg.com) und Schriften von Google und
+baut sich erst dann im Browser zusammen — langsam, schlecht für Google und
+datenschutzrechtlich heikel. Die Umwandlung erzeugt daraus fertige Seiten, die
+genauso aussehen und sich genauso verhalten, aber **nichts von fremden Servern
+laden**. Deshalb braucht die Seite auch kein Cookie-Banner.
 
-Jede Seite ist eine eigene Datei — zwei parallele Änderungen kollidieren fast nie.
-
-## Datenschutz (bitte beibehalten)
-
-Die Seite lädt **nichts von fremden Servern**: keine Google Fonts, kein Google
-Analytics, keine Karten-Einbettung, keine Skripte von CDNs. Instagram, Facebook
-und WhatsApp sind nur **Links**. Deshalb braucht die Seite kein Cookie-Banner.
-Neue externe Einbindungen nur nach Absprache — sonst muss die Datenschutzerklärung
-angepasst werden.
-
-## Herkunft
-
-Gestaltet in Claude Design („Berlinando website strategy", Export 16.09.2026) und
-anschließend in statisches HTML umgewandelt (ohne React/Babel von unpkg.com und
-ohne Google Fonts). Aussehen und Verhalten wurden Seite für Seite gegen den Export
-geprüft. **Wichtig:** Ein neuer Export aus Claude Design darf nicht einfach über
-diese Dateien kopiert werden — er muss wieder umgewandelt werden.
+Neue externe Einbindungen (Karten, Videos, Statistik, Schriften aus dem Netz) nur
+nach Absprache — sonst muss die Datenschutzerklärung angepasst werden.

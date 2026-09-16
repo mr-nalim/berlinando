@@ -1,0 +1,14 @@
+{
+  "name": "berlinando",
+  "private": true,
+  "description": "Website Berlinando — statisches HTML in website/. Die Abhängigkeiten hier sind nur Werkzeuge zum Prüfen, nicht Teil der Website.",
+  "type": "module",
+  "scripts": {
+    "uebernehmen": "node werkzeuge/design-uebernehmen.mjs",
+    "qa": "node werkzeuge/qa-vergleich.mjs",
+    "vorschau": "cd website && python3 -m http.server 8000"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
+}
