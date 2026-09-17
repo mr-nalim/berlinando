@@ -57,7 +57,12 @@ const STARTWERTE = { heroImgTy: '0', navLogoH: '58', navShade: '0' };
 const GEPRUEFTE_LOGIK = new Set(['c3c1b5027a0b', 'e7a211478efe', '025883bb8c79', 'd1c10ac42484', 'da39a3ee5e6b']);
 
 const MAX_FOTO_KB = 700;  // größere Fotos werden neu komprimiert
-const MAX_FOTO_PX = 1600;  // längste Kante
+const MAX_FOTO_PX = 2600;  // längste Kante (Titelbilder laufen über die ganze Bildschirmbreite)
+
+// Große Fassungen: Liegt hier eine Datei mit demselben Namen wie ein Foto aus dem
+// Export, wird sie statt der Export-Fassung verwendet. Claude Design begrenzt
+// Fotos beim Export offenbar auf 1600 px – so bleiben die Titelbilder scharf.
+const FOTOS_GROSS = path.join(REPO, 'fotos-gross');
 const LOGO_BREITE = 720;   // Logo wird max. ~220 px breit angezeigt (×3 für Retina)
 
 // --- 1. ZIP finden & entpacken ----------------------------------------------
@@ -104,9 +109,11 @@ function bildInfo(datei) {
 }
 
 for (const d of fs.readdirSync(path.join(quelle, 'assets'))) {
-  const von = path.join(quelle, 'assets', d);
+  const gross = path.join(FOTOS_GROSS, d);
+  const von = fs.existsSync(gross) ? gross : path.join(quelle, 'assets', d);
   const nach = path.join(ASSETS, d);
   fs.copyFileSync(von, nach);
+  if (von === gross) console.log(`  Große Fassung verwendet: ${d} (aus fotos-gross/)`);
   if (!hatSips) continue;
 
   if (/\.jpe?g$/i.test(d)) {
@@ -118,8 +125,13 @@ for (const d of fs.readdirSync(path.join(quelle, 'assets'))) {
       if (zuGross) args.push('-Z', String(MAX_FOTO_PX));
       const zwischen = path.join(tmp, `opt-${d}`);
       execFileSync('sips', [...args, nach, '--out', zwischen], { stdio: 'ignore' });
-      fs.renameSync(zwischen, nach);
-      console.log(`  Foto optimiert: ${d}  ${Math.round(kb)} KB → ${Math.round(fs.statSync(nach).size / 1024)} KB`);
+      // Nur übernehmen, wenn es etwas bringt (falsches Format, zu groß oder wirklich kleiner)
+      if (info.format !== 'jpeg' || zuGross || fs.statSync(zwischen).size < fs.statSync(nach).size) {
+        fs.renameSync(zwischen, nach);
+        console.log(`  Foto optimiert: ${d}  ${Math.round(kb)} KB → ${Math.round(fs.statSync(nach).size / 1024)} KB`);
+      } else {
+        fs.rmSync(zwischen);
+      }
     }
   } else if (/^logo.*\.png$/i.test(d)) {
     if (bildInfo(nach).breite > LOGO_BREITE) {

@@ -28,6 +28,7 @@ in `website/` werden bei der nächsten Übernahme überschrieben.
 | `website/` | **die Website** — genau das, was online geht (fertiges HTML) |
 | `website/assets/` | Fotos, Logo, Favicon (das „B" aus Martas Logo), Schriften, `site.js` (Aufklappen, Karussell, Scroll-Effekte) |
 | `werkzeuge/design-uebernehmen.mjs` | wandelt einen Claude-Design-Export in `website/` um |
+| `fotos-gross/` | große Fassungen einiger Fotos – ersetzen bei jeder Übernahme die kleinere Export-Fassung |
 | `werkzeuge/korrekturen.mjs` | Texte, die bei jeder Übernahme fest ersetzt werden (z. B. Datenschutz-Hosting) |
 | `werkzeuge/qa-vergleich.mjs` | vergleicht `website/` Seite für Seite mit dem Original-Export |
 | `.claude/skills/design-uebernehmen/` | Anleitung für Claude Code |

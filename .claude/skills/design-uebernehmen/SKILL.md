@@ -45,6 +45,13 @@ ohne Erklärung).
    GitHub veröffentlicht `website/` danach automatisch (1–2 Minuten, siehe
    Reiter „Actions" im Repo). Anschließend die Live-Seite kurz aufrufen.
 
+## Große Fotos
+
+`fotos-gross/` enthält hochaufgelöste Fassungen einiger Website-Fotos (gleicher
+Name, gleicher Bildausschnitt). Die Übernahme nimmt sie automatisch statt der
+Export-Fassung, weil Claude Design Fotos auf 1600 px verkleinert. Wird in Claude
+Design an einer Stelle das **Motiv** getauscht, die passende Datei dort löschen.
+
 ## Regeln
 
 - **Nie** direkt in `website/*.html` Design oder Texte ändern — die nächste
