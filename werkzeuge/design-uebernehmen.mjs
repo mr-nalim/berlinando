@@ -54,7 +54,7 @@ const STARTWERTE = { heroImgTy: '0', navLogoH: '58', navShade: '0' };
 
 // Fingerabdrücke der React-Logik, die assets/site.js nachbildet (Stand Export 16.09.2026):
 // Startseite, Tourseiten (2 Varianten), Katalog, Seiten ohne Logik.
-const GEPRUEFTE_LOGIK = new Set(['c3c1b5027a0b', 'e7a211478efe', '025883bb8c79', 'd1c10ac42484', 'da39a3ee5e6b']);
+const GEPRUEFTE_LOGIK = new Set(['c3c1b5027a0b', 'e7a211478efe', '025883bb8c79', 'd1c10ac42484', 'da39a3ee5e6b', 'dee2d051686f']);
 
 const MAX_FOTO_KB = 700;  // größere Fotos werden neu komprimiert
 const MAX_FOTO_PX = 2600;  // längste Kante (Titelbilder laufen über die ganze Bildschirmbreite)
@@ -171,8 +171,10 @@ function umbauen(datei, roh) {
     .replace(/\s*<script src="\.\/image-slot\.js"><\/script>/g, '')
     .replace(/\s*<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com[^>]*>/g, '');
   if (/https?:\/\//.test(head)) throw new Error(`${datei}: externer Link im Kopf übrig`);
-  if (!head.includes("--font-heading:'Baloo 2'")) {
-    throw new Error(`${datei}: Schrift-Variablen fehlen — Seite würde falsche Schrift zeigen`);
+  // Überschriften-Schrift muss eine der selbst gehosteten sein (assets/fonts.css)
+  const titelSchrift = head.match(/--font-heading:\s*'([^']+)'/)?.[1];
+  if (!['Baloo 2', 'Cormorant Garamond', 'Nunito Sans'].includes(titelSchrift)) {
+    throw new Error(`${datei}: Schrift-Variablen fehlen oder Schrift „${titelSchrift}" nicht selbst gehostet — Seite würde falsche Schrift zeigen`);
   }
 
   body = body

@@ -7,11 +7,16 @@
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/fonts.css">
-<style>
-    :root { --font-heading:'Baloo 2', system-ui, sans-serif; --font-body:'Nunito Sans', system-ui, sans-serif; --font-slogan:'Cormorant Garamond', Georgia, serif; }
+<script src="./nav-logo.js"></script>
+  <style>
+    :root { --font-heading:'Cormorant Garamond', Georgia, serif; --font-body:'Nunito Sans', system-ui, sans-serif; --font-slogan:'Cormorant Garamond', Georgia, serif; }
     body { margin:0; background:#FBF7EE; font-family:var(--font-body); }
     a { color:#33302B; text-decoration:none; transition:color .15s; }
     a:hover { color:#B45B3E; }
+    .yb { background:transparent; color:#33302B; border:1px solid #33302B; white-space:nowrap; transition:background .15s, transform .12s; cursor:pointer; }
+    .yb:hover { background:rgba(51,48,43,.06); }
+    .yb:active { transform:translateY(1px); }
+    .yb:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
     .yb-fill { background:#F6C445; color:#33302B; border:1px solid #F6C445; border-radius:10px; white-space:nowrap; transition:background .15s, transform .12s; cursor:pointer; }
     .yb-fill:hover { background:#EAB72E; border-color:#EAB72E; }
     .yb-fill:active { transform:translateY(1px); }
@@ -35,6 +40,7 @@
       .row { grid-template-columns:minmax(0,1fr) !important; gap:8px !important; }
       .navlinks { display:none !important; }
     }
+    #nav-logo { height:58px; display:block; transition:height .18s linear; }
   </style>
 <script src="assets/site.js" defer></script>
 </head>
@@ -43,20 +49,19 @@
 
   <nav style="position:sticky;top:0;z-index:60;background:#FBF7EE;box-shadow:0 1px 0 #E7DFCB">
     <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:14px;padding-bottom:14px">
-      <a href="index.html" style="display:flex;align-items:flex-end;flex-shrink:0"><img src="assets/logo-rose-inkdot.png" alt="Berlinando" style="height:44px"></a>
+      <a href="index.html" style="display:flex;align-items:flex-end;flex-shrink:0"><img id="nav-logo" src="assets/logo-rose-inkdot.png" alt="Berlinando"></a>
       <div style="display:flex;align-items:center;gap:30px">
         <div class="navlinks" style="display:flex;align-items:center;gap:30px;font-size:15px;font-weight:600;white-space:nowrap">
           <a href="passeios.html" class="nlink">Passeios</a>
           <a href="como-funciona.html" class="nlink">Como funciona</a>
           <a href="quem-sou.html" class="nlink" style="color:#B45B3E">Quem Sou</a>
         </div>
-        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="font-size:14px;font-weight:700;padding:10px 20px;text-decoration:none">Reservar</a>
+        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb" style="font-size:14px;font-weight:700;border-radius:10px;padding:10px 20px;text-decoration:none">Reservar</a>
       </div>
     </div>
   </nav>
 
   <header class="wrap" style="padding-top:58px;padding-bottom:20px">
-    <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C25067;margin-bottom:20px">Quem Sou</div>
     <h1 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(46px,6.6vw,88px);line-height:0.98;letter-spacing:-0.01em;margin:0 0 24px;text-wrap:pretty">Marta Ruth<br>Ribeiro Rocha</h1>
     <p style="font-family:var(--font-slogan);font-style:italic;font-size:clamp(22px,2.6vw,32px);line-height:1.32;margin:0;color:#B45B3E">Guia profissional desde 2012 —<br>quarenta anos de Alemanha por dentro.</p>
   </header>
@@ -70,6 +75,10 @@
       <p>Cheguei à Alemanha em 1986, ainda estudante de Filosofia, achando que aqui era a terra dos grandes pensadores — e que só se pensa direito em alemão. Aprendi a língua para poder ler Schopenhauer no original. O que era férias se tornou a vida: são quarenta anos, três filhos criados aqui, e a Alemanha aprendida do jeito que só se aprende vivendo — por dentro.</p>
       <p>Conheci Berlim em 1989, com o Muro ainda de pé, e me apaixonei de vez — dessas paixões que a gente leva anos pra entender. Hoje Berlim é a minha cidade, e guio profissionalmente desde 2012. Hoje eu compartilho com os meus clientes não só a paixão, mas o porquê dela.</p>
     </div>
+  </section>
+
+  <section class="wrap" style="padding-top:30px;padding-bottom:0">
+    <div class="plate-b" style="max-width:820px"><div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden"><img src="assets/foto-marta-explicando-muro.jpg" alt="Marta explicando a história do Muro ao grupo" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 100%;filter:saturate(.94) sepia(.04) contrast(.99) brightness(1.01)"></div></div>
   </section>
 
   <section style="background:#F4EDDC;border-top:1px solid #E8DEC4;border-bottom:1px solid #E8DEC4;margin-top:60px">
@@ -100,7 +109,7 @@
 
   <section class="wrap g2" style="padding-top:60px;padding-bottom:10px;display:grid;grid-template-columns:1fr 0.92fr;gap:52px;align-items:center">
     <div>
-      <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#B45B3E;margin-bottom:22px">Por que Berlim</div>
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#A83F55;margin-bottom:22px">Por que Berlim</div>
       <div class="prose">
         <p>Berlim não se entrega na primeira visita. É uma cidade que foi destruída, dividida, remendada e reinventada em menos de um século, e que deixou tudo isso à vista. Caminhar por ela é ler essas camadas uma sobre a outra.</p>
         <p>É isso que eu gosto de mostrar: não a lista dos pontos turísticos, mas o que aconteceu naquela esquina e por que ela é assim hoje.</p>
@@ -119,7 +128,6 @@
   <section style="background:#231F1C;margin-top:56px">
     <div class="wrap g2" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;padding-top:76px;padding-bottom:76px">
       <div>
-        <div style="font-size:15px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#E58497;margin-bottom:18px">Contato</div>
         <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(34px,4.2vw,54px);line-height:1.06;margin:0;max-width:20ch;color:#FBF7EE;text-wrap:pretty">Me chame no WhatsApp com a data e quantas pessoas.</h2>
       </div>
       <div style="border-left:1px solid rgba(251,247,238,.18);padding-left:44px;display:flex;flex-direction:column;align-items:flex-start;gap:20px">
@@ -131,9 +139,41 @@
   </section>
 
   <footer style="border-top:1px solid #E7DFCB;background:#FBF7EE">
-    <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding-top:30px;padding-bottom:36px;font-size:14px">
-      <a href="como-funciona.html" class="lnk">← Como funciona</a>
-      <span style="color:color-mix(in srgb,#33302B 60%,transparent)">© 2026 Berlinando · <a href="informacoes-legais.html" style="color:inherit">Informações legais</a></span>
+    <div class="wrap" style="max-width:1280px;margin:0 auto;padding:60px 44px 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:48px;align-items:start">
+        <div>
+          <img src="assets/logo-rose-inkdot.png" alt="Berlinando" style="height:34px;display:block;margin-bottom:20px">
+          <div style="font-family:var(--font-slogan);font-weight:600;font-size:13px;letter-spacing:0.42em;text-transform:uppercase;color:#A83F55;margin-bottom:22px">Berlim do nosso jeito</div>
+          <p style="font-size:15px;line-height:1.7;margin:0;max-width:32ch;color:color-mix(in srgb,#33302B 68%,transparent)">Passeios privados de história e cidade, em português. Só você e o seu grupo.</p>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:18px">Passeios</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;align-items:flex-start">
+            <a href="passeios.html#temas" style="color:color-mix(in srgb,#33302B 68%,transparent)">Berlim por Temas</a>
+            <a href="passeios.html#geografica" style="color:color-mix(in srgb,#33302B 68%,transparent)">Berlim Geográfica</a>
+            <a href="passeios.html" style="color:color-mix(in srgb,#33302B 68%,transparent)">Todos os passeios</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:18px">Berlinando</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;align-items:flex-start">
+            <a href="quem-sou.html" style="color:color-mix(in srgb,#33302B 68%,transparent)">Quem Sou</a>
+            <a href="como-funciona.html" style="color:color-mix(in srgb,#33302B 68%,transparent)">Como funciona</a>
+            <a href="como-funciona.html#valores" style="color:color-mix(in srgb,#33302B 68%,transparent)">Valores</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:18px">Contato</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;align-items:flex-start">
+            <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" style="color:color-mix(in srgb,#33302B 68%,transparent);font-variant-numeric:tabular-nums">WhatsApp +49 1578 5568432</a>
+            <a href="https://www.instagram.com/berlinando_tours/" target="_blank" rel="noopener" style="color:color-mix(in srgb,#33302B 68%,transparent)">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div style="height:1px;background:#E7DFCB;margin-top:54px"></div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:22px 0 34px;font-size:13px">
+        <div style="color:color-mix(in srgb,#33302B 55%,transparent)">© 2026 Berlinando · <a href="informacoes-legais.html" class="lnk" style="color:inherit">Informações legais</a></div>
+      </div>
     </div>
   </footer>
 

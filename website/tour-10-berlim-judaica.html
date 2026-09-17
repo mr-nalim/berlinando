@@ -7,11 +7,16 @@
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/fonts.css">
-<style>
-    :root { --font-heading:'Baloo 2', system-ui, sans-serif; --font-body:'Nunito Sans', system-ui, sans-serif; --font-slogan:'Cormorant Garamond', Georgia, serif; }
+<script src="./nav-logo.js"></script>
+  <style>
+    :root { --font-heading:'Cormorant Garamond', Georgia, serif; --font-body:'Nunito Sans', system-ui, sans-serif; --font-slogan:'Cormorant Garamond', Georgia, serif; }
     body { margin:0; background:#FBF7EE; font-family:var(--font-body); }
     a { color:#33302B; text-decoration:none; transition:color .15s; }
     a:hover { color:#B45B3E; }
+    .yb { background:transparent; color:#33302B; border:1px solid #33302B; white-space:nowrap; transition:background .15s, transform .12s; cursor:pointer; }
+    .yb:hover { background:rgba(51,48,43,.06); }
+    .yb:active { transform:translateY(1px); }
+    .yb:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
     .yb-fill { background:#F6C445; color:#33302B; border:1px solid #F6C445; border-radius:10px; white-space:nowrap; transition:background .15s, transform .12s; cursor:pointer; }
     .yb-fill:hover { background:#EAB72E; border-color:#EAB72E; }
     .yb-fill:active { transform:translateY(1px); }
@@ -46,6 +51,7 @@
     @media (prefers-reduced-motion: reduce) {
       .acc-pan, .acc-pan > div, .acc-a { transition:none; }
     }
+    #nav-logo { height:58px; display:block; transition:height .18s linear; }
   </style>
 <script src="assets/site.js" defer></script>
 </head>
@@ -54,28 +60,23 @@
 
   <nav style="position:sticky;top:0;z-index:60;background:#FBF7EE;box-shadow:0 1px 0 #E7DFCB">
     <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:14px;padding-bottom:14px">
-      <a href="index.html" style="display:flex;align-items:flex-end;flex-shrink:0"><img src="assets/logo-rose-inkdot.png" alt="Berlinando" style="height:44px"></a>
+      <a href="index.html" style="display:flex;align-items:flex-end;flex-shrink:0"><img id="nav-logo" src="assets/logo-rose-inkdot.png" alt="Berlinando"></a>
       <div style="display:flex;align-items:center;gap:30px">
         <div class="navlinks" style="display:flex;align-items:center;gap:30px;font-size:15px;font-weight:600;white-space:nowrap">
           <a href="passeios.html" class="nlink">Passeios</a>
           <a href="como-funciona.html" class="nlink">Como funciona</a>
           <a href="quem-sou.html" class="nlink">Quem Sou</a>
         </div>
-        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="font-size:14px;font-weight:700;padding:10px 20px;text-decoration:none">Reservar</a>
+        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb" style="font-size:14px;font-weight:700;padding:10px 20px;border-radius:10px;text-decoration:none">Reservar</a>
       </div>
     </div>
   </nav>
 
   <header class="wrap" style="padding-top:48px;padding-bottom:36px">
     <a href="passeios.html" style="display:inline-block;font-size:14px;color:color-mix(in srgb,#33302B 70%,transparent);margin-bottom:26px">← Todos os passeios</a>
-    <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C25067;margin-bottom:16px">Berlim por Temas · Roteiro 10</div>
+    <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#A83F55;margin-bottom:16px">Berlim por Temas · Roteiro 10</div>
     <h1 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(36px,4.8vw,64px);line-height:1.04;margin:0 0 16px;max-width:18ch;text-wrap:pretty">A Berlim Judaica</h1>
-    <p style="font-family:var(--font-slogan);font-style:italic;font-size:clamp(20px,2.2vw,27px);line-height:1.36;margin:0 0 30px;max-width:34ch;color:color-mix(in srgb,#33302B 74%,transparent)">Séculos de presença, e o retorno</p>
-    <div style="display:flex;flex-wrap:wrap;gap:10px 30px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb,#33302B 80%,transparent);font-variant-numeric:tabular-nums">
-      <span>Duração ~4 h</span>
-      <span>A pé</span>
-      <span>Privado · em português</span>
-    </div>
+    <p style="font-family:var(--font-slogan);font-style:italic;font-size:clamp(20px,2.2vw,27px);line-height:1.36;margin:0 0 0;max-width:34ch;color:color-mix(in srgb,#33302B 74%,transparent)">Séculos de presença, e o retorno</p>
   </header>
 
   <div style="position:relative;width:100%;height:clamp(300px,38vw,520px);overflow:hidden;background:#33302B">
@@ -91,7 +92,7 @@
   </section>
 
   <section class="wrap" style="padding-top:48px;padding-bottom:16px">
-    <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#B45B3E;margin-bottom:22px">Panorama</div>
+    <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#A83F55;margin-bottom:22px">Panorama</div>
     <div class="prose">
       <p>Este tour não é um roteiro de vítimas. É a história de uma comunidade que, por séculos, ajudou a construir Berlim — e que quase foi dizimada. Começa na Idade Média, quando os primeiros judeus de Berlim foram acusados e expulsos, em 1510; e segue em 1671, com cinquenta famílias vindas de Viena a convite do Grão-Príncipe Eleitor de Brandemburgo. A comunidade floresce no século das ideias, quando Moses Mendelssohn e os salões de Rahel Varnhagen fazem da cidade um centro do Iluminismo, protegidos pela liberdade religiosa na Prússia. Em 1933, Berlim tinha a maior comunidade judaica do país — um terço dos judeus alemães.</p>
       <p>Depois veio a ruptura. Caminhamos pelo antigo bairro judaico — o Scheunenviertel — e por seus marcos: a sinagoga, o cemitério onde repousa Mendelssohn, a escola, o prédio de onde partiram os deportados. Mas também por gestos de luz no meio do escuro: a oficina de Otto Weidt, que escondeu judeus; o protesto das mulheres da Rosenstraße, que arrancou os maridos das mãos da Gestapo.</p>
@@ -107,7 +108,7 @@
     <div class="acc">
       <button type="button" class="acc-btn" aria-expanded="false">
         <div>
-          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:9px">Você sabia?</div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:9px">Você sabia?</div>
           <h2 class="acc-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(22px,2.3vw,28px);line-height:1.18;margin:0;max-width:30ch;text-wrap:pretty">Um quarto dos Nobel alemães</h2>
         </div>
         <span class="acc-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
@@ -123,7 +124,7 @@
     <div class="acc">
       <button type="button" class="acc-btn" aria-expanded="false">
         <div>
-          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:9px">Janela</div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:9px">Janela</div>
           <h2 class="acc-t" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(22px,2.3vw,28px);line-height:1.18;margin:0;max-width:30ch;text-wrap:pretty">O protesto da Rosenstraße</h2>
         </div>
         <span class="acc-a" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
@@ -144,19 +145,19 @@
 
       <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:52px;align-items:start;padding-bottom:38px;border-bottom:1px solid #E1D6BC">
         <div>
-          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:12px">1 · Duração e reserva</div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:12px">1 · Duração e reserva</div>
           <div style="font-family:var(--font-heading);font-weight:500;font-size:30px;line-height:1.1;margin-bottom:14px;font-variant-numeric:tabular-nums">~4 horas</div>
           <p style="font-size:16px;line-height:1.7;margin:0;max-width:42ch;color:color-mix(in srgb,#33302B 80%,transparent)">O núcleo é caminhável, no antigo bairro judaico (Mitte). Locomoção, encontro e idioma estão em <a href="como-funciona.html" class="lnk">Como funciona</a>.</p>
           <p style="font-size:16px;line-height:1.7;margin:12px 0 0;max-width:42ch;color:color-mix(in srgb,#33302B 80%,transparent)">Preços — <a href="como-funciona.html#valores" class="lnk" style="font-weight:700;color:#B45B3E">ver a tabela</a>.</p>
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px">
-          <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="font-size:16px;font-weight:700;padding:14px 28px;text-decoration:none">Reservar no WhatsApp</a>
+          <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb" style="font-size:16px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none">Reservar no WhatsApp</a>
           <span style="font-size:15px;color:color-mix(in srgb,#33302B 74%,transparent);font-variant-numeric:tabular-nums">+49 1578 5568432</span>
         </div>
       </div>
 
       <div style="padding-top:38px">
-        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:12px">2 · Extensões</div>
+        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:12px">2 · Extensões</div>
         <p style="font-size:15px;line-height:1.66;margin:0 0 26px;max-width:64ch;color:color-mix(in srgb,#33302B 80%,transparent)">★ = posso guiar/contextualizar vocês; Vocês também podem fazer por conta própria — neste caso posso fazer a reserva dos ingressos.</p>
 
         <div class="ext">
@@ -241,7 +242,7 @@
       </div>
 
       <div style="padding-top:38px">
-        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B45B3E;margin-bottom:12px">3 · Serviço avulso</div>
+        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:12px">3 · Serviço avulso</div>
         <p style="font-size:16px;line-height:1.7;margin:0;max-width:62ch;color:color-mix(in srgb,#33302B 80%,transparent)">Eu providencio a compra/reserva de qualquer ingresso acima, mesmo sem a visita com a guia. Taxa de 10% sobre o total desses serviços (pagamento adiantado).</p>
       </div>
     </div>
@@ -261,9 +262,42 @@
   </section>
 
   <footer style="border-top:1px solid #E7DFCB;background:#FBF7EE">
-    <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding-top:30px;padding-bottom:36px;font-size:14px">
-      <a href="passeios.html" class="lnk">← Todos os passeios</a>
-      <span style="color:color-mix(in srgb,#33302B 60%,transparent)">© 2026 Berlinando · <a href="informacoes-legais.html" style="color:inherit">Informações legais</a></span>
+    <div class="wrap" style="max-width:1280px;margin:0 auto;padding:60px 44px 0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:48px;align-items:start">
+        <div>
+          <img src="assets/logo-rose-inkdot.png" alt="Berlinando" style="height:34px;display:block;margin-bottom:20px">
+          <div style="font-family:var(--font-slogan);font-weight:600;font-size:13px;letter-spacing:0.42em;text-transform:uppercase;color:#A83F55;margin-bottom:22px">Berlim do nosso jeito</div>
+          <p style="font-size:15px;line-height:1.7;margin:0;max-width:32ch;color:color-mix(in srgb,#33302B 68%,transparent)">Passeios privados de história e cidade, em português. Só você e o seu grupo.</p>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:18px">Passeios</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;align-items:flex-start">
+            <a href="passeios.html#temas" style="color:color-mix(in srgb,#33302B 68%,transparent)">Berlim por Temas</a>
+            <a href="passeios.html#geografica" style="color:color-mix(in srgb,#33302B 68%,transparent)">Berlim Geográfica</a>
+            <a href="passeios.html" style="color:color-mix(in srgb,#33302B 68%,transparent)">Todos os passeios</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:18px">Berlinando</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;align-items:flex-start">
+            <a href="quem-sou.html" style="color:color-mix(in srgb,#33302B 68%,transparent)">Quem Sou</a>
+            <a href="como-funciona.html" style="color:color-mix(in srgb,#33302B 68%,transparent)">Como funciona</a>
+            <a href="como-funciona.html#valores" style="color:color-mix(in srgb,#33302B 68%,transparent)">Valores</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A83F55;margin-bottom:18px">Contato</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;align-items:flex-start">
+            <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" style="color:color-mix(in srgb,#33302B 68%,transparent);font-variant-numeric:tabular-nums">WhatsApp +49 1578 5568432</a>
+            <a href="https://www.instagram.com/berlinando_tours/" target="_blank" rel="noopener" style="color:color-mix(in srgb,#33302B 68%,transparent)">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div style="height:1px;background:#E7DFCB;margin-top:54px"></div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:22px 0 34px;font-size:13px">
+        <div style="color:color-mix(in srgb,#33302B 55%,transparent)">© 2026 Berlinando · <a href="informacoes-legais.html" class="lnk" style="color:inherit">Informações legais</a></div>
+        <a href="passeios.html" class="lnk" style="font-size:13px">← Todos os passeios</a>
+      </div>
     </div>
   </footer>
 

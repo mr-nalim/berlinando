@@ -66,7 +66,7 @@
       var hp = Math.min(1, Math.max(0, y / h));
       // Foto läuft langsamer als die Seite (30 % Überhang als Reserve)
       if (weicheBewegung) {
-        heroBild.style.transform = 'translate3d(0, -' + (0.06 * hp * h).toFixed(2) + 'px, 0)';
+        heroBild.style.transform = 'translate3d(0, -' + (0.0233 * hp * h).toFixed(2) + 'px, 0)';
       }
       // Schatten unter der Navigation, sobald gescrollt wird
       if (navSchatten) {
