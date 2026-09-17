@@ -52,6 +52,44 @@
       .acc-pan, .acc-pan > div, .acc-a { transition:none; }
     }
     #nav-logo { height:58px; display:block; transition:height .18s linear; }
+    /* ---- Handy-Optimierung ---- */
+    .mnav-cb { position:absolute; opacity:0; width:0; height:0; }
+    .mnav-btn { display:none; width:46px; height:46px; flex-direction:column; align-items:center; justify-content:center; gap:5px; cursor:pointer; order:-1; }
+    .mnav-btn span { display:block; width:22px; height:2px; background:#33302B; transition:transform .18s, opacity .18s; }
+    .mnav-cb:checked + .mnav-btn span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .mnav-cb:checked + .mnav-btn span:nth-child(2) { opacity:0; }
+    .mnav-cb:checked + .mnav-btn span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .mnav-cb:focus-visible + .mnav-btn { outline:2px solid #B45B3E; outline-offset:3px; }
+    .mnav-panel { display:none; position:absolute; top:calc(100% + 10px); right:0; width:min(340px,88vw); background:#FBF7EE; border:1px solid #E7DFCB; border-radius:12px; box-shadow:0 18px 40px -18px rgba(51,48,43,.4); padding:6px 18px; flex-direction:column; z-index:80; }
+    .mnav-panel a { min-height:52px; display:flex; align-items:center; font-size:16px; font-weight:600; color:#33302B; text-decoration:none; border-bottom:1px solid #EFE7D6; }
+    .mnav-panel a:last-child { border-bottom:none; font-weight:500; color:#B45B3E; }
+    .mnav-cb:checked ~ .mnav-panel { display:flex; }
+    @media (max-width: 900px) {
+      .mnav-btn { display:flex; }
+      footer a:not(.lnk) { min-height:44px; display:flex; align-items:center; }
+      a.lnk, .tc-go, .cmpgo { padding-top:11px; padding-bottom:11px; }
+      .yb, .navcta { min-height:44px !important; display:inline-flex !important; align-items:center; }
+      .yb-fill { width:100% !important; min-height:52px !important; justify-content:center; text-align:center; }
+      div[style*="font-size:12px"], span[style*="font-size:12px"], div[style*="font-size:13px"], span[style*="font-size:13px"] { font-size:14px !important; }
+    }
+    @media (max-width: 640px) {
+      .qnav { display:none !important; }
+    }
+    @media (max-width: 900px) {
+      #nav-logo { height:42px !important; }
+      nav .wrap { gap:12px !important; }
+      nav .wrap > div { gap:14px !important; }
+      div[style*="font-size: 12px"], span[style*="font-size: 12px"], div[style*="font-size: 13px"], span[style*="font-size: 13px"], th[style*="font-size: 12px"], th[style*="font-size:12px"] { font-size:14px !important; }
+      header > a:first-child { min-height:44px !important; display:inline-flex !important; align-items:center; }
+      .ctaside a, .ctaside span { min-height:44px; display:inline-flex; align-items:center; }
+    }
+    @media (max-width: 900px) {
+      .yb-fill { box-sizing:border-box !important; }
+      .rowl { font-size:14px !important; }
+      a[style*="font-size: 13px"], a[style*="font-size:13px"] { font-size:14px !important; }
+      a.lnk, .tc-go, .cmpgo { padding-top:13px !important; padding-bottom:13px !important; }
+      .mnav-btn { min-height:44px; }
+    }
   </style>
 <script src="assets/site.js" defer></script>
 </head>
@@ -62,12 +100,23 @@
     <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:14px;padding-bottom:14px">
       <a href="index.html" style="display:flex;align-items:flex-end;flex-shrink:0"><img id="nav-logo" src="assets/logo-rose-inkdot.png" alt="Berlinando"></a>
       <div style="display:flex;align-items:center;gap:30px">
+        <input type="checkbox" id="mnav" class="mnav-cb">
+        <label for="mnav" class="mnav-btn" aria-label="Menu"><span></span><span></span><span></span></label>
         <div class="navlinks" style="display:flex;align-items:center;gap:30px;font-size:15px;font-weight:600;white-space:nowrap">
           <a href="passeios.html" class="nlink">Passeios</a>
           <a href="como-funciona.html" class="nlink">Como funciona</a>
           <a href="quem-sou.html" class="nlink">Quem Sou</a>
         </div>
         <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb" style="font-size:14px;font-weight:700;padding:10px 20px;border-radius:10px;text-decoration:none">Reservar</a>
+        <div class="mnav-panel">
+          <a href="passeios.html">Passeios</a>
+          <a href="passeios.html#temas">Berlim por Temas</a>
+          <a href="passeios.html#geografica">Berlim Geográfica</a>
+          <a href="como-funciona.html">Como funciona</a>
+          <a href="como-funciona.html#valores">Valores</a>
+          <a href="quem-sou.html">Quem Sou</a>
+          <a href="https://wa.me/4915785568432" target="_blank" rel="noopener">WhatsApp +49 1578 5568432</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -279,7 +328,7 @@
     <div class="wrap" style="max-width:1280px;margin:0 auto;padding:60px 44px 0">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:48px;align-items:start">
         <div>
-          <img src="assets/logo-rose-inkdot.png" alt="Berlinando" style="height:34px;display:block;margin-bottom:20px">
+          <img src="assets/logo-rose-inkdot.png" alt="Berlinando" loading="lazy" style="height:34px;display:block;margin-bottom:20px">
           <div style="font-family:var(--font-slogan);font-weight:600;font-size:13px;letter-spacing:0.42em;text-transform:uppercase;color:#A83F55;margin-bottom:22px">Berlim do nosso jeito</div>
           <p style="font-size:15px;line-height:1.7;margin:0;max-width:32ch;color:color-mix(in srgb,#33302B 68%,transparent)">Passeios privados de história e cidade, em português. Só você e o seu grupo.</p>
         </div>
