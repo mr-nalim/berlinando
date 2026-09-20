@@ -30,9 +30,20 @@ in `website/` werden bei der nächsten Übernahme überschrieben.
 | `werkzeuge/design-uebernehmen.mjs` | wandelt einen Claude-Design-Export in `website/` um |
 | `fotos-gross/` | große Fassungen einiger Fotos – ersetzen bei jeder Übernahme die kleinere Export-Fassung |
 | `werkzeuge/korrekturen.mjs` | Texte, die bei jeder Übernahme fest ersetzt werden (z. B. Datenschutz-Hosting) |
+| `werkzeuge/bilder-responsive.mjs` | erzeugt von jedem Foto kleine Fassungen (WebP), damit Handys nicht die Laptop-Größe laden |
+| `werkzeuge/seo.mjs` | ergänzt Google-Beschreibung, Teilen-Vorschau (WhatsApp), `sitemap.xml`, `robots.txt` |
+| `werkzeuge/seo-texte.mjs` | **die Beschreibungstexte** je Seite — hier ändern, wenn sie anders lauten sollen |
 | `werkzeuge/qa-vergleich.mjs` | vergleicht `website/` Seite für Seite mit dem Original-Export |
 | `.claude/skills/design-uebernehmen/` | Anleitung für Claude Code |
 | `.github/workflows/` | automatisches Veröffentlichen von `website/` |
+
+## Wenn die eigene Domain kommt (berlinando.de)
+
+Die Adresse der Seite steht an **genau einer Stelle**: `SEITE_BASIS` ganz oben in
+`werkzeuge/seo.mjs`. Dort auf `https://berlinando.de` ändern, danach einmal
+`npm run uebernehmen` — Sitemap, Teilen-Vorschau und die Angaben für Google
+stellen sich mit um. (Zusätzlich muss die Domain in den GitHub-Pages-Einstellungen
+eingetragen werden.)
 
 ## Seiten
 

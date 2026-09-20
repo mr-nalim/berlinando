@@ -31,6 +31,8 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { KORREKTUREN } from './korrekturen.mjs';
+import { responsiveBilder } from './bilder-responsive.mjs';
+import { seoEinbauen } from './seo.mjs';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const WEBSITE = path.join(REPO, 'website');
@@ -42,10 +44,10 @@ const EIGENE_ASSETS = new Set(['fonts', 'fonts.css', 'site.js', 'favicon.png', '
 // Seitentitel (Browser-Tab & Google). Tourseiten: automatisch aus der <h1>.
 const TITEL = {
   'index.html': 'Berlinando · Guia Brasileira em Berlim',
-  'passeios.html': 'Passeios · Berlinando',
-  'como-funciona.html': 'Como funciona · Berlinando',
-  'quem-sou.html': 'Quem Sou · Berlinando',
-  'catalogo.html': 'Catálogo · Berlinando',
+  'passeios.html': 'Passeios privados em Berlim, em português · Berlinando',
+  'como-funciona.html': 'Como funcionam os tours e os valores · Berlinando',
+  'quem-sou.html': 'Quem sou — guia brasileira em Berlim · Berlinando',
+  'catalogo.html': 'Catálogo de tours para agências · Berlinando',
   'informacoes-legais.html': 'Informações legais · Berlinando',
 };
 
@@ -169,7 +171,9 @@ function umbauen(datei, roh) {
 
   head = head
     .replace(/\s*<script src="\.\/image-slot\.js"><\/script>/g, '')
-    .replace(/\s*<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com[^>]*>/g, '');
+    .replace(/\s*<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com[^>]*>/g, '')
+    // technischer Rest aus dem Claude-Design-Werkzeug, gehört nicht auf die Seite
+    .replace(/\s*<meta name="omelette-[^>]*>/g, '');
   if (/https?:\/\//.test(head)) throw new Error(`${datei}: externer Link im Kopf übrig`);
   // Überschriften-Schrift muss eine der selbst gehosteten sein (assets/fonts.css)
   const titelSchrift = head.match(/--font-heading:\s*'([^']+)'/)?.[1];
@@ -244,5 +248,11 @@ for (const k of KORREKTUREN) {
 for (const [datei, inhalt] of Object.entries(html)) {
   fs.writeFileSync(path.join(WEBSITE, datei), inhalt);
 }
+// --- 5. Fotos fürs Handy: passende Größen erzeugen und eintragen ------------
+await responsiveBilder(WEBSITE);
+
+// --- 6. SEO: Beschreibung, Teilen-Vorschau, Sitemap -------------------------
+await seoEinbauen(WEBSITE);
+
 console.log(`\n✓ ${seiten.length} Seiten nach website/ übernommen.`);
 console.log(`Original-Export zum Vergleichen: ${quelle}`);

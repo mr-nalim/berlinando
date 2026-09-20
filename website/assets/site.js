@@ -65,8 +65,10 @@
       var y = window.scrollY;
       var hp = Math.min(1, Math.max(0, y / h));
       // Foto läuft langsamer als die Seite (30 % Überhang als Reserve)
+      // Absicht: 0.0261 statt 0.0233 wie im Claude-Design-Export — auf Wunsch
+      // 12 % stärkere Bewegung (18.09.2026). Bei Übernahmen so lassen.
       if (weicheBewegung) {
-        heroBild.style.transform = 'translate3d(0, -' + (0.0233 * hp * h).toFixed(2) + 'px, 0)';
+        heroBild.style.transform = 'translate3d(0, -' + (0.0261 * hp * h).toFixed(2) + 'px, 0)';
       }
       // Schatten unter der Navigation, sobald gescrollt wird
       if (navSchatten) {

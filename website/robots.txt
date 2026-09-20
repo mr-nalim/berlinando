@@ -1,0 +1,5 @@
+# Suchmaschinen dürfen die ganze Seite lesen.
+User-agent: *
+Allow: /
+
+Sitemap: https://mr-nalim.github.io/berlinando/sitemap.xml

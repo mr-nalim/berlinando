@@ -31,6 +31,11 @@ ohne Erklärung).
    - **⚠ „Korrektur nicht angewendet"** → Text in Claude Design wurde geändert.
      Neue Fassung ansehen; ist sie korrekt, Eintrag in `werkzeuge/korrekturen.mjs`
      löschen, sonst `suche` anpassen.
+   - Die Übernahme erzeugt zusätzlich **Handy-Größen der Fotos** (WebP,
+     `bilder-responsive.mjs`) und die **SEO-Angaben** (`seo.mjs`): Beschreibung,
+     Teilen-Vorschau `assets/og-*.jpg`, `sitemap.xml`, `robots.txt`.
+     Meldet der Lauf „Ohne Beschreibungstext", fehlt die Seite in
+     `werkzeuge/seo-texte.mjs` — dort mit Martas eigenen Worten ergänzen.
 4. **Prüfen:** `npm run qa -- <Original-Export>/site qa-ergebnis`
    - Jede ✗-Zeile klären und beheben, dann erneut prüfen.
    - **Zusätzlich mit eigenen Augen:** Screenshots der geänderten Seiten

@@ -43,6 +43,8 @@
     .qbtn:focus-visible { outline:2px solid #B45B3E; outline-offset:3px; }
     .plate-b { background:#fff; padding:8px; border:1px solid #E7DFCB; box-shadow:0 1px 3px rgba(51,48,43,.07); }
     .navcta { white-space:nowrap; }
+    .navcta-short { display:none; }
+    @media (max-width:900px){ .navcta-long { display:none; } .navcta-short { display:inline; } }
     .g3f > div + div { border-left:1px solid #E7DFCB; padding-left:34px; }
     .nlink { color:inherit; transition:opacity .15s; }
     .nlink:hover { color:inherit; opacity:.6; }
@@ -162,6 +164,22 @@
     }
   </style>
 <script src="assets/site.js" defer></script>
+<meta name="description" content="Guia brasileira em Berlim: passeios privados de história e cidade, em português. Só você e o seu grupo, sem roteiro engessado, com tempo para profundidade.">
+<link rel="canonical" href="https://mr-nalim.github.io/berlinando/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Berlinando">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Berlinando — Guia brasileira em Berlim">
+<meta property="og:description" content="Guia brasileira em Berlim: passeios privados de história e cidade, em português. Só você e o seu grupo, sem roteiro engessado, com tempo para profundidade.">
+<meta property="og:url" content="https://mr-nalim.github.io/berlinando/">
+<meta property="og:image" content="https://mr-nalim.github.io/berlinando/assets/og-index.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mr-nalim.github.io/berlinando/assets/og-index.jpg">
+<meta name="twitter:title" content="Berlinando — Guia brasileira em Berlim">
+<meta name="twitter:description" content="Guia brasileira em Berlim: passeios privados de história e cidade, em português. Só você e o seu grupo, sem roteiro engessado, com tempo para profundidade.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TravelAgency","@id":"https://mr-nalim.github.io/berlinando/#berlinando","name":"Berlinando","url":"https://mr-nalim.github.io/berlinando/","telephone":"+4915785568432","image":"https://mr-nalim.github.io/berlinando/assets/og-index.jpg","areaServed":{"@type":"City","name":"Berlin","address":{"@type":"PostalAddress","addressCountry":"DE"}},"availableLanguage":[{"@type":"Language","name":"Portuguese","alternateName":"pt-BR"}],"sameAs":["https://www.instagram.com/berlinando.tour/"],"founder":{"@type":"Person","name":"Marta Ruth Ribeiro Rocha","jobTitle":"Guia de turismo","knowsLanguage":["pt-BR","de","en"]}}]}</script>
 </head>
 <body>
 <div style="font-family:var(--font-body);color:#33302B;background:#FBF7EE">
@@ -180,7 +198,7 @@
           <a href="quem-sou.html" class="nlink">Quem Sou</a>
           <a href="#kontakt" class="nlink">Contato</a>
         </div>
-        <a href="#kontakt" class="yb navcta" style="font-size:14px;font-weight:700;padding:10px 20px;border-radius:10px;text-decoration:none">Fale com a Marta</a>
+        <a href="#kontakt" class="yb navcta" style="font-size:14px;font-weight:700;padding:10px 20px;border-radius:10px;text-decoration:none"><span class="navcta-long">Fale com a Marta</span><span class="navcta-short">Reservar</span></a>
         <div class="mnav-panel">
           <a href="passeios.html">Passeios</a>
           <a href="passeios.html#temas">Berlim por Temas</a>
@@ -209,7 +227,7 @@
       </div>
     </div>
     <div class="herophoto" style="position:relative;width:100%;height:clamp(360px,46vw,660px);overflow:hidden;background:#33302B">
-      <img src="assets/foto-hero-portao-web.jpg" alt="Marta com seu grupo em frente ao Portão de Brandemburgo" style="position:absolute;left:0;bottom:-24px;width:100%;height:112%;max-width:none;object-fit:cover;object-position:52% 50%;transform:translate3d(0, -0px, 0);will-change:transform;backface-visibility:hidden">
+      <img srcset="assets/foto-hero-portao-web-400.webp 400w, assets/foto-hero-portao-web-640.webp 640w, assets/foto-hero-portao-web-900.webp 900w, assets/foto-hero-portao-web-1200.webp 1200w, assets/foto-hero-portao-web-1600.webp 1600w, assets/foto-hero-portao-web-2000.webp 2000w, assets/foto-hero-portao-web-2600.webp 2600w" sizes="(max-width: 900px) 100vw, 100vw" src="assets/foto-hero-portao-web-2600.webp" alt="Marta com seu grupo em frente ao Portão de Brandemburgo" style="position:absolute;left:0;bottom:-24px;width:100%;height:112%;max-width:none;object-fit:cover;object-position:52% 50%;transform:translate3d(0, -0px, 0);will-change:transform;backface-visibility:hidden">
     </div>
   </header>
 
@@ -234,8 +252,8 @@
     <p style="font-size:17px;line-height:1.74;margin:24px 0 46px;max-width:62ch;color:color-mix(in srgb,#33302B 72%,transparent)">Concebi os tours a partir de duas bases. Berlim tem camadas demais — impérios, guerras, muros, renascimentos — para caber num percurso só; por isso, em vez de um único tipo de abordagem, ofereço dois. Você decide com qual deles prefere começar.</p>
     <div class="g2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px">
       <div>
-        <a href="passeios.html" class="rubrik" style="display:block;text-decoration:none;color:inherit">
-          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-marta-muro-chapeu-web.jpg" alt="Marta explica o Muro de Berlim ao seu grupo" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <a href="passeios.html#temas" class="rubrik" style="display:block;text-decoration:none;color:inherit">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img srcset="assets/foto-marta-muro-chapeu-web-400.webp 400w, assets/foto-marta-muro-chapeu-web-640.webp 640w, assets/foto-marta-muro-chapeu-web-900.webp 900w, assets/foto-marta-muro-chapeu-web-1100.webp 1100w" sizes="(max-width: 900px) 85vw, 39vw" src="assets/foto-marta-muro-chapeu-web-1100.webp" alt="Marta explica o Muro de Berlim ao seu grupo" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
           <h3 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(28px,3vw,36px);line-height:1.08;margin:26px 0 12px">Berlim por Temas</h3>
           <p style="font-size:16px;line-height:1.72;margin:0 0 16px;max-width:52ch;color:color-mix(in srgb,#33302B 72%,transparent)">O fio condutor é uma ideia. Em vez de uma área, seguimos um assunto — a Alemanha nazista, a Guerra Fria, a cidade operária — atravessando a cidade por onde o fio da História nos levar.</p>
           <p style="font-size:16px;line-height:1.72;margin:0 0 18px;max-width:52ch;color:color-mix(in srgb,#33302B 88%,transparent)">Sachsenhausen · A Guerra Fria · A Alemanha Nazista · A Berlim Judaica</p>
@@ -246,8 +264,8 @@
         </a>
       </div>
       <div>
-        <a href="passeios.html" class="rubrik" style="display:block;text-decoration:none;color:inherit">
-          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img src="assets/foto-oranienburger.jpg" alt="Berlim Geográfica" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
+        <a href="passeios.html#geografica" class="rubrik" style="display:block;text-decoration:none;color:inherit">
+          <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden"><img srcset="assets/foto-geo-reichstag-grupo-400.webp 400w, assets/foto-geo-reichstag-grupo-640.webp 640w, assets/foto-geo-reichstag-grupo-900.webp 900w, assets/foto-geo-reichstag-grupo-1100.webp 1100w" sizes="(max-width: 900px) 85vw, 39vw" src="assets/foto-geo-reichstag-grupo-1100.webp" alt="Berlim Geográfica" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
           <h3 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(28px,3vw,36px);line-height:1.08;margin:26px 0 12px">Berlim Geográfica</h3>
           <p style="font-size:16px;line-height:1.72;margin:0 0 16px;max-width:52ch;color:color-mix(in srgb,#33302B 72%,transparent)">Aqui o fio é o chão. Percorremos uma área e deixamos que ela conte as suas próprias camadas — o que foi construído, destruído e reconstruído no mesmo lugar.</p>
           <p style="font-size:16px;line-height:1.72;margin:0 0 18px;max-width:52ch;color:color-mix(in srgb,#33302B 88%,transparent)">O Eixo Histórico do Século XX · O Coração da Prússia · O Eixo das 3 Berlins · Berlim Ocidental · Berlim Oriental · Potsdam</p>
@@ -261,7 +279,7 @@
   </section>
 
   <div style="width:100%;height:clamp(300px,44vw,580px);overflow:hidden">
-    <img src="assets/foto-hp-banda.webp" alt="Berlim, o Spree na Friedrichstrasse" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover">
+    <img srcset="assets/foto-hp-banda-400.webp 400w, assets/foto-hp-banda-640.webp 640w, assets/foto-hp-banda-900.webp 900w, assets/foto-hp-banda-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 100vw" src="assets/foto-hp-banda-1200.webp" alt="Berlim, o Spree na Friedrichstrasse" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover">
   </div>
 
 
@@ -269,7 +287,7 @@
   <section id="marta" style="background:#F4EDDC;border-top:1px solid #E8DEC4;border-bottom:1px solid #E8DEC4">
     <div class="wrap g2" style="max-width:1280px;margin:0 auto;padding:72px 44px;display:grid;grid-template-columns:0.82fr 1fr;gap:62px;align-items:center">
     <div class="plate-b">
-      <div style="position:relative;width:100%;aspect-ratio:4/5"><img src="assets/foto-marta-guiando2.jpg" alt="Retrato da Marta" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div>
+      <div style="position:relative;width:100%;aspect-ratio:4/5"><img srcset="assets/foto-marta-guiando2-400.webp 400w, assets/foto-marta-guiando2-640.webp 640w, assets/foto-marta-guiando2-900.webp 900w" sizes="(max-width: 900px) 85vw, 35vw" src="assets/foto-marta-guiando2-900.webp" alt="Retrato da Marta" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div>
     </div>
     <div>
       <h2 class="reveal" style="font-family:var(--font-heading);font-weight:500;font-size:clamp(36px,4vw,48px);line-height:1.06;margin:0 0 22px;transition-delay:.07s">Marta Ruth Ribeiro Rocha</h2>
@@ -339,7 +357,7 @@
 
   <!-- ===== CTA / KONTAKT (dunkler Abschluss) ===== -->
   <div style="width:100%;height:clamp(260px,34vw,480px);overflow:hidden">
-    <img src="assets/foto-hp-antes-contato.webp" alt="Marta recebe o grupo em uma rua de Berlim" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover">
+    <img srcset="assets/foto-hp-antes-contato-400.webp 400w, assets/foto-hp-antes-contato-640.webp 640w, assets/foto-hp-antes-contato-900.webp 900w, assets/foto-hp-antes-contato-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 100vw" src="assets/foto-hp-antes-contato-1200.webp" alt="Marta recebe o grupo em uma rua de Berlim" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover">
   </div>
 
   <section id="kontakt" style="background:#231F1C">
