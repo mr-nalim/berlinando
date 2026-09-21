@@ -30,7 +30,14 @@ export const SEITE_BASIS = 'https://berlinando.de';
 
 const NAME = 'Berlinando';
 const TELEFON = '+4915785568432';
-const INSTAGRAM = 'https://www.instagram.com/berlinando.tour/';
+// Profile wie auf der Seite verlinkt (Fußbereich) — nicht raten, sonst zeigt
+// Google auf ein fremdes Konto.
+const INSTAGRAM = 'https://www.instagram.com/berlinando_tours/';
+const FACEBOOK = 'https://facebook.com/guiaemberlim';
+// Preise laut Tabelle auf „Como funciona" (pro Stunde und pro Gruppe).
+// Kleinste Gruppe (bis 10 Personen) je Tourdauer — nur als „ab"-Preis.
+const AB_PREIS = { '4': 400, '4h30': 450, '6': 600 };
+const PREIS_SPANNE = '€100–€140 por hora, por grupo';
 const WHATSAPP = `https://wa.me/${TELEFON.replace('+', '')}`;
 
 const OG_BREITE = 1200, OG_HOEHE = 630;
@@ -55,7 +62,23 @@ async function vorschaubild(website, datei, html) {
 }
 
 // --- Strukturierte Daten ----------------------------------------------------
-function strukturierteDaten(datei, titel, beschreibung, bildAdresse) {
+// Liest die Dauer, die auf der Tourseite sichtbar steht („4 horas", „~4h30",
+// „6 horas"), und macht daraus den „ab"-Preis aus Martas Tabelle.
+function angebot(html) {
+  const text = html.replace(/<[^>]+>/g, '\n');
+  const m = text.match(/DURAÇÃO E RESERVA\s*\n+\s*~?\s*(4h30|4|6)\s*(?:horas?)?/i);
+  const ab = m && AB_PREIS[m[1]];
+  if (!ab) return undefined;
+  return {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'EUR',
+    lowPrice: ab,
+    description: 'Preço por grupo, conforme a duração e o número de pessoas.',
+    url: `${SEITE_BASIS}/como-funciona.html#valores`,
+  };
+}
+
+function strukturierteDaten(datei, titel, beschreibung, bildAdresse, angebotDaten) {
   const anbieter = {
     '@type': 'TravelAgency',
     '@id': `${SEITE_BASIS}/#berlinando`,
@@ -65,7 +88,8 @@ function strukturierteDaten(datei, titel, beschreibung, bildAdresse) {
     image: bildAdresse,
     areaServed: { '@type': 'City', name: 'Berlin', address: { '@type': 'PostalAddress', addressCountry: 'DE' } },
     availableLanguage: [{ '@type': 'Language', name: 'Portuguese', alternateName: 'pt-BR' }],
-    sameAs: [INSTAGRAM],
+    sameAs: [INSTAGRAM, FACEBOOK],
+    priceRange: PREIS_SPANNE,
     founder: {
       '@type': 'Person',
       name: 'Marta Ruth Ribeiro Rocha',
@@ -95,6 +119,7 @@ function strukturierteDaten(datei, titel, beschreibung, bildAdresse) {
         inLanguage: 'pt-BR',
         touristType: 'Viajantes de língua portuguesa',
         provider: anbieter,
+        ...(angebotDaten ? { offers: angebotDaten } : {}),
         itinerary: { '@type': 'ItemList', itemListElement: [{ '@type': 'ListItem', position: 1, item: { '@type': 'City', name: 'Berlin' } }] },
       },
       {
@@ -127,7 +152,7 @@ export async function seoEinbauen(website, log = console.log) {
     const bildAdresse = bild ? `${SEITE_BASIS}/${bild}` : undefined;
     const teilenTitel = TEILEN_TITEL[datei] ?? titel;
 
-    const daten = { '@context': 'https://schema.org', '@graph': strukturierteDaten(datei, titel, beschreibung, bildAdresse) };
+    const daten = { '@context': 'https://schema.org', '@graph': strukturierteDaten(datei, titel, beschreibung, bildAdresse, angebot(html)) };
 
     const bloecke = [
       `<meta name="description" content="${entschaerfen(beschreibung)}">`,
@@ -172,9 +197,54 @@ ${seiten.map((d) => `  <url>
   fs.writeFileSync(path.join(website, 'robots.txt'),
     `# Suchmaschinen dürfen die ganze Seite lesen.\nUser-agent: *\nAllow: /\n\nSitemap: ${SEITE_BASIS}/sitemap.xml\n`);
 
+  // --- 404: eigene Fehlerseite statt der nackten GitHub-Seite ---------------
+  // Wer sich vertippt oder einem alten Link folgt, soll zurück zu den Touren
+  // finden. Bewusst schlicht: nur Schrift und Farben der Website.
+  fs.writeFileSync(path.join(website, '404.html'), `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página não encontrada · ${NAME}</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+  :root { --papel:#FBF7EE; --tinta:#33302B; --terra:#B45B3E; }
+  body { margin:0; background:var(--papel); color:var(--tinta);
+         font-family:'Nunito Sans', system-ui, sans-serif; line-height:1.6;
+         display:flex; min-height:100vh; align-items:center; justify-content:center; padding:28px; }
+  main { max-width:520px; }
+  img { width:190px; height:auto; margin-bottom:34px; }
+  h1 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500;
+       font-size:clamp(30px,6vw,44px); line-height:1.15; margin:0 0 14px; }
+  p { margin:0 0 26px; color:color-mix(in srgb, var(--tinta) 78%, transparent); }
+  ul { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:14px 26px; }
+  a { color:var(--tinta); text-decoration:none; border-bottom:1px solid var(--terra);
+      padding-bottom:3px; transition:color .15s; }
+  a:hover, a:focus-visible { color:var(--terra); }
+  a:focus-visible { outline:2px solid var(--terra); outline-offset:4px; }
+</style>
+</head>
+<body>
+<main>
+  <img src="/assets/logo-rose-inkdot.png" alt="${NAME}">
+  <h1>Esta página não existe.</h1>
+  <p>Talvez o endereço tenha mudado. Você pode continuar por aqui:</p>
+  <ul>
+    <li><a href="/">Início</a></li>
+    <li><a href="/passeios.html">Todos os passeios</a></li>
+    <li><a href="/como-funciona.html">Como funciona</a></li>
+    <li><a href="${WHATSAPP}">Falar com a Marta</a></li>
+  </ul>
+</main>
+</body>
+</html>
+`);
+
   // --- CNAME: sagt GitHub Pages, unter welcher Domain die Seite läuft -------
   fs.writeFileSync(path.join(website, 'CNAME'), `${new URL(SEITE_BASIS).host}\n`);
 
-  log(`  SEO: ${seiten.length - fehlend.length} Seiten mit Beschreibung + Teilen-Vorschau, sitemap.xml, robots.txt`);
+  log(`  SEO: ${seiten.length - fehlend.length} Seiten mit Beschreibung + Teilen-Vorschau, sitemap.xml, robots.txt, 404.html`);
   if (fehlend.length) log(`  ⚠ Ohne Beschreibungstext (in werkzeuge/seo-texte.mjs ergänzen): ${fehlend.join(', ')}`);
 }
