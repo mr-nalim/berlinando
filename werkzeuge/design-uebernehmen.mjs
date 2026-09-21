@@ -29,6 +29,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import sharp from 'sharp';
 import { fileURLToPath } from 'node:url';
 import { KORREKTUREN } from './korrekturen.mjs';
 import { responsiveBilder } from './bilder-responsive.mjs';
@@ -110,12 +111,35 @@ function bildInfo(datei) {
   };
 }
 
+// Zeigen zwei Bilddateien dasselbe Motiv? Vergleicht ein grobes Graustufen-
+// Muster (16×16). 0 = gleich; bis ~5 nur andere Größe/Kompression; ab ~12
+// unterscheiden sie sich sichtbar (anderes Motiv oder andere Bildfassung).
+async function motivUnterschied(a, b) {
+  const muster = (f) => sharp(f).greyscale().resize(16, 16, { fit: 'fill' }).raw().toBuffer();
+  const [x, y] = await Promise.all([muster(a), muster(b)]);
+  let summe = 0;
+  for (let i = 0; i < x.length; i++) summe += Math.abs(x[i] - y[i]);
+  return summe / x.length;
+}
+const MOTIV_GRENZE = 12;
+
 for (const d of fs.readdirSync(path.join(quelle, 'assets'))) {
   const gross = path.join(FOTOS_GROSS, d);
   const von = fs.existsSync(gross) ? gross : path.join(quelle, 'assets', d);
   const nach = path.join(ASSETS, d);
   fs.copyFileSync(von, nach);
-  if (von === gross) console.log(`  Große Fassung verwendet: ${d} (aus fotos-gross/)`);
+  if (von === gross) {
+    console.log(`  Große Fassung verwendet: ${d} (aus fotos-gross/)`);
+    // Wurde das Foto in Claude Design ausgetauscht (gleicher Dateiname, anderes
+    // Bild)? Dann würde die alte große Fassung es still überschreiben.
+    try {
+      const u = await motivUnterschied(gross, path.join(quelle, 'assets', d));
+      if (u > MOTIV_GRENZE) {
+        console.warn(`  ⚠ ${d}: fotos-gross/ zeigt ein anderes Bild als der Export (Unterschied ${u.toFixed(0)}).`);
+        console.warn('     Beide ansehen — wurde das Foto in Claude Design getauscht, die Datei in fotos-gross/ löschen.');
+      }
+    } catch { /* unlesbare Datei: die Prüfung darf die Übernahme nicht stoppen */ }
+  }
   if (!hatSips) continue;
 
   if (/\.jpe?g$/i.test(d)) {
