@@ -23,8 +23,10 @@ import path from 'node:path';
 import sharp from 'sharp';
 import { BESCHREIBUNGEN, TEILEN_TITEL } from './seo-texte.mjs';
 
-// ⚠ Sobald berlinando.de umgezogen ist: hier (und NUR hier) die Adresse ändern.
-export const SEITE_BASIS = 'https://mr-nalim.github.io/berlinando';
+// ⚠ Die Adresse der Website steht NUR hier. Ändert sie sich, reicht diese Zeile
+// (danach einmal `npm run uebernehmen`): Sitemap, Teilen-Vorschau, die Angaben
+// für Google und die Datei website/CNAME stellen sich mit um.
+export const SEITE_BASIS = 'https://berlinando.de';
 
 const NAME = 'Berlinando';
 const TELEFON = '+4915785568432';
@@ -169,6 +171,9 @@ ${seiten.map((d) => `  <url>
   // --- robots.txt: alles erlaubt, plus Hinweis auf die Sitemap --------------
   fs.writeFileSync(path.join(website, 'robots.txt'),
     `# Suchmaschinen dürfen die ganze Seite lesen.\nUser-agent: *\nAllow: /\n\nSitemap: ${SEITE_BASIS}/sitemap.xml\n`);
+
+  // --- CNAME: sagt GitHub Pages, unter welcher Domain die Seite läuft -------
+  fs.writeFileSync(path.join(website, 'CNAME'), `${new URL(SEITE_BASIS).host}\n`);
 
   log(`  SEO: ${seiten.length - fehlend.length} Seiten mit Beschreibung + Teilen-Vorschau, sitemap.xml, robots.txt`);
   if (fehlend.length) log(`  ⚠ Ohne Beschreibungstext (in werkzeuge/seo-texte.mjs ergänzen): ${fehlend.join(', ')}`);

@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mr-nalim.github.io/berlinando/sitemap.xml
+Sitemap: https://berlinando.de/sitemap.xml
