@@ -122,6 +122,11 @@ async function motivUnterschied(a, b) {
   return summe / x.length;
 }
 const MOTIV_GRENZE = 12;
+// Fotos, bei denen der Unterschied BEKANNT und GEWOLLT ist (keine Warnung):
+// foto-sachsenhausen.jpg — unsere Fassung ist 2600 px und farblich zurück-
+// haltender; der Export liefert nur 657 px. Entscheidung 21.09.2026: Schärfe
+// geht vor. Wird das Motiv in Claude Design ersetzt, hier den Eintrag löschen.
+const MOTIV_BEKANNT = new Set(['foto-sachsenhausen.jpg']);
 
 for (const d of fs.readdirSync(path.join(quelle, 'assets'))) {
   const gross = path.join(FOTOS_GROSS, d);
@@ -134,7 +139,7 @@ for (const d of fs.readdirSync(path.join(quelle, 'assets'))) {
     // Bild)? Dann würde die alte große Fassung es still überschreiben.
     try {
       const u = await motivUnterschied(gross, path.join(quelle, 'assets', d));
-      if (u > MOTIV_GRENZE) {
+      if (u > MOTIV_GRENZE && !MOTIV_BEKANNT.has(d)) {
         console.warn(`  ⚠ ${d}: fotos-gross/ zeigt ein anderes Bild als der Export (Unterschied ${u.toFixed(0)}).`);
         console.warn('     Beide ansehen — wurde das Foto in Claude Design getauscht, die Datei in fotos-gross/ löschen.');
       }
