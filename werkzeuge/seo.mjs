@@ -42,6 +42,15 @@ const WHATSAPP = `https://wa.me/${TELEFON.replace('+', '')}`;
 
 const OG_BREITE = 1200, OG_HOEHE = 630;
 
+// Bestätigungscode der Google Search Console (Methode „HTML-Tag").
+// Google zeigt dort eine Zeile wie
+//   <meta name="google-site-verification" content="AbC123…">
+// — NUR den Teil zwischen den Anführungszeichen hier eintragen, dann einmal
+// `npm run uebernehmen` und hochladen. Leer lassen = kein Tag auf der Seite.
+// (Wird die Domain stattdessen über einen DNS-Eintrag bestätigt, bleibt das
+// hier leer.)
+const GOOGLE_BESTAETIGUNG = '';
+
 const adresse = (datei) => (datei === 'index.html' ? `${SEITE_BASIS}/` : `${SEITE_BASIS}/${datei}`);
 const entschaerfen = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -155,6 +164,8 @@ export async function seoEinbauen(website, log = console.log) {
     const daten = { '@context': 'https://schema.org', '@graph': strukturierteDaten(datei, titel, beschreibung, bildAdresse, angebot(html)) };
 
     const bloecke = [
+      ...(GOOGLE_BESTAETIGUNG && datei === 'index.html'
+        ? [`<meta name="google-site-verification" content="${entschaerfen(GOOGLE_BESTAETIGUNG)}">`] : []),
       `<meta name="description" content="${entschaerfen(beschreibung)}">`,
       `<link rel="canonical" href="${adresse(datei)}">`,
       `<meta property="og:type" content="${datei === 'index.html' ? 'website' : 'article'}">`,
