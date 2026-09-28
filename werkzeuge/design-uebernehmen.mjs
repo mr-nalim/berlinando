@@ -48,7 +48,8 @@ const TITEL = {
   'passeios.html': 'Passeios privados em Berlim, em português · Berlinando',
   'como-funciona.html': 'Como funcionam os tours e os valores · Berlinando',
   'quem-sou.html': 'Quem sou — guia brasileira em Berlim · Berlinando',
-  'catalogo.html': 'Catálogo de tours para agências · Berlinando',
+  'catalogo.html': 'Catálogo dos dez tours · Berlinando',
+  'catalogo-agencias.html': 'Área para agências · Berlinando',
   'informacoes-legais.html': 'Informações legais · Berlinando',
 };
 
@@ -57,7 +58,7 @@ const STARTWERTE = { heroImgTy: '0', navLogoH: '58', navShade: '0' };
 
 // Fingerabdrücke der React-Logik, die assets/site.js nachbildet (Stand Export 16.09.2026):
 // Startseite, Tourseiten (2 Varianten), Katalog, Seiten ohne Logik.
-const GEPRUEFTE_LOGIK = new Set(['c3c1b5027a0b', 'e7a211478efe', '025883bb8c79', 'd1c10ac42484', 'da39a3ee5e6b', 'dee2d051686f']);
+const GEPRUEFTE_LOGIK = new Set(['c3c1b5027a0b', 'e7a211478efe', '025883bb8c79', 'd1c10ac42484', 'da39a3ee5e6b', 'dee2d051686f', '18d9d6d5b8a6']);
 
 const MAX_FOTO_KB = 700;  // größere Fotos werden neu komprimiert
 const MAX_FOTO_PX = 2600;  // längste Kante (Titelbilder laufen über die ganze Bildschirmbreite)
@@ -210,7 +211,15 @@ function umbauen(datei, roh) {
     throw new Error(`${datei}: Schrift-Variablen fehlen oder Schrift „${titelSchrift}" nicht selbst gehostet — Seite würde falsche Schrift zeigen`);
   }
 
+  // <sc-if value="{{ x }}"> … </sc-if> → einfacher Block, den site.js schaltet.
+  // Startzustand: „locked" sichtbar, „unlocked" und „error" verborgen.
+  const SICHTBAR_AM_ANFANG = new Set(['locked']);
   body = body
+    .replace(/<sc-if\b[^>]*value="\{\{\s*(\w+)\s*\}\}"[^>]*>/g,
+      (_, name) => `<div data-wenn="${name}"${SICHTBAR_AM_ANFANG.has(name) ? '' : ' hidden'}>`)
+    .replace(/<\/sc-if>/g, '</div>')
+    .replace(/\s*hint-placeholder-val="\{\{[^}]*\}\}"/g, '')
+    .replace(/\sonSubmit="\{\{\s*submit\s*\}\}"/g, ' data-ag-form')
     .replace(/<template id="__bundler_thumbnail">[\s\S]*?<\/template>\s*/g, '')
     .replace(/\s(?:onClick|onScroll|ref)="\{\{\s*\w+\s*\}\}"/g, '')
     .replace(/\sdisabled="\{\{\s*qStart\s*\}\}"/g, ' disabled')

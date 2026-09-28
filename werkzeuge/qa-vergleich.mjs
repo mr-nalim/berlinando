@@ -44,7 +44,14 @@ const sOrig = await server(path.resolve(origDir));
 const sNeu = await server(path.join(REPO, 'website'));
 const PORT = { orig: sOrig.address().port, neu: sNeu.address().port };
 
-const seiten = fs.readdirSync(path.join(REPO, 'website')).filter((d) => d.endsWith('.html')).sort();
+// Nur Seiten vergleichen, die es im Export auch gibt. Eigene Ergänzungen wie
+// 404.html stammen nicht aus Claude Design und haben dort kein Gegenstück.
+const seiten = fs.readdirSync(path.join(REPO, 'website'))
+  .filter((d) => d.endsWith('.html') && fs.existsSync(path.join(path.resolve(origDir), d)))
+  .sort();
+const nurBeiUns = fs.readdirSync(path.join(REPO, 'website'))
+  .filter((d) => d.endsWith('.html') && !fs.existsSync(path.join(path.resolve(origDir), d)));
+if (nurBeiUns.length) console.log(`Nicht aus Claude Design, daher nicht verglichen: ${nurBeiUns.join(', ')}\n`);
 // Seiten mit festen Korrekturen weichen absichtlich vom Original ab
 const KORRIGIERT = new Set(KORREKTUREN.map((k) => k.datei));
 const browser = await chromium.launch();

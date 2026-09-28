@@ -24,7 +24,9 @@ export const BESCHREIBUNGEN = {
   'quem-sou.html':
     'Marta Ruth Ribeiro Rocha, guia brasileira em Berlim desde 2012: passeios em português, na Alemanha desde 1986 e apaixonada pela cidade desde 1989.',
   'catalogo.html':
-    'Dez tours privados em Berlim, guiados em português por guia brasileira — catálogo para agências e operadoras do Brasil e de Portugal.',
+    'Os dez tours privados de Berlinando em um só lugar: duração, temas e valores a partir de €320 — em português, com guia brasileira.',
+  'catalogo-agencias.html':
+    'Área reservada: catálogo com valores para agências e operadoras do Brasil e de Portugal.',
   'informacoes-legais.html':
     'Informações legais e política de privacidade do site Berlinando — passeios privados em Berlim com a guia brasileira Marta Rocha.',
 

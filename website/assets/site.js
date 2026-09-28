@@ -257,8 +257,38 @@
         var mehr = tg.closest('.card').querySelector('.more');
         var offen = !mehr.classList.contains('hidden');
         mehr.classList.toggle('hidden', offen);
-        tg.textContent = offen ? 'ver detalhe ▾' : 'fechar ▴';
+        tg.textContent = offen ? 'ver detalhe \u25be' : 'fechar \u25b4';
       });
+    });
+  }
+
+  // --- Agentur-Bereich: Abfrage wie im Claude-Design-Entwurf ----------------
+  // ACHTUNG, kein echter Schutz: Passwort UND Inhalte stehen im Quelltext der
+  // Seite, jeder Browser zeigt sie mit „Seitenquelltext anzeigen". Die Abfrage
+  // hält nur zufaellige Besucher ab. Echter Schutz braucht einen Server, den
+  // GitHub Pages nicht bietet — dann Katalog lieber als PDF verschicken.
+  var agFormular = document.querySelector('[data-ag-form]');
+  if (agFormular) {
+    var AG_PASSWORT = 'CT-PT-092026';
+    var gesperrt = document.querySelector('[data-wenn="locked"]');
+    var offenBereich = document.querySelector('[data-wenn="unlocked"]');
+    var fehlerHinweis = document.querySelector('[data-wenn="error"]');
+
+    var umschalten = function (frei) {
+      if (gesperrt) gesperrt.hidden = frei;
+      if (offenBereich) offenBereich.hidden = !frei;
+    };
+
+    // Wer in derselben Sitzung schon eingegeben hat, muss es nicht wiederholen
+    try { if (sessionStorage.getItem('berlinando-ag') === '1') umschalten(true); } catch (e) {}
+
+    agFormular.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var feld = agFormular.querySelector('#pw, [name="pw"]');
+      var stimmt = ((feld && feld.value) || '').trim() === AG_PASSWORT;
+      if (stimmt) { try { sessionStorage.setItem('berlinando-ag', '1'); } catch (e2) {} }
+      if (fehlerHinweis) fehlerHinweis.hidden = stimmt;
+      umschalten(stimmt);
     });
   }
 })();

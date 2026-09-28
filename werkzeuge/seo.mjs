@@ -36,8 +36,10 @@ const INSTAGRAM = 'https://www.instagram.com/berlinando_tours/';
 const FACEBOOK = 'https://facebook.com/guiaemberlim';
 // Preise laut Tabelle auf „Como funciona" (pro Stunde und pro Gruppe).
 // Kleinste Gruppe (bis 10 Personen) je Tourdauer — nur als „ab"-Preis.
-const AB_PREIS = { '4': 400, '4h30': 450, '6': 600 };
-const PREIS_SPANNE = '€100–€140 por hora, por grupo';
+// Stand Export 28.09.2026: Besucherpreise (nicht die Agenturpreise!).
+// €80/h für bis zu 2 Personen, ab der 3. Person +€10/h pro Person.
+const AB_PREIS = { '4': 320, '4h30': 360, '6': 480 };
+const PREIS_SPANNE = 'A partir de €80 por hora, para até 2 pessoas';
 const WHATSAPP = `https://wa.me/${TELEFON.replace('+', '')}`;
 
 const OG_BREITE = 1200, OG_HOEHE = 630;
@@ -166,6 +168,7 @@ export async function seoEinbauen(website, log = console.log) {
     const bloecke = [
       ...(GOOGLE_BESTAETIGUNG && datei === 'index.html'
         ? [`<meta name="google-site-verification" content="${entschaerfen(GOOGLE_BESTAETIGUNG)}">`] : []),
+      ...(datei === 'catalogo-agencias.html' ? ['<meta name="robots" content="noindex, nofollow">'] : []),
       `<meta name="description" content="${entschaerfen(beschreibung)}">`,
       `<link rel="canonical" href="${adresse(datei)}">`,
       `<meta property="og:type" content="${datei === 'index.html' ? 'website' : 'article'}">`,
@@ -193,9 +196,10 @@ export async function seoEinbauen(website, log = console.log) {
   // --- sitemap.xml: Liste aller Seiten für Google ---------------------------
   const heute = new Date().toISOString().slice(0, 10);
   const wichtig = { 'index.html': '1.0', 'passeios.html': '0.9', 'como-funciona.html': '0.8' };
+  const nichtInSitemap = new Set(['catalogo-agencias.html']);
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${seiten.map((d) => `  <url>
+${seiten.filter((d) => !nichtInSitemap.has(d)).map((d) => `  <url>
     <loc>${adresse(d)}</loc>
     <lastmod>${heute}</lastmod>
     <priority>${wichtig[d] ?? (d.startsWith('tour-') ? '0.8' : '0.5')}</priority>
