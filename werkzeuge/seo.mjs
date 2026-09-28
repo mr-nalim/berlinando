@@ -49,7 +49,7 @@ const OG_BREITE = 1200, OG_HOEHE = 630;
 // `npm run uebernehmen` und hochladen. Leer lassen = kein Tag auf der Seite.
 // (Wird die Domain stattdessen über einen DNS-Eintrag bestätigt, bleibt das
 // hier leer.)
-const GOOGLE_BESTAETIGUNG = '';
+const GOOGLE_BESTAETIGUNG = 'gRe2uR3bXm2GehK_n6diL2uPgBPLVJEdmBAybne4DBY';
 
 const adresse = (datei) => (datei === 'index.html' ? `${SEITE_BASIS}/` : `${SEITE_BASIS}/${datei}`);
 const entschaerfen = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
