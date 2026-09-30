@@ -27,6 +27,8 @@ export const BESCHREIBUNGEN = {
     'Os dez tours privados de Berlinando em um só lugar: duração, temas e valores a partir de €320 — em português, com guia brasileira.',
   'catalogo-agencias.html':
     'Área reservada: catálogo com valores para agências e operadoras do Brasil e de Portugal.',
+  'condicoes.html':
+    'Condições dos passeios da Berlinando: reserva, pagamento, cancelamento e o que vale em caso de chuva — em português, de forma clara.',
   'informacoes-legais.html':
     'Informações legais e política de privacidade do site Berlinando — passeios privados em Berlim com a guia brasileira Marta Rocha.',
 

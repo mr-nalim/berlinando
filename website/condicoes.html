@@ -3,12 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quem sou — guia brasileira em Berlim · Berlinando</title>
+<title>Informações importantes · Berlinando</title>
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/fonts.css">
-<script src="./nav-logo.js"></script>
-  <style>
+<style>
     :root { --font-heading:'Cormorant Garamond', Georgia, serif; --font-body:'Nunito Sans', system-ui, sans-serif; --font-slogan:'Cormorant Garamond', Georgia, serif; }
     body { margin:0; background:#FBF7EE; font-family:var(--font-body); }
     a { color:#33302B; text-decoration:none; transition:color .15s; }
@@ -25,15 +24,11 @@
     .lnk:hover { border-color:#B45B3E; }
     .nlink { color:inherit; transition:opacity .15s; }
     .nlink:hover { color:inherit; opacity:.6; }
-    .plate-b { background:#fff; padding:8px; border:1px solid #E7DFCB; box-shadow:0 1px 3px rgba(51,48,43,.07); }
-    .plate-b image-slot { display:block; width:100%; height:100%; filter:saturate(.94) sepia(.04) contrast(.99) brightness(1.01); }
     .wrap { max-width:1120px; margin:0 auto; padding:0 44px; }
-    .prose p { font-size:18px; line-height:1.78; margin:0 0 22px; max-width:64ch; color:color-mix(in srgb,#33302B 84%,transparent); text-wrap:pretty; }
-    .prose p:last-child { margin-bottom:0; }
     .row { display:grid; grid-template-columns:232px minmax(0,1fr); gap:30px; align-items:start; padding:24px 2px; border-top:1px solid #E1D6BC; }
     .row:last-child { border-bottom:1px solid #E1D6BC; }
     .rowl { font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#B45B3E; line-height:1.5; padding-top:5px; }
-    .rowp { font-size:17px; line-height:1.72; margin:0; max-width:56ch; color:color-mix(in srgb,#33302B 84%,transparent); }
+    .rowp { font-size:17px; line-height:1.72; margin:0; max-width:60ch; color:color-mix(in srgb,#33302B 84%,transparent); }
     @media (max-width: 900px) {
       .wrap { padding-left:22px !important; padding-right:22px !important; }
       .g2 { grid-template-columns:minmax(0,1fr) !important; gap:28px !important; }
@@ -79,24 +74,30 @@
       a.lnk, .tc-go, .cmpgo { padding-top:13px !important; padding-bottom:13px !important; }
       .mnav-btn { min-height:44px; }
     }
+    .mrow-cb { position:absolute; opacity:0; width:0; height:0; pointer-events:none; }
+    @media (max-width: 900px) {
+      .row.acc-m { padding-top:0 !important; padding-bottom:0 !important; }
+      .mrow-l { display:flex !important; align-items:center; justify-content:space-between; gap:14px; min-height:54px; cursor:pointer; padding-top:0 !important; }
+      .mrow-l::after { content:'+'; font-family:var(--font-body); font-size:22px; font-weight:400; line-height:1; color:#B45B3E; }
+      .mrow-cb:checked + .mrow-l::after { content:'–'; }
+      .mrow-cb:focus-visible + .mrow-l { outline:2px solid #B45B3E; outline-offset:3px; }
+      .mrow-body { display:none; padding-bottom:22px; }
+      .mrow-cb:checked ~ .mrow-body { display:block; }
+    }
   </style>
+  <script src="./nav-logo.js"></script>
 <script src="assets/site.js" defer></script>
-<meta name="description" content="Marta Ruth Ribeiro Rocha, guia brasileira em Berlim desde 2012: passeios em português, na Alemanha desde 1986 e apaixonada pela cidade desde 1989.">
-<link rel="canonical" href="https://berlinando.de/quem-sou.html">
+<meta name="description" content="Condições dos passeios da Berlinando: reserva, pagamento, cancelamento e o que vale em caso de chuva — em português, de forma clara.">
+<link rel="canonical" href="https://berlinando.de/condicoes.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Berlinando">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Quem sou — guia brasileira em Berlim · Berlinando">
-<meta property="og:description" content="Marta Ruth Ribeiro Rocha, guia brasileira em Berlim desde 2012: passeios em português, na Alemanha desde 1986 e apaixonada pela cidade desde 1989.">
-<meta property="og:url" content="https://berlinando.de/quem-sou.html">
-<meta property="og:image" content="https://berlinando.de/assets/og-quem-sou.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://berlinando.de/assets/og-quem-sou.jpg">
-<meta name="twitter:title" content="Quem sou — guia brasileira em Berlim · Berlinando">
-<meta name="twitter:description" content="Marta Ruth Ribeiro Rocha, guia brasileira em Berlim desde 2012: passeios em português, na Alemanha desde 1986 e apaixonada pela cidade desde 1989.">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","url":"https://berlinando.de/quem-sou.html","mainEntity":{"@type":"Person","name":"Marta Ruth Ribeiro Rocha","jobTitle":"Guia de turismo","knowsLanguage":["pt-BR","de","en"],"description":"Marta Ruth Ribeiro Rocha, guia brasileira em Berlim desde 2012: passeios em português, na Alemanha desde 1986 e apaixonada pela cidade desde 1989.","image":"https://berlinando.de/assets/og-quem-sou.jpg","worksFor":{"@id":"https://berlinando.de/#berlinando"}}}]}</script>
+<meta property="og:title" content="Informações importantes · Berlinando">
+<meta property="og:description" content="Condições dos passeios da Berlinando: reserva, pagamento, cancelamento e o que vale em caso de chuva — em português, de forma clara.">
+<meta property="og:url" content="https://berlinando.de/condicoes.html">
+<meta name="twitter:title" content="Informações importantes · Berlinando">
+<meta name="twitter:description" content="Condições dos passeios da Berlinando: reserva, pagamento, cancelamento e o que vale em caso de chuva — em português, de forma clara.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","url":"https://berlinando.de/condicoes.html","name":"Informações importantes · Berlinando","description":"Condições dos passeios da Berlinando: reserva, pagamento, cancelamento e o que vale em caso de chuva — em português, de forma clara.","isPartOf":{"@id":"https://berlinando.de/#berlinando"}}]}</script>
 </head>
 <body>
 <div style="font-family:var(--font-body);color:#33302B;background:#FBF7EE">
@@ -110,7 +111,7 @@
         <div class="navlinks" style="display:flex;align-items:center;gap:30px;font-size:15px;font-weight:600;white-space:nowrap">
           <a href="passeios.html" class="nlink">Passeios</a>
           <a href="como-funciona.html" class="nlink">Como funciona</a>
-          <a href="quem-sou.html" class="nlink" style="color:#B45B3E">Quem Sou</a>
+          <a href="quem-sou.html" class="nlink">Quem Sou</a>
         </div>
         <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb" style="font-size:14px;font-weight:700;border-radius:10px;padding:10px 20px;text-decoration:none">Reservar</a>
         <div class="mnav-panel">
@@ -126,80 +127,61 @@
     </div>
   </nav>
 
-  <header class="wrap" style="padding-top:58px;padding-bottom:20px">
-    <h1 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(46px,6.6vw,88px);line-height:0.98;letter-spacing:-0.01em;margin:0 0 24px;text-wrap:pretty">Marta Ruth<br>Ribeiro Rocha</h1>
-    <p style="font-family:var(--font-slogan);font-style:italic;font-size:clamp(22px,2.6vw,32px);line-height:1.32;margin:0;color:#B45B3E">Guia profissional desde 2012 —<br>quarenta anos de Alemanha por dentro.</p>
+  <header class="wrap" style="padding-top:58px;padding-bottom:26px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#A83F55;margin-bottom:20px">Condições Gerais</div>
+    <h1 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(40px,5.2vw,68px);line-height:1;letter-spacing:-0.01em;margin:0">Informações importantes</h1>
   </header>
 
-  <section class="wrap" style="padding-top:34px;padding-bottom:10px">
-    <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img srcset="assets/foto-marta-chapeu-400.webp 400w, assets/foto-marta-chapeu-640.webp 640w, assets/foto-marta-chapeu-900.webp 900w, assets/foto-marta-chapeu-1200.webp 1200w, assets/foto-marta-chapeu-1600.webp 1600w, assets/foto-marta-chapeu-2000.webp 2000w" sizes="(max-width: 900px) 85vw, 77vw" src="assets/foto-marta-chapeu-2000.webp" alt="Retrato de Marta sorrindo ao ar livre, segurando o seu chapéu de palha" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
-  </section>
-
-  <section class="wrap" style="padding-top:52px;padding-bottom:10px">
-    <div class="prose">
-      <p>Cheguei à Alemanha em 1986, ainda estudante de Filosofia, achando que aqui era a terra dos grandes pensadores — e que só se pensa direito em alemão. Aprendi a língua para poder ler Schopenhauer no original. O que era férias se tornou a vida: são quarenta anos, três filhos criados aqui, e a Alemanha aprendida do jeito que só se aprende vivendo — por dentro.</p>
-      <p>Conheci Berlim em 1989, com o Muro ainda de pé, e me apaixonei de vez — dessas paixões que a gente leva anos pra entender. Hoje Berlim é a minha cidade, e guio profissionalmente desde 2012. Hoje eu compartilho com os meus clientes não só a paixão, mas o porquê dela.</p>
+  <section class="wrap" style="padding-top:30px;padding-bottom:72px">
+    <div class="row acc-m">
+      <input type="checkbox" id="r-Cond-1" class="mrow-cb">
+      <label for="r-Cond-1" class="rowl mrow-l">Serviço com data marcada</label>
+      <div class="mrow-body"><p class="rowp">Para serviços de lazer com data e horário determinados, não se aplica o direito de arrependimento de 14 dias, nos termos do § 312g, parágrafo 2, nº 9, do Código Civil alemão (BGB).</p></div>
     </div>
-  </section>
-
-  <section class="wrap" style="padding-top:30px;padding-bottom:0">
-    <div class="plate-b" style="max-width:820px"><div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden"><img srcset="assets/foto-marta-explicando-muro-web-400.webp 400w, assets/foto-marta-explicando-muro-web-640.webp 640w, assets/foto-marta-explicando-muro-web-900.webp 900w, assets/foto-marta-explicando-muro-web-1200.webp 1200w, assets/foto-marta-explicando-muro-web-1600.webp 1600w" sizes="(max-width: 900px) 85vw, 57vw" src="assets/foto-marta-explicando-muro-web-1600.webp" alt="Marta explicando a história do Muro ao grupo" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 100%;filter:saturate(.94) sepia(.04) contrast(.99) brightness(1.01)"></div></div>
-  </section>
-
-  <section style="background:#F4EDDC;border-top:1px solid #E8DEC4;border-bottom:1px solid #E8DEC4;margin-top:60px">
-    <div class="wrap" style="padding-top:60px;padding-bottom:64px">
-      <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(30px,3.4vw,42px);line-height:1.06;margin:0 0 34px">Em poucas linhas</h2>
-      <div class="row">
-        <div class="rowl">Berlim</div>
-        <p class="rowp">Conheci a cidade em 1989, com o Muro ainda de pé. Hoje é onde eu moro e trabalho.</p>
-      </div>
-      <div class="row">
-        <div class="rowl">Alemanha</div>
-        <p class="rowp">Desde 1986 — quarenta anos, três filhos criados aqui.</p>
-      </div>
-      <div class="row">
-        <div class="rowl">Idiomas</div>
-        <p class="rowp">Português nativo e alemão — aprendido por gosto de filosofia, antes de virar profissão.</p>
-      </div>
-      <div class="row">
-        <div class="rowl">Como guia</div>
-        <p class="rowp">Profissional desde 2012, com formação de guia certificada e cursos temáticos a cada ano: história do século XX, memória, arquitetura e cidade contemporânea.</p>
-      </div>
-      <div class="row">
-        <div class="rowl">Onde conduzo</div>
-        <p class="rowp">Berlim e arredores, incluindo o Memorial de Sachsenhausen e os palácios e jardins de Potsdam.</p>
-      </div>
+    <div class="row acc-m">
+      <input type="checkbox" id="r-Cond-2" class="mrow-cb">
+      <label for="r-Cond-2" class="rowl mrow-l">Objeto e reserva</label>
+      <div class="mrow-body"><p class="rowp">A Berlinando (Marta Rocha) presta serviços de guia de turismo em passeios privados em Berlim e arredores; não atua como operadora ou organizadora de viagem. A sua solicitação é vinculante, e o contrato se conclui com a confirmação por escrito da Berlinando, com data, duração, ponto de encontro e valor.</p></div>
     </div>
-  </section>
-
-  <section class="wrap g2" style="padding-top:60px;padding-bottom:10px;display:grid;grid-template-columns:1fr 0.92fr;gap:52px;align-items:center">
-    <div>
-      <div style="font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#A83F55;margin-bottom:22px">Por que Berlim</div>
-      <div class="prose">
-        <p>Berlim não se entrega na primeira visita. É uma cidade que foi destruída, dividida, remendada e reinventada em menos de um século, e que deixou tudo isso à vista. Caminhar por ela é ler essas camadas uma sobre a outra.</p>
-        <p>É isso que eu gosto de mostrar: não a lista dos pontos turísticos, mas o que aconteceu naquela esquina e por que ela é assim hoje.</p>
-      </div>
+    <div class="row acc-m">
+      <input type="checkbox" id="r-Cond-3" class="mrow-cb">
+      <label for="r-Cond-3" class="rowl mrow-l">Preços e pagamento</label>
+      <div class="mrow-body"><p class="rowp">€80 por hora para até 2 pessoas, mais €10 por hora por pessoa a partir da terceira. Todos os valores são finais, com os impostos já incluídos. Um sinal de 25% reserva a data; o saldo é pago até 3 dias antes do passeio.</p></div>
     </div>
-    <div class="plate-b"><div style="position:relative;width:100%;aspect-ratio:3/2;overflow:hidden"><img srcset="assets/foto-marta-mercado-feira-400.webp 400w, assets/foto-marta-mercado-feira-640.webp 640w, assets/foto-marta-mercado-feira-900.webp 900w" sizes="(max-width: 900px) 85vw, 35vw" src="assets/foto-marta-mercado-feira-900.webp" alt="Marta em um mercado de Berlim" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;max-width:none;object-fit:cover"></div></div>
-  </section>
-
-  <section class="wrap" style="padding-top:46px;padding-bottom:10px">
-    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px 24px;padding-top:26px;border-top:1px solid #E7DFCB">
-      <p style="font-size:17px;line-height:1.7;margin:0;max-width:52ch;color:color-mix(in srgb,#33302B 84%,transparent)">Dez roteiros, cada um com um fio condutor diferente.</p>
-      <a href="passeios.html" class="lnk" style="font-size:15px;font-weight:700;color:#B45B3E">Ver os 10 roteiros →</a>
+    <div class="row acc-m">
+      <input type="checkbox" id="r-Cond-4" class="mrow-cb">
+      <label for="r-Cond-4" class="rowl mrow-l">Cancelamento e estorno</label>
+      <div class="mrow-body"><p class="rowp">Cancelamento gratuito até 15 dias antes do passeio; 50% do valor entre 14 e 7 dias antes; 100% com menos de 7 dias ou em caso de não comparecimento. O sinal de 25% fica retido, pois cobre o planejamento. Não comparecer sem aviso — ou chegar com atraso que inviabilize o serviço — equivale a cancelar no dia.</p></div>
     </div>
-  </section>
-
-  <section style="background:#231F1C;margin-top:56px">
-    <div class="wrap g2" style="display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end;padding-top:76px;padding-bottom:76px">
-      <div>
-        <h2 style="font-family:var(--font-heading);font-weight:500;font-size:clamp(34px,4.2vw,54px);line-height:1.06;margin:0;max-width:20ch;color:#FBF7EE;text-wrap:pretty">Me chame no WhatsApp com a data e quantas pessoas.</h2>
-      </div>
-      <div style="border-left:1px solid rgba(251,247,238,.18);padding-left:44px;display:flex;flex-direction:column;align-items:flex-start;gap:20px">
-        <p style="font-size:16px;line-height:1.7;margin:0;color:rgba(251,247,238,.72)">O resto a gente acerta junto.</p>
-        <a href="https://wa.me/4915785568432" target="_blank" rel="noopener" class="yb-fill" style="padding:15px 32px;font-size:15px;letter-spacing:0.03em;text-decoration:none">Reservar no WhatsApp</a>
-        <span style="font-size:15px;color:rgba(251,247,238,.56);font-variant-numeric:tabular-nums">+49 1578 5568432</span>
-      </div>
+    <div class="row acc-m">
+      <input type="checkbox" id="r-Cond-5" class="mrow-cb">
+      <label for="r-Cond-5" class="rowl mrow-l">Se eu precisar cancelar</label>
+      <div class="mrow-body"><p class="rowp">Se eu não puder guiar por doença, acidente ou força maior, você escolhe: uma nova data ou a devolução integral do que já tiver pago, inclusive o sinal. Sempre que possível, indico um colega de confiança.</p></div>
+    </div>
+    <div class="row acc-m">
+      <input type="checkbox" id="r-Cond-6" class="mrow-cb">
+      <label for="r-Cond-6" class="rowl mrow-l">Chuva, frio e calor</label>
+      <div class="mrow-body"><p class="rowp">Os passeios acontecem com qualquer tempo — caminhamos de guarda-chuva, se for preciso. Havendo alerta oficial de perigo (tempestade, por exemplo), combinamos uma nova data sem custo. Venha com calçado confortável e roupa adequada ao dia.</p></div>
+    </div>
+    <div class="row acc-m">
+      <input type="checkbox" id="r-Cond-7" class="mrow-cb">
+      <label for="r-Cond-7" class="rowl mrow-l">Ingressos, reservas e alterações</label>
+      <div class="mrow-body"><p class="rowp">Ingressos de museus e atrações pagas não estão incluídos. Reservas feitas por mim têm taxa de 10% sobre o valor dos ingressos e serviços; para atrações gratuitas que exigem reserva, a taxa é de €10 por pessoa. O roteiro pode ser adaptado por pedido seu ou por necessidade do dia; mudanças que aumentem a duração são cobradas proporcionalmente.</p></div>
+    </div>
+    <div class="row acc-m">
+      <input type="checkbox" id="r-Cond-8" class="mrow-cb">
+      <label for="r-Cond-8" class="rowl mrow-l">Responsabilidade</label>
+      <div class="mrow-body"><p class="rowp">Respondo por dolo e culpa grave. Em caso de culpa leve, a responsabilidade limita-se aos danos previsíveis e típicos deste serviço. Fica ressalvada, sem qualquer limitação, a responsabilidade por danos à vida, ao corpo ou à saúde, bem como nos demais casos previstos em lei.</p></div>
+    </div>
+    <div class="row acc-m">
+      <input type="checkbox" id="r-Cond-9" class="mrow-cb">
+      <label for="r-Cond-9" class="rowl mrow-l">Dados</label>
+      <div class="mrow-body"><p class="rowp">Os seus dados são tratados apenas para combinar e realizar o passeio, conforme o RGPD/DSGVO. Os detalhes estão em <a href="informacoes-legais.html" class="lnk">Informações legais</a>.</p></div>
+    </div>
+    <div class="row acc-m">
+      <input type="checkbox" id="r-Cond-10" class="mrow-cb">
+      <label for="r-Cond-10" class="rowl mrow-l">Lei aplicável</label>
+      <div class="mrow-body"><p class="rowp">Aplica-se o direito alemão. Se você for consumidor, ficam resguardadas as normas de proteção ao consumidor e o foro do seu domicílio previstos em lei.</p></div>
     </div>
   </section>
 
