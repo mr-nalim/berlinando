@@ -34,6 +34,10 @@ const TELEFON = '+4915785568432';
 // Google auf ein fremdes Konto.
 const INSTAGRAM = 'https://www.instagram.com/berlinando_tours/';
 const FACEBOOK = 'https://facebook.com/guiaemberlim';
+// Martas Google-Unternehmensprofil (seit Export 30.09. auch auf der Startseite
+// verlinkt). In sameAs hilft es Google, Website und Profil als dasselbe
+// Unternehmen zu erkennen.
+const GOOGLE_PROFIL = 'https://maps.app.goo.gl/wQ5y3nbHFzzEezR36';
 // Preise laut Tabelle auf „Como funciona" (pro Stunde und pro Gruppe).
 // Kleinste Gruppe (bis 10 Personen) je Tourdauer — nur als „ab"-Preis.
 // Stand Export 28.09.2026: Besucherpreise (nicht die Agenturpreise!).
@@ -99,7 +103,7 @@ function strukturierteDaten(datei, titel, beschreibung, bildAdresse, angebotDate
     image: bildAdresse,
     areaServed: { '@type': 'City', name: 'Berlin', address: { '@type': 'PostalAddress', addressCountry: 'DE' } },
     availableLanguage: [{ '@type': 'Language', name: 'Portuguese', alternateName: 'pt-BR' }],
-    sameAs: [INSTAGRAM, FACEBOOK],
+    sameAs: [INSTAGRAM, FACEBOOK, GOOGLE_PROFIL],
     priceRange: PREIS_SPANNE,
     founder: {
       '@type': 'Person',
