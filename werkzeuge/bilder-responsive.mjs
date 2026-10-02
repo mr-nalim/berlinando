@@ -61,6 +61,25 @@ function server(dir) {
   });
 }
 
+// --- Rahmen ≠ Foto: Fotos, die ihren Rahmen füllen (object-fit: cover) -------
+// Solche Fotos werden so weit vergrößert, dass sie den Rahmen ganz ausfüllen,
+// und an den Seiten beschnitten. Das Foto selbst ist dann BREITER als sein
+// Rahmen — z. B. das Titelbild auf dem Handy: Rahmen 390, Foto ~820 Punkte.
+// Gezählt wird die Breite des Fotos, sonst bekommt das Handy eine zu kleine
+// Fassung und zeigt sie unscharf gestreckt (Fehler bis 02.10.2026).
+const seitenverhaeltnis = {};   // Datei → Breite/Höhe des Originals
+async function angezeigteBreite(website, w) {
+  if (!w.fuellt || !w.hoehe || !w.src?.startsWith('assets/')) return w.breite;
+  const datei = path.join(website, w.src);
+  if (!fs.existsSync(datei)) return w.breite;
+  if (!seitenverhaeltnis[datei]) {
+    const { width, height, orientation } = await sharp(datei).metadata();
+    // hochkant gespeicherte Handyfotos (EXIF-Drehung 5–8) zeigt der Browser gedreht
+    seitenverhaeltnis[datei] = orientation >= 5 ? height / width : width / height;
+  }
+  return Math.max(w.breite, Math.round(w.hoehe * seitenverhaeltnis[datei]));
+}
+
 // --- Messen: wie breit wird jedes Foto auf jeder Seite angezeigt? -----------
 async function messen(website, seiten) {
   const srv = await server(website);
@@ -78,12 +97,19 @@ async function messen(website, seiten) {
         document.querySelectorAll('input[type=checkbox]').forEach((c) => { if (!c.checked) c.click(); });
       });
       await page.waitForTimeout(250);
-      const werte = await page.$$eval('img', (imgs) => imgs.map((i) => ({
-        src: i.getAttribute('src'),
-        breite: Math.round(i.getBoundingClientRect().width),
-      })));
+      const werte = await page.$$eval('img', (imgs) => imgs.map((i) => {
+        const rahmen = i.getBoundingClientRect();
+        return {
+          src: i.getAttribute('src'),
+          breite: Math.round(rahmen.width),
+          hoehe: Math.round(rahmen.height),
+          fuellt: getComputedStyle(i).objectFit === 'cover',
+        };
+      }));
       messung[seite] ??= werte.map((w) => ({ src: w.src }));
-      werte.forEach((w, i) => { if (messung[seite][i]) messung[seite][i][name] = w.breite; });
+      for (const [i, w] of werte.entries()) {
+        if (messung[seite][i]) messung[seite][i][name] = await angezeigteBreite(website, w);
+      }
     }
     await page.close();
   }
@@ -159,8 +185,9 @@ export async function responsiveBilder(website, log = console.log) {
       if (!datei || !varianten[datei]?.length) return tag;
       const v = varianten[datei];
       const srcset = v.map((x) => `${x.datei} ${x.breite}w`).join(', ');
-      // „sizes" in vw, damit es auch auf sehr großen Bildschirmen stimmt
-      const vw = (px, fenster) => Math.min(100, Math.ceil((px / fenster) * 100));
+      // „sizes" in vw, damit es auch auf sehr großen Bildschirmen stimmt.
+      // Über 100vw ist gewollt: beschnittene Fotos sind breiter als der Bildschirm.
+      const vw = (px, fenster) => Math.ceil((px / fenster) * 100);
       const handy = m?.handy ? vw(m.handy, MESSBREITEN.handy) : 100;
       const laptop = m?.laptop ? vw(m.laptop, MESSBREITEN.laptop) : 100;
       const sizes = `(max-width: 900px) ${handy}vw, ${laptop}vw`;
