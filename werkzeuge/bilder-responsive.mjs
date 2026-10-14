@@ -202,10 +202,15 @@ export async function responsiveBilder(website, log = console.log) {
   const verwendet = new Set();
   for (const seite of seiten) {
     const inhalt = fs.readFileSync(path.join(website, seite), 'utf8');
-    for (const t of inhalt.matchAll(/assets\/([\w.-]+\.(?:jpe?g|png|webp))/gi)) verwendet.add(t[1]);
+    // auch Fotos in Unterordnern (assets/fotos/…) und Namen mit Sonderzeichen
+    // wie „+" (z. B. tour07-kopf+karte-…). Alles bis zum nächsten Anführungs-
+    // zeichen, Komma oder Leerzeichen gehört zum Dateinamen.
+    for (const t of inhalt.matchAll(/assets\/([^"'\s,)]+\.(?:jpe?g|png|webp))/gi)) verwendet.add(t[1]);
   }
+  const alleDateien = (unter = '') => fs.readdirSync(path.join(assets, unter), { withFileTypes: true })
+    .flatMap((e) => (e.isDirectory() ? alleDateien(path.join(unter, e.name)) : [path.join(unter, e.name)]));
   let entfernt = 0;
-  for (const datei of fs.readdirSync(assets)) {
+  for (const datei of alleDateien()) {
     if (!istFoto(datei) || verwendet.has(datei)) continue;
     fs.rmSync(path.join(assets, datei));
     entfernt++;

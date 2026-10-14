@@ -129,10 +129,21 @@ const MOTIV_GRENZE = 12;
 // geht vor. Wird das Motiv in Claude Design ersetzt, hier den Eintrag löschen.
 const MOTIV_BEKANNT = new Set(['foto-sachsenhausen.jpg']);
 
-for (const d of fs.readdirSync(path.join(quelle, 'assets'))) {
+// Alle Dateien unter assets/ — auch in Unterordnern (Claude Design legt seit
+// Oktober 2026 z. B. `assets/fotos/` an). Pfade sind relativ zu assets/.
+function assetDateien(wurzel, unter = '') {
+  return fs.readdirSync(path.join(wurzel, unter), { withFileTypes: true })
+    .flatMap((e) => (e.isDirectory()
+      ? assetDateien(wurzel, path.join(unter, e.name))
+      : [path.join(unter, e.name)]));
+}
+
+for (const d of assetDateien(path.join(quelle, 'assets'))) {
+  const name = path.basename(d);
   const gross = path.join(FOTOS_GROSS, d);
   const von = fs.existsSync(gross) ? gross : path.join(quelle, 'assets', d);
   const nach = path.join(ASSETS, d);
+  fs.mkdirSync(path.dirname(nach), { recursive: true });
   fs.copyFileSync(von, nach);
   if (von === gross) {
     console.log(`  Große Fassung verwendet: ${d} (aus fotos-gross/)`);
@@ -155,7 +166,7 @@ for (const d of fs.readdirSync(path.join(quelle, 'assets'))) {
     if (info.format !== 'jpeg' || kb > MAX_FOTO_KB || zuGross) {
       const args = ['-s', 'format', 'jpeg', '-s', 'formatOptions', '82'];
       if (zuGross) args.push('-Z', String(MAX_FOTO_PX));
-      const zwischen = path.join(tmp, `opt-${d}`);
+      const zwischen = path.join(tmp, `opt-${d.replace(/\//g, '_')}`);
       execFileSync('sips', [...args, nach, '--out', zwischen], { stdio: 'ignore' });
       // Nur übernehmen, wenn es etwas bringt (falsches Format, zu groß oder wirklich kleiner)
       if (info.format !== 'jpeg' || zuGross || fs.statSync(zwischen).size < fs.statSync(nach).size) {
@@ -165,7 +176,7 @@ for (const d of fs.readdirSync(path.join(quelle, 'assets'))) {
         fs.rmSync(zwischen);
       }
     }
-  } else if (/^logo.*\.png$/i.test(d)) {
+  } else if (/^logo.*\.png$/i.test(name)) {
     if (bildInfo(nach).breite > LOGO_BREITE) {
       execFileSync('sips', ['--resampleWidth', String(LOGO_BREITE), nach], { stdio: 'ignore' });
       console.log(`  Logo verkleinert: ${d}`);
