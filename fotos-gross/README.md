@@ -16,7 +16,7 @@ Größe: längste Kante max. 2600 px, JPEG. Quelle: Fotoarchiv
 
 ## Stand 21.09.2026 — neu dazugekommen
 
-Aus dem Fotoarchiv (`~/Desktop/Berlinando Fotos Webseite`) in hoher Auflösung
+Aus dem Fotoarchiv (`~/Desktop/Berlinando/Berlinando Fotos Webseite`) in hoher Auflösung
 nachgezogen, weil der Claude-Design-Export sie zu klein liefert:
 
 | Datei | Export | hier | Quelle im Archiv |
